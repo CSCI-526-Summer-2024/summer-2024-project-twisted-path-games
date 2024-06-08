@@ -13,7 +13,9 @@ public class HunterController : MonoBehaviour
 
     public GameObject hunted;
     public NavMeshAgent agent;
-    public bool isChaseActive = true; 
+    public bool isChaseActive = true;
+
+    public float thresholdDistance = 5.0f;
 
     void Start()
     {
@@ -36,7 +38,13 @@ public class HunterController : MonoBehaviour
         if (isChaseActive)
         {
             agent.isStopped = false;
-            agent.SetDestination(hunted.transform.position);
+            bool shouldChase = CheckHuntedProximity();
+
+            if (shouldChase)
+            {
+                Debug.Log("Chasing!");
+                agent.SetDestination(hunted.transform.position);
+            }
         }
         else
         {
@@ -59,5 +67,11 @@ public class HunterController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * Time.deltaTime * increasedSpeed * verticalInput);
         transform.Translate(Vector3.right * Time.deltaTime * increasedSpeed * horizontalInput);
+    }
+
+    private bool CheckHuntedProximity()
+    {
+        float distance = Vector3.Distance(hunted.transform.position, rb.transform.position);
+        return distance <= thresholdDistance;
     }
 }

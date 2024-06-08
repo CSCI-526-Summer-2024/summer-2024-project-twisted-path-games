@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 21017757}
   - component: {fileID: 21017756}
   m_Layer: 0
-  m_Name: RoleManager
+  m_Name: CollisonManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1430,7 +1430,7 @@ GameObject:
   - component: {fileID: 349038682}
   - component: {fileID: 349038681}
   m_Layer: 0
-  m_Name: CameraHolder
+  m_Name: HuntedCamHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5679,7 +5679,7 @@ Transform:
   m_GameObject: {fileID: 1977468906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.46, y: 0.292, z: -3.19}
+  m_LocalPosition: {x: 1.36, y: 0.292, z: -1.65}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5702,6 +5702,7 @@ MonoBehaviour:
   hunted: {fileID: 2095705914}
   agent: {fileID: 1977468914}
   isChaseActive: 1
+  thresholdDistance: 5
 --- !u!195 &1977468914
 NavMeshAgent:
   m_ObjectHideFlags: 0

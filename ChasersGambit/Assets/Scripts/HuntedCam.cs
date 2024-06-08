@@ -24,6 +24,7 @@ public class HuntedCam : MonoBehaviour
         }
         return value;
     }
+
     void Start()
     {
         // Lock the cursor to the center of the game window for first person view
