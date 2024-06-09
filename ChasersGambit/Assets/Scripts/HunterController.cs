@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.AI;
+using Newtonsoft.Json;
+using DBManager;
 
 public class HunterController : MonoBehaviour
 {
@@ -35,6 +37,20 @@ public class HunterController : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            // Sample endpoint - Remove this or change it accordingly
+            string urlPath = "users/jack/name.json";
+            
+            // Sample Data - Remove this or change accordingly.
+            var data = new
+            {
+                FirstName = "Jack",
+                LastName = "Sparrow"
+            };
+            string dataJsonString = JsonConvert.SerializeObject(data);
+            DBController.WriteToDB(urlPath, dataJsonString);
+        }
         if (isChaseActive)
         {
             agent.isStopped = false;
