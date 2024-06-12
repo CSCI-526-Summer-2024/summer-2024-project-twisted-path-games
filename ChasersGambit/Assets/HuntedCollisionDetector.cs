@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HunterCollisionDetector : MonoBehaviour
@@ -8,17 +9,18 @@ public class HunterCollisionDetector : MonoBehaviour
         if (collision.collider.CompareTag("PowerUp"))
         {
             // Notify the CollisionManager of the collision
-            CollisionManager.Instance.OnHuntedCollisionWithPowerUp(collision.collider.gameObject);
+            Debug.Log(this.gameObject.tag);
+            CollisionManager.Instance.OnHuntedCollisionWithPowerUp(collision.collider.gameObject, this.gameObject);   
         }
         else if (collision.collider.CompareTag("Hunter"))
         {
             // Notify the CollisionManager of the collision
-            CollisionManager.Instance.OnHuntedCollisionWithHunter(collision.collider.gameObject);
+            CollisionManager.Instance.OnHuntedCollisionWithHunter();
         }
         else if (collision.collider.CompareTag("Exit"))
         {
             // Notify the CollisionManager of the collision
-            CollisionManager.Instance.OnHuntedCollisionWithExit(collision.collider.gameObject);
+            CollisionManager.Instance.OnHuntedCollisionWithExit();
         }
     }
 }

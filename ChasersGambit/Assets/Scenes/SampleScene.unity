@@ -222,8 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunter: {fileID: 1977468906}
   hunterCam: {fileID: 963194227}
-  hunted: {fileID: 2095705914}
-  huntedCam: {fileID: 119359660}
+  hunted1: {fileID: 2095705914}
+  huntedCam1: {fileID: 119359660}
+  hunted2: {fileID: 611426813}
+  huntedCam2: {fileID: 192198640}
   exit: {fileID: 1236249473}
   gameManager: {fileID: 962236938}
   isHuntedActive: 1
@@ -2006,7 +2008,7 @@ GameObject:
   - component: {fileID: 611426814}
   m_Layer: 8
   m_Name: Hunted2
-  m_TagString: Untagged
+  m_TagString: Hunted2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6052,6 +6054,7 @@ MonoBehaviour:
   hunted: {fileID: 2095705914}
   agent: {fileID: 1977468914}
   isChaseActive: 1
+  thresholdDistance: 5
 --- !u!195 &1977468914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -6320,7 +6323,7 @@ GameObject:
   - component: {fileID: 2095705918}
   m_Layer: 8
   m_Name: Hunted1
-  m_TagString: Untagged
+  m_TagString: Hunted1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
