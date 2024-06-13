@@ -9,7 +9,6 @@ public class HunterCollisionDetector : MonoBehaviour
         if (collision.collider.CompareTag("PowerUp"))
         {
             // Notify the CollisionManager of the collision
-            Debug.Log(this.gameObject.tag);
             CollisionManager.Instance.OnHuntedCollisionWithPowerUp(collision.collider.gameObject, this.gameObject);   
         }
         else if (collision.collider.CompareTag("Hunter"))
@@ -17,10 +16,15 @@ public class HunterCollisionDetector : MonoBehaviour
             // Notify the CollisionManager of the collision
             CollisionManager.Instance.OnHuntedCollisionWithHunter();
         }
-        else if (collision.collider.CompareTag("Exit"))
+        else if (this.gameObject.CompareTag("Hunted1") && collision.collider.CompareTag("Exit1"))
         {
             // Notify the CollisionManager of the collision
-            CollisionManager.Instance.OnHuntedCollisionWithExit();
+            CollisionManager.Instance.OnHuntedCollisionWithExit(this.gameObject);
+        }
+        else if (this.gameObject.CompareTag("Hunted2") && collision.collider.CompareTag("Exit2"))
+        {
+            // Notify the CollisionManager of the collision
+            CollisionManager.Instance.OnHuntedCollisionWithExit(this.gameObject);
         }
     }
 }
