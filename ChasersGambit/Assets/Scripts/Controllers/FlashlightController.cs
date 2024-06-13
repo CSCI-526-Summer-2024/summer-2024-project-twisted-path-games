@@ -1,24 +1,26 @@
 using UnityEngine;
-
-public class FlashlightController : MonoBehaviour
+namespace Controllers
 {
-    private Light flashlight;
-
-    private void Start()
+    public class FlashlightController : MonoBehaviour
     {
-        flashlight = GetComponent<Light>();
+        private Light flashlight;
 
-        if (flashlight == null)
+        private void Start()
         {
-            Debug.LogError("No Light component found on this GameObject.");
+            flashlight = GetComponent<Light>();
+
+            if (flashlight == null)
+            {
+                Debug.LogError("No Light component found on this GameObject.");
+            }
         }
-    }
 
-    void Update()
-    {
-        if (flashlight != null && Input.GetKeyDown(KeyCode.F))
+        void Update()
         {
-            flashlight.enabled = !flashlight.enabled;
+            if (flashlight != null && Input.GetKeyDown(KeyCode.F))
+            {
+                flashlight.enabled = !flashlight.enabled;
+            }
         }
     }
 }
