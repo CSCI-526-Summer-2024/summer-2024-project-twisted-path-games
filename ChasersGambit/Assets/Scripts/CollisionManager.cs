@@ -11,9 +11,11 @@ public class CollisionManager : MonoBehaviour
 
     public GameObject hunted1;
     public Camera huntedCam1;
+    public GameObject cameraHolder1;
     
     public GameObject hunted2;
     public Camera huntedCam2;
+    public GameObject cameraHolder2;
 
     public Light mazeLights;
     
@@ -153,11 +155,13 @@ public class CollisionManager : MonoBehaviour
         if (huntedThatExited.CompareTag("Hunted1"))
         {
             GameState.EnableGo(hunted2);
+            cameraHolder1.SetActive(false);
             huntedCam2.gameObject.SetActive(true);
         }
         else
         {
             GameState.EnableGo(hunted1);
+            cameraHolder2.SetActive(false);
             huntedCam1.gameObject.SetActive(true);
         }
         huntedThatExited.SetActive(false);
