@@ -14,6 +14,8 @@ public class CollisionManager : MonoBehaviour
     public GameObject hunted2;
     public Camera huntedCam2;
 
+    public Light mazeLights;
+
     public GameObject exit;
     public GameManager gameManager;
 
@@ -111,7 +113,15 @@ public class CollisionManager : MonoBehaviour
     }
 
     IEnumerator SwitchRolesForDuration(float duration, GameObject collidingHunted)
-    {
+    {        
+        if (mazeLights == null)
+        {
+            Debug.LogError("No Light component found on this GameObject.");
+        }
+
+        // Brighten the map so the player can see
+        mazeLights.enabled = true;
+
         // Switch roles
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
@@ -119,6 +129,9 @@ public class CollisionManager : MonoBehaviour
 
         // Wait for the specified duration
         yield return new WaitForSeconds(duration);
+
+        // Return to dark lighting for first person view
+        mazeLights.enabled = false;
 
         // Revert the roles back
         isHuntedActive = !isHuntedActive;
