@@ -9,6 +9,8 @@ TagManager:
   - Exit
   - Hunted1
   - Hunted2
+  - Exit1
+  - Exit2
   layers:
   - Default
   - TransparentFX

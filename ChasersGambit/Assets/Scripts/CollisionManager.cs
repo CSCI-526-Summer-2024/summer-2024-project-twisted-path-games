@@ -16,8 +16,7 @@ public class CollisionManager : MonoBehaviour
     public Camera huntedCam2;
 
     public Light mazeLights;
-
-    public GameObject exit;
+    
     public GameManager gameManager;
 
     public bool isHuntedActive = true;
@@ -61,12 +60,21 @@ public class CollisionManager : MonoBehaviour
         gameManager.LoseGame();
     }
 
-    public void OnHuntedCollisionWithExit()
+    public void OnHuntedCollisionWithExit(GameObject huntedThatExited)
     {
-        // Log a message to the console
-        Debug.Log("Hunted collided with exit");
-
-        //GAME OVER! - WIN
+        if (GameState.DidAnyHuntedExit)
+        {
+            OnBothHuntedExitMaze();
+        }
+        else
+        {
+            DisableHuntedAfterExiting(huntedThatExited);
+            GameState.DidAnyHuntedExit = true;   
+        }
+    }
+    
+    public void OnBothHuntedExitMaze()
+    {
         gameManager.WinGame();
     }
 
@@ -138,5 +146,20 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
+    }
+
+    void DisableHuntedAfterExiting(GameObject huntedThatExited)
+    {
+        if (huntedThatExited.CompareTag("Hunted1"))
+        {
+            GameState.EnableGo(hunted2);
+            huntedCam2.gameObject.SetActive(true);
+        }
+        else
+        {
+            GameState.EnableGo(hunted1);
+            huntedCam1.gameObject.SetActive(true);
+        }
+        huntedThatExited.SetActive(false);
     }
 }

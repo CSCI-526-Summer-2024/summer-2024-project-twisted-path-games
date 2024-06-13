@@ -17,8 +17,8 @@ public class SwitchHunted : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DisableGO(hunted2);
-        EnableGO(hunted1);
+        GameState.DisableGo(hunted2);
+        GameState.EnableGo(hunted1);
         _isHunted1Enabled = true;
 
         SetCameraPerspective();
@@ -27,7 +27,7 @@ public class SwitchHunted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !GameState.DidAnyHuntedExit)
         {
             SwitchHuntedFocus();
             UpdateHunter();
@@ -39,13 +39,13 @@ public class SwitchHunted : MonoBehaviour
     {
         if (_isHunted1Enabled)
         {
-            DisableGO(hunted1);
-            EnableGO(hunted2);
+            GameState.DisableGo(hunted1);
+            GameState.EnableGo(hunted2);
         }
         else
         {
-            DisableGO(hunted2);
-            EnableGO(hunted1);
+            GameState.DisableGo(hunted2);
+            GameState.EnableGo(hunted1);
         }
     }
 
@@ -62,24 +62,6 @@ public class SwitchHunted : MonoBehaviour
             Debug.Log("Hunter is hunting P1");
         }
         _isHunted1Enabled = !_isHunted1Enabled;
-    }
-    
-    void DisableGO(GameObject gb)
-    {
-        _scripts = gb.GetComponents<MonoBehaviour>();
-        foreach(var script in _scripts)
-        {
-            script.enabled = false;
-        }
-    }
-
-    void EnableGO(GameObject gb)
-    {
-        _scripts = gb.GetComponents<MonoBehaviour>();
-        foreach (var script in _scripts)
-        {
-            script.enabled = true;
-        }
     }
 
     void SetCameraPerspective()
