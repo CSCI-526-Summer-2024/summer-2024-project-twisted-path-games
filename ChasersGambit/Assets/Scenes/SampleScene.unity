@@ -224,10 +224,11 @@ MonoBehaviour:
   hunterCam: {fileID: 963194227}
   hunted1: {fileID: 2095705914}
   huntedCam1: {fileID: 119359660}
+  cameraHolder1: {fileID: 0}
   hunted2: {fileID: 611426813}
   huntedCam2: {fileID: 192198640}
+  cameraHolder2: {fileID: 0}
   mazeLights: {fileID: 305995090}
-  exit: {fileID: 0}
   gameManager: {fileID: 962236938}
   isHuntedActive: 1
 --- !u!4 &21017757
@@ -635,8 +636,8 @@ Camera:
   m_GameObject: {fileID: 119359657}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.13305447, g: 0.1762193, b: 0.24528301, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -915,7 +916,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.13333334, g: 0.1764706, b: 0.24705882, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
