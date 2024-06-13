@@ -12,6 +12,8 @@ public class HuntedCam : MonoBehaviour
     // This empty game object's purpose is to track the player's orientation
     public Transform orientation;
 
+    public GameObject flashlight;
+
     // Camera rotation
     float xRotation;
     float yRotation;
@@ -57,5 +59,7 @@ public class HuntedCam : MonoBehaviour
         // Ensures the player's forward direction matches where the camera is looking horizontally
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
 
+        // Apply rotation to the flashlight
+        flashlight.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
     }
 }
