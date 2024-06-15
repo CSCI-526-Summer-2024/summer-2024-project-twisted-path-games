@@ -1,16 +1,26 @@
-using System.Net.Http;
+using UnityEngine;
+using UnityEngine.Networking;
+using System.Text;
 namespace DBManager
 {
     public static class DBController
     {
-        public static async void WriteToDB(string urlPath, string data)
+        private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/";
+
+        public static void WriteToDB(string urlPath, string data)
         {
-            var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Put, "https://chasers-gambit-425703-default-rtdb.firebaseio.com/"+urlPath);
-            var content = new StringContent(data, null, "application/json");
-            request.Content = content;
-            var response = await client.SendAsync(request);
-            response.EnsureSuccessStatusCode();
+            // Create a new UnityWebRequest for the PUT method
+            UnityWebRequest request = new UnityWebRequest(URL + urlPath, "PUT");
+            
+            byte[] bodyRaw = Encoding.UTF8.GetBytes(data);
+            request.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            request.SetRequestHeader("Content-Type", "application/json");
+            request.downloadHandler = new DownloadHandlerBuffer(); // Might not be required - check and remove this
+            request.SendWebRequest();
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error: " + request.error);
+            }
         }
     }
 }

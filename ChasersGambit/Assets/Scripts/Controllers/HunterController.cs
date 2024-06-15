@@ -42,15 +42,13 @@ namespace Controllers
             {
                 // Sample endpoint - Remove this or change it accordingly
                 string urlPath = "users/jack/name.json";
-
-                // Sample Data - Remove this or change accordingly.
-                var data = new
+                SampleData data = new SampleData()
                 {
-                    FirstName = "Jack",
-                    LastName = "Sparrow"
+                    firstName = "Jack",
+                    lastName = "Sparrow"
                 };
-                string dataJsonString = JsonConvert.SerializeObject(data);
-                DBController.WriteToDB(urlPath, dataJsonString);
+                string dataString = JsonUtility.ToJson(data);
+                DBController.WriteToDB(urlPath, dataString);
             }
             if (isChaseActive)
             {
