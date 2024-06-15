@@ -6,7 +6,9 @@ public class CollisionManager : MonoBehaviour
 {
     public static CollisionManager Instance;
 
-    public GameObject hunter;
+    public GameObject hunter1;
+
+    public GameObject hunter2;
     public Camera hunterCam;
 
     public GameObject hunted1;
@@ -93,7 +95,8 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted2.GetComponent<HuntedController>().enabled = true;
             }
-            hunter.GetComponent<HunterController>().isChaseActive = true;
+            hunter1.GetComponent<HunterController>().isChaseActive = true;
+            hunter2.GetComponent<HunterController>().isChaseActive = true;
         }
         else
         {
@@ -105,7 +108,8 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted2.GetComponent<HuntedController>().enabled = false;
             }
-            hunter.GetComponent<HunterController>().isChaseActive = false;
+            hunter1.GetComponent<HunterController>().isChaseActive = false;
+            hunter2.GetComponent<HunterController>().isChaseActive = false;
         }
     }
 
