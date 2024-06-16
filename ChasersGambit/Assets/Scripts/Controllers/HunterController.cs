@@ -20,6 +20,8 @@ namespace Controllers
 
         public float thresholdDistance = 5.0f;
 
+        public bool controlled = false;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -67,8 +69,10 @@ namespace Controllers
             {
                 agent.isStopped = true;
                 rb.isKinematic = false;
-                GetInputs();
-                MoveHunter();
+                if (controlled){
+                    GetInputs();
+                    MoveHunter();
+                }
             }
         }
 

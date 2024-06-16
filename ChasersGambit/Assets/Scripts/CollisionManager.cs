@@ -108,8 +108,12 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted2.GetComponent<HuntedController>().enabled = false;
             }
+
+            //only activate one of the hunters? probably the closest to the player
+            //activate the rest later
             hunter1.GetComponent<HunterController>().isChaseActive = false;
             hunter2.GetComponent<HunterController>().isChaseActive = false;
+            hunter1.GetComponent<HunterController>().controlled = true;
         }
     }
 
