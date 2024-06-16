@@ -27,7 +27,7 @@ public class SwitchHunted : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && !GameState.DidAnyHuntedExit)
+        if (Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
         {
             SwitchHuntedFocus();
             UpdateHunter();

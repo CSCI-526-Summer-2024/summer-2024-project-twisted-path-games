@@ -20,10 +20,6 @@ public class GameManager : MonoBehaviour
 
         Button playAgainButton = playAgainButtonObject.GetComponent<Button>();
         playAgainButton.onClick.AddListener(OnReplayButtonClick);
-
-        winUI.SetActive(false);
-        loseUI.SetActive(false);
-        playAgainButtonObject.SetActive(false);
     }
 
     public void WinGame()
