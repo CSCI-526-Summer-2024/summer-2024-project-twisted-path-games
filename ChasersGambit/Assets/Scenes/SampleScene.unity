@@ -224,10 +224,10 @@ MonoBehaviour:
   hunterCam: {fileID: 963194227}
   hunted1: {fileID: 2095705914}
   huntedCam1: {fileID: 119359660}
-  cameraHolder1: {fileID: 0}
+  cameraHolder1: {fileID: 349038680}
   hunted2: {fileID: 611426813}
   huntedCam2: {fileID: 192198640}
-  cameraHolder2: {fileID: 0}
+  cameraHolder2: {fileID: 2036568268}
   mazeLights: {fileID: 305995090}
   gameManager: {fileID: 962236938}
   isHuntedActive: 1
@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 21017755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0124018, y: -2.618492, z: 27.825819}
+  m_LocalPosition: {x: 1.012402, y: -2.618492, z: 27.82582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

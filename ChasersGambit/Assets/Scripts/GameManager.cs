@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
 
         winUI.SetActive(true);
         playAgainButtonObject.SetActive(true);
+        
+        DBManager.AnalyticManager.WriteNumberOfSwitches();
+        GameState.ResetGameState();
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -43,6 +46,9 @@ public class GameManager : MonoBehaviour
 
         loseUI.SetActive(true);
         playAgainButtonObject.SetActive(true);
+        
+        DBManager.AnalyticManager.WriteNumberOfSwitches();
+        GameState.ResetGameState();
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

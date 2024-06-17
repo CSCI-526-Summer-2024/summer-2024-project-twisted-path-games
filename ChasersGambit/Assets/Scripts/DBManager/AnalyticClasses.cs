@@ -7,4 +7,10 @@ namespace DBManager
         public string firstName;
         public string lastName;
     }
+    
+    [System.Serializable]
+    public class NumberOfSwitches
+    {
+        public int numberOfSwitches;
+    }
 }

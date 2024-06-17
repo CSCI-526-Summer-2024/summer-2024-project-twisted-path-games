@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 using Controllers;
@@ -21,6 +23,8 @@ public class SwitchHunted : MonoBehaviour
         GameState.EnableGo(hunted1);
         _isHunted1Enabled = true;
 
+        Debug.Log(GameState.SessionId);
+        
         SetCameraPerspective();
     }
 
@@ -32,6 +36,7 @@ public class SwitchHunted : MonoBehaviour
             SwitchHuntedFocus();
             UpdateHunter();
             SetCameraPerspective();
+            GameState.NumberOfSwitches++;
         }
     }
 
