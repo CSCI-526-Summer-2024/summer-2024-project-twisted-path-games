@@ -9,6 +9,8 @@ namespace Controllers
         float verticalInput;
         Vector3 moveDirection;
 
+        private Light flashlight;
+
         // Ground drag properties so the player doesn't skate across ice-like ground
         public float groundDrag;
         public float playerHeight;
@@ -26,6 +28,8 @@ namespace Controllers
             // Prevent rotation based on physics interactions
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+
+            flashlight = GetComponentInChildren<Light>();
         }
 
         void Update()
@@ -44,6 +48,12 @@ namespace Controllers
             else
             {
                 rb.drag = 0;
+            }
+
+            if (flashlight != null && Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("F key pressed");
+                flashlight.enabled = !flashlight.enabled;
             }
         }
 
