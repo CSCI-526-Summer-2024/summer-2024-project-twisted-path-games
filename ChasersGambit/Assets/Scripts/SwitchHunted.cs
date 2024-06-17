@@ -49,6 +49,7 @@ public class SwitchHunted : MonoBehaviour
         }
     }
 
+    
     void UpdateHunter()
     {
         if (_isHunted1Enabled)
@@ -63,6 +64,7 @@ public class SwitchHunted : MonoBehaviour
         }
         _isHunted1Enabled = !_isHunted1Enabled;
     }
+    
 
     void SetCameraPerspective()
     {

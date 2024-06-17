@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88797cb4136540e89a96ff8d876720f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hunter: {fileID: 1977468906}
-  hunterCam: {fileID: 963194227}
   hunted1: {fileID: 2095705914}
   huntedCam1: {fileID: 119359660}
   cameraHolder1: {fileID: 0}
@@ -260,7 +258,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunted1: {fileID: 2095705914}
   hunted2: {fileID: 611426813}
-  hunter: {fileID: 1977468906}
   hunted1Cam: {fileID: 119359660}
   hunted2Cam: {fileID: 192198640}
 --- !u!1 &61793265
@@ -1675,7 +1672,7 @@ Transform:
   m_GameObject: {fileID: 349038680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0.5, z: -9.67}
+  m_LocalPosition: {x: -1.91, y: 0.5, z: -7.04}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
