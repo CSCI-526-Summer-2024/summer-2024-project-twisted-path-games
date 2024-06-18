@@ -4,8 +4,11 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public GameObject winUI;
+    public GameObject winL1;
+    public GameObject winL2;
     public GameObject loseUI;
     public GameObject playAgainButtonObject;
+    public GameObject playNextLevelButtonObject;
    
     // Start is called before the first frame update
     void Start()
@@ -20,13 +23,30 @@ public class GameManager : MonoBehaviour
 
         Button playAgainButton = playAgainButtonObject.GetComponent<Button>();
         playAgainButton.onClick.AddListener(OnReplayButtonClick);
+        
+        Button playNextLevelButton = playNextLevelButtonObject.GetComponent<Button>();
+        playNextLevelButton.onClick.AddListener(OnNextLevelButtonClick);
     }
 
     public void WinGame()
     {
         Time.timeScale = 0f;
 
-        winUI.SetActive(true);
+        if (GameState.LevelNumber == 1)
+        {
+            winL1.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+        }
+        else if (GameState.LevelNumber == 2)
+        {
+            winL2.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+        }
+        else if (GameState.LevelNumber == 3)
+        {
+            winUI.SetActive(true);   
+        }
+        
         playAgainButtonObject.SetActive(true);
         
         DBManager.AnalyticManager.WriteNumberOfSwitches();
@@ -50,6 +70,19 @@ public class GameManager : MonoBehaviour
         Cursor.visible = true;
     }
 
+    void OnNextLevelButtonClick()
+    {
+        if (GameState.LevelNumber == 1)
+        {
+            GameState.LevelNumber = 2;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
+        }
+        else if (GameState.LevelNumber == 2)
+        {
+            GameState.LevelNumber = 3;
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
+        }
+    }
     void OnReplayButtonClick()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
