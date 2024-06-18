@@ -11,6 +11,7 @@ public static class GameState
     public static void ResetGameState()
     {
         NumberOfSwitches = 0;
+        DidAnyHuntedExit = false;
     }
     private static string GenerateSessionId(int length)
     {
