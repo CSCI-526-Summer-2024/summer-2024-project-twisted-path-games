@@ -60,6 +60,11 @@ namespace Controllers
             }
         }
 
+        public void UpdateTarget(GameObject newTarget)
+        {
+            target = newTarget;
+        }
+
         // Get keyboard inputs
         private void GetInputs()
         {
