@@ -5259,7 +5259,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e05614b158b44871ac4cf63858d853a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5321,7 +5321,7 @@ MonoBehaviour:
   glowMaterial: {fileID: 0}
   minGlow: 0.5
   maxGlow: 1
-  glowSpeed: 2
+  glowSpeed: 0.2
 --- !u!1 &113643885
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,7 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bebf92ab396924f9cacb0c9a1fdfdefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointLight: {fileID: 0}
+  pointLight: {fileID: 212059652}
   minIntensity: 0.2
   maxIntensity: 0.4
   minRange: 1
@@ -19497,7 +19497,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e05614b158b44871ac4cf63858d853a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19559,7 +19559,7 @@ MonoBehaviour:
   glowMaterial: {fileID: 0}
   minGlow: 0.5
   maxGlow: 1
-  glowSpeed: 2
+  glowSpeed: 0.2
 --- !u!1 &1233478343
 GameObject:
   m_ObjectHideFlags: 0
@@ -19621,7 +19621,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7e05614b158b44871ac4cf63858d853a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -19683,7 +19683,7 @@ MonoBehaviour:
   glowMaterial: {fileID: 0}
   minGlow: 0.5
   maxGlow: 1
-  glowSpeed: 2
+  glowSpeed: 0.2
 --- !u!1 &1308335070
 GameObject:
   m_ObjectHideFlags: 0
