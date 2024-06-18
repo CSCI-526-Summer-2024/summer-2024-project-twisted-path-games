@@ -2590,7 +2590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993155bfe71b416ab8d67af817b7588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherHunter: {fileID: 2095705914}
+  otherHunted: {fileID: 2095705914}
 --- !u!1 &697079931
 GameObject:
   m_ObjectHideFlags: 0
@@ -7417,7 +7417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8993155bfe71b416ab8d67af817b7588, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherHunter: {fileID: 611426813}
+  otherHunted: {fileID: 611426813}
 --- !u!1 &2107622592
 GameObject:
   m_ObjectHideFlags: 0
