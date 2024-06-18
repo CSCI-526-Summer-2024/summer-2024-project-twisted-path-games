@@ -71,7 +71,7 @@ public class CollisionManager : MonoBehaviour
         else
         {
             DisableHuntedAfterExiting(huntedThatExited);
-            GameState.DidAnyHuntedExit = true;   
+            GameState.DidAnyHuntedExit = true;
         }
     }
     
