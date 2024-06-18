@@ -5,7 +5,7 @@ namespace DBManager
 {
     public static class DBController
     {
-        #if UNITY_WEBGL
+        #if UNITY_WEBGL && !UNITY_EDITOR
             private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/webgl/";
         #else
             private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/";

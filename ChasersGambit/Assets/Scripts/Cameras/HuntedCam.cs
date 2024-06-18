@@ -4,8 +4,13 @@ namespace Cameras
     public class HuntedCam : MonoBehaviour
     {
         // Mouse sensitivity, lowered for build
-        public float sensX = 400.0f;
-        public float sensY = 400.0f;
+        #if UNITY_WEBGL && !UNITY_EDITOR
+            public float sensX = 400.0f;
+            public float sensY = 400.0f;  
+        #else
+            public float sensX = 200.0f;
+            public float sensY = 200.0f;
+        #endif
 
         // Reference to the orientation object under the hunted game object
         // This empty game object's purpose is to track the player's orientation
