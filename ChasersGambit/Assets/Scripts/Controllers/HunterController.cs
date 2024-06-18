@@ -44,6 +44,7 @@ namespace Controllers
                 agent.isStopped = false;
                 capsuleCollider.enabled = true;
 
+
                 if (CheckHuntedProximity())
                 {
                     Debug.Log("Chasing!");
@@ -63,6 +64,10 @@ namespace Controllers
         public void UpdateTarget(GameObject newTarget)
         {
             target = newTarget;
+            agent.isStopped = true;
+            agent.velocity = Vector3.zero;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
         }
 
         // Get keyboard inputs

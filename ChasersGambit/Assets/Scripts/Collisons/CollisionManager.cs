@@ -71,9 +71,11 @@ public class CollisionManager : MonoBehaviour
         }
         else
         {
+            hunterController = hunter.GetComponent<HunterController>();
+            hunterController.UpdateTarget(otherHunted);
+
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
-            hunterController = hunter.GetComponent<HunterController>();
 
             if (hunterController == null)
             {
@@ -81,7 +83,6 @@ public class CollisionManager : MonoBehaviour
                 return;
             }
 
-            hunterController.UpdateTarget(otherHunted);
         }
     }
     
