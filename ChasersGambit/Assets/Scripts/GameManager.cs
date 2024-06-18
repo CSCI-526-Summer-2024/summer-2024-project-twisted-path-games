@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        GameState.LastAttemptWasSuccess = true;
         if (GameState.LevelNumber == 1)
         {
             winL1.SetActive(true);   
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
 
+        GameState.LastAttemptWasSuccess = false;
         loseUI.SetActive(true);
         playAgainButtonObject.SetActive(true);
         
