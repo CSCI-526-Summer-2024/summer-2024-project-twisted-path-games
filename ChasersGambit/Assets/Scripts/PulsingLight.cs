@@ -4,7 +4,7 @@ public class PulsingLight : MonoBehaviour
 {
     public Light pointLight;  // Reference to the Point Light component
     public float minIntensity = 0.2f;
-    public float maxIntensity = 0.4f;
+    public float maxIntensity = 0.6f;
     public float minRange = 1.0f;
     public float maxRange = 2.0f;
     public float pulseSpeed = 0.4f;

@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 110434117}
   - component: {fileID: 110434116}
   - component: {fileID: 110434120}
+  - component: {fileID: 110434121}
   m_Layer: 6
   m_Name: powerup1 (2)
   m_TagString: PowerUp
@@ -491,6 +492,18 @@ MonoBehaviour:
   minGlow: 0.3
   maxGlow: 0.6
   glowSpeed: 0.1
+--- !u!122 &110434121
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110434115}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 1694440960
+  m_Size: 0.3
 --- !u!1 &113643885
 GameObject:
   m_ObjectHideFlags: 0
@@ -4136,6 +4149,7 @@ GameObject:
   - component: {fileID: 956829679}
   - component: {fileID: 956829678}
   - component: {fileID: 956829682}
+  - component: {fileID: 956829683}
   m_Layer: 6
   m_Name: powerup1 (4)
   m_TagString: PowerUp
@@ -4246,6 +4260,18 @@ MonoBehaviour:
   minGlow: 0.3
   maxGlow: 0.6
   glowSpeed: 0.1
+--- !u!122 &956829683
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956829677}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 1694440960
+  m_Size: 0.3
 --- !u!1 &960154941
 GameObject:
   m_ObjectHideFlags: 0
@@ -5149,6 +5175,7 @@ GameObject:
   - component: {fileID: 1179151019}
   - component: {fileID: 1179151018}
   - component: {fileID: 1179151022}
+  - component: {fileID: 1179151023}
   m_Layer: 6
   m_Name: powerup1
   m_TagString: PowerUp
@@ -5259,6 +5286,18 @@ MonoBehaviour:
   minGlow: 0.3
   maxGlow: 0.6
   glowSpeed: 0.1
+--- !u!122 &1179151023
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179151017}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 1694440960
+  m_Size: 0.3
 --- !u!1 &1189725360
 GameObject:
   m_ObjectHideFlags: 0
@@ -5482,6 +5521,7 @@ GameObject:
   - component: {fileID: 1221186205}
   - component: {fileID: 1221186204}
   - component: {fileID: 1221186208}
+  - component: {fileID: 1221186209}
   m_Layer: 6
   m_Name: powerup1 (3)
   m_TagString: PowerUp
@@ -5592,6 +5632,18 @@ MonoBehaviour:
   minGlow: 0.3
   maxGlow: 0.6
   glowSpeed: 0.1
+--- !u!122 &1221186209
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221186203}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 1694440960
+  m_Size: 0.3
 --- !u!1 &1233478343
 GameObject:
   m_ObjectHideFlags: 0
@@ -5605,6 +5657,7 @@ GameObject:
   - component: {fileID: 1233478345}
   - component: {fileID: 1233478344}
   - component: {fileID: 1233478348}
+  - component: {fileID: 1233478349}
   m_Layer: 6
   m_Name: powerup1 (1)
   m_TagString: PowerUp
@@ -5715,6 +5768,18 @@ MonoBehaviour:
   minGlow: 0.3
   maxGlow: 0.6
   glowSpeed: 0.1
+--- !u!122 &1233478349
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233478343}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 1694440960
+  m_Size: 0.3
 --- !u!1 &1310543170
 GameObject:
   m_ObjectHideFlags: 0
