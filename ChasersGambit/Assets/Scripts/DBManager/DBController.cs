@@ -5,7 +5,11 @@ namespace DBManager
 {
     public static class DBController
     {
-        private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/";
+        #if UNITY_WEBGL
+            private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/";
+        #else
+            private static readonly string URL = "https://chasers-gambit-425703-default-rtdb.firebaseio.com/webgl/";
+        #endif
 
         public static void WriteToDB(string urlPath, string data)
         {
