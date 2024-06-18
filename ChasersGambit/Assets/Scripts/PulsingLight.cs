@@ -3,10 +3,10 @@ using UnityEngine;
 public class PulsingLight : MonoBehaviour
 {
     public Light pointLight;  // Reference to the Point Light component
-    public float minIntensity = 1f;
-    public float maxIntensity = 5f;
-    public float minRange = 5f;
-    public float maxRange = 10f;
+    public float minIntensity = 0.2f;
+    public float maxIntensity = 0.4f;
+    public float minRange = 1.0f;
+    public float maxRange = 2.0f;
     public float pulseSpeed = 1f;
 
     private float currentIntensity;
@@ -33,7 +33,7 @@ public class PulsingLight : MonoBehaviour
             if (currentIntensity >= maxIntensity || currentRange >= maxRange)
             {
                 currentIntensity = maxIntensity;
-                currentRange = maxRange;
+                //currentRange = maxRange;
                 increasing = false;
             }
         }
@@ -45,7 +45,7 @@ public class PulsingLight : MonoBehaviour
             if (currentIntensity <= minIntensity || currentRange <= minRange)
             {
                 currentIntensity = minIntensity;
-                currentRange = minRange;
+                //currentRange = minRange;
                 increasing = true;
             }
         }
