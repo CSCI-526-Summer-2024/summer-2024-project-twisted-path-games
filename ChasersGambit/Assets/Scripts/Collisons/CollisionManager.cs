@@ -8,6 +8,7 @@ public class CollisionManager : MonoBehaviour
 
     public GameObject hunter;
     public Camera hunterCam;
+    private HunterController hunterController;
 
     public GameObject hunted1;
     public Camera huntedCam1;
@@ -62,7 +63,7 @@ public class CollisionManager : MonoBehaviour
         gameManager.LoseGame();
     }
 
-    public void OnHuntedCollisionWithExit(GameObject huntedThatExited)
+    public void OnHuntedCollisionWithExit(GameObject huntedThatExited, GameObject otherHunted)
     {
         if (GameState.DidAnyHuntedExit)
         {
@@ -72,6 +73,15 @@ public class CollisionManager : MonoBehaviour
         {
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
+            hunterController = hunter.GetComponent<HunterController>();
+
+            if (hunterController == null)
+            {
+                Debug.LogError("HunterController component not found on otherHunted");
+                return;
+            }
+
+            hunterController.UpdateTarget(otherHunted);
         }
     }
     
