@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"/Users/shashankmg/Desktop/LA/USC/Job Hunt/ShashankMG123.github.io/CS526Builds/Test_builds;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v4;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v3;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/rrmangum.github;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v2;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/shashankmg/Desktop/LA/USC/Job Hunt/ShashankMG123.github.io/CS526Builds/Chasers_Gambit_Alpha_Build;/Users/shashankmg/Desktop/LA/USC/Job Hunt/ShashankMG123.github.io/CS526Builds/Test_builds;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v4;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v3;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/rrmangum.github;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds/v2;/Users/ryan.mangum/School/CSCI-526/switchhunt-proto/PartnerProto/WebGL Builds;;;\"}"
             }
         ]
     }

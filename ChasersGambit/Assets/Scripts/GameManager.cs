@@ -76,11 +76,13 @@ public class GameManager : MonoBehaviour
     {
         if (GameState.LevelNumber == 1)
         {
+            GameState.TryNumber = 1;
             GameState.LevelNumber = 2;
             UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
         }
         else if (GameState.LevelNumber == 2)
         {
+            GameState.TryNumber = 1;
             GameState.LevelNumber = 3;
             UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
         }

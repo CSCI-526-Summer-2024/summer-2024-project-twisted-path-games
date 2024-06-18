@@ -12,7 +12,6 @@ public static class GameState
 
     public static void ResetGameState()
     {
-        TryNumber = 1;
         NumberOfSwitches = 0;
         DidAnyHuntedExit = false;
     }
