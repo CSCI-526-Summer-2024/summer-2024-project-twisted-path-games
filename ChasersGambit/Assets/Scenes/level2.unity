@@ -2818,7 +2818,7 @@ GameObject:
   - component: {fileID: 762239296}
   - component: {fileID: 762239295}
   - component: {fileID: 762239294}
-  - component: {fileID: 762239293}
+  - component: {fileID: 762239297}
   m_Layer: 8
   m_Name: Hunted2
   m_TagString: Hunted2
@@ -2826,18 +2826,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &762239293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762239292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a503e9480376416d873c3c2321a1c0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &762239294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,6 +2891,19 @@ Transform:
   - {fileID: 716297258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762239297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762239292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8993155bfe71b416ab8d67af817b7588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherHunted: {fileID: 1469245435}
 --- !u!1 &781430558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,7 +4767,7 @@ GameObject:
   - component: {fileID: 1469245439}
   - component: {fileID: 1469245438}
   - component: {fileID: 1469245437}
-  - component: {fileID: 1469245436}
+  - component: {fileID: 1469245440}
   m_Layer: 8
   m_Name: Hunted1
   m_TagString: Hunted1
@@ -4774,18 +4775,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1469245436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1469245435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a503e9480376416d873c3c2321a1c0c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1469245437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4851,6 +4840,19 @@ Transform:
   - {fileID: 183144262}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1469245440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469245435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8993155bfe71b416ab8d67af817b7588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherHunted: {fileID: 762239292}
 --- !u!1 &1478222250
 GameObject:
   m_ObjectHideFlags: 0
