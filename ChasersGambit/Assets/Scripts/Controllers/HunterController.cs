@@ -1,7 +1,5 @@
 using UnityEngine;
 using UnityEngine.AI;
-using Newtonsoft.Json;
-using DBManager;
 namespace Controllers
 {
     public class HunterController : MonoBehaviour
@@ -12,9 +10,10 @@ namespace Controllers
         float verticalInput;
 
         // Hunter rigid body component
-        Rigidbody rb;
+        private Rigidbody rb;
+        private CapsuleCollider capsuleCollider;
 
-        public GameObject hunted;
+        public GameObject target;
         public NavMeshAgent agent;
         public bool isChaseActive = true;
 
@@ -25,48 +24,37 @@ namespace Controllers
             // Prevent rotation based on physics interactions
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
-
+            
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
             agent.speed = speed;
+
+            capsuleCollider = GetComponent<CapsuleCollider>();
 
             if (isChaseActive)
             {
                 rb.isKinematic = true;
             }
-        }
+    }
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Z))
-            {
-                // Sample endpoint - Remove this or change it accordingly
-                string urlPath = "users/jack/name.json";
-
-                // Sample Data - Remove this or change accordingly.
-                var data = new
-                {
-                    FirstName = "Jack",
-                    LastName = "Sparrow"
-                };
-                string dataJsonString = JsonConvert.SerializeObject(data);
-                DBController.WriteToDB(urlPath, dataJsonString);
-            }
             if (isChaseActive)
             {
                 agent.isStopped = false;
-                bool shouldChase = CheckHuntedProximity();
+                capsuleCollider.enabled = true;
 
-                if (shouldChase)
+                if (CheckHuntedProximity())
                 {
                     Debug.Log("Chasing!");
-                    agent.SetDestination(hunted.transform.position);
+                    agent.SetDestination(target.transform.position);
                 }
             }
             else
             {
                 agent.isStopped = true;
                 rb.isKinematic = false;
+                capsuleCollider.enabled = false;
                 GetInputs();
                 MoveHunter();
             }
@@ -88,7 +76,7 @@ namespace Controllers
 
         private bool CheckHuntedProximity()
         {
-            float distance = Vector3.Distance(hunted.transform.position, rb.transform.position);
+            float distance = Vector3.Distance(target.transform.position, rb.transform.position);
             return distance <= thresholdDistance;
         }
     }

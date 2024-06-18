@@ -224,10 +224,10 @@ MonoBehaviour:
   hunterCam: {fileID: 0}
   hunted1: {fileID: 2095705914}
   huntedCam1: {fileID: 119359660}
-  cameraHolder1: {fileID: 0}
+  cameraHolder1: {fileID: 349038680}
   hunted2: {fileID: 611426813}
   huntedCam2: {fileID: 192198640}
-  cameraHolder2: {fileID: 0}
+  cameraHolder2: {fileID: 2036568268}
   mazeLights: {fileID: 305995090}
   gameManager: {fileID: 962236938}
   isHuntedActive: 1
@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 21017755}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0124018, y: -2.618492, z: 27.825819}
+  m_LocalPosition: {x: 1.012402, y: -2.618492, z: 27.82582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -380,7 +380,7 @@ GameObject:
   - component: {fileID: 110434118}
   - component: {fileID: 110434117}
   - component: {fileID: 110434116}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: powerup1 (2)
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -1692,7 +1692,7 @@ GameObject:
   m_Component:
   - component: {fileID: 354304133}
   - component: {fileID: 354304132}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: NavMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2625,7 +2625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &785814126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2891,7 +2891,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.827451, g: 0.87058824, b: 1, a: 1}
+  m_Color: {r: 0.5801887, g: 0.6828092, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
   m_SpotAngle: 70
@@ -4266,7 +4266,7 @@ GameObject:
   - component: {fileID: 1179151020}
   - component: {fileID: 1179151019}
   - component: {fileID: 1179151018}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: powerup1
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -4581,7 +4581,7 @@ GameObject:
   - component: {fileID: 1221186206}
   - component: {fileID: 1221186205}
   - component: {fileID: 1221186204}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: powerup1 (3)
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -4686,7 +4686,7 @@ GameObject:
   - component: {fileID: 1233478346}
   - component: {fileID: 1233478345}
   - component: {fileID: 1233478344}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: powerup1 (1)
   m_TagString: PowerUp
   m_Icon: {fileID: 0}
@@ -4797,7 +4797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1308335071
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4927,13 +4927,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1310543170}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.434, y: 0, z: 11.644}
+  m_LocalRotation: {x: 0.0061554387, y: 0.70708, z: 0.006177811, w: 0.7070799}
+  m_LocalPosition: {x: 2.38, y: 0, z: 11.64}
   m_LocalScale: {x: 1.0125, y: 3, z: 1.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1151722243}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.002, y: 90, z: 0.999}
 --- !u!65 &1310543172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6000,7 +6000,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1687204567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6408,7 +6408,7 @@ Transform:
   m_GameObject: {fileID: 1977468906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.54, y: 0.292, z: -2.29}
+  m_LocalPosition: {x: 1.46, y: 0.292, z: -3.19}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6428,7 +6428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   increasedSpeed: 3
-  hunted: {fileID: 2095705914}
+  target: {fileID: 2095705914}
   agent: {fileID: 1977468914}
   isChaseActive: 1
   thresholdDistance: 5
