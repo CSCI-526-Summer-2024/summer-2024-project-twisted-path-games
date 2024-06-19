@@ -3,7 +3,7 @@ using UnityEngine;
 public class GlowEffect : MonoBehaviour
 {
     public Material glowMaterial;
-    public float minGlow = .3f;
+    public float minGlow = .2f;
     public float maxGlow = .6f;
     public float glowSpeed = .1f;
 
