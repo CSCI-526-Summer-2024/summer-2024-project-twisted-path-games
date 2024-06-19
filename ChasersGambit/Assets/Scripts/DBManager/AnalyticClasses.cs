@@ -7,4 +7,10 @@ namespace DBManager
         public int numberOfSwitches;
         public bool wasSuccessfull;
     }
+    public class NumberofAggro
+    {
+        public int numAggro;
+        public bool wasSuccessful;
+        public float timeSinceFirstAggro;
+    }
 }

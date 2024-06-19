@@ -1,3 +1,4 @@
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
@@ -6,14 +7,21 @@ public static class GameState
     public static bool DidAnyHuntedExit = false;
     public static readonly string SessionId = GenerateSessionId(16);
     public static int NumberOfSwitches = 0;
+    public static int numAggro = 0;
     public static int LevelNumber = 1;
     public static int TryNumber = 1;
     public static bool LastAttemptWasSuccess = false;
 
+    public static float firstChase = -1.0f;
+    public static float endTime = -1.0f;
+
     public static void ResetGameState()
     {
         NumberOfSwitches = 0;
+        numAggro = 0;
         DidAnyHuntedExit = false;
+        endTime = -1.0f;
+        firstChase = -1.0f;
     }
     private static string GenerateSessionId(int length)
     {

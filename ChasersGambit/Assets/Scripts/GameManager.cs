@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         Time.timeScale = 0f;
-
+        GameState.endTime = Time.time;
         GameState.LastAttemptWasSuccess = true;
         if (GameState.LevelNumber == 1)
         {
@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         
         playAgainButtonObject.SetActive(true);
         
+        DBManager.AnalyticManager.WriteAggro();
         DBManager.AnalyticManager.WriteNumberOfSwitches();
         GameState.ResetGameState();
 
@@ -59,12 +60,14 @@ public class GameManager : MonoBehaviour
 
     public void LoseGame()
     {
+        GameState.endTime = Time.time;
         Time.timeScale = 0f;
 
         GameState.LastAttemptWasSuccess = false;
         loseUI.SetActive(true);
         playAgainButtonObject.SetActive(true);
         
+        DBManager.AnalyticManager.WriteAggro();
         DBManager.AnalyticManager.WriteNumberOfSwitches();
         GameState.ResetGameState();
 
