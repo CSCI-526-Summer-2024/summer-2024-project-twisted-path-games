@@ -18,11 +18,18 @@ namespace DBManager
         public static void WriteAggro()
         {
             string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/aggro.json";
+            float timeSinceAggro;
+            if (GameState.firstChase < 0){
+                timeSinceAggro = 0;
+            }
+            else{
+                timeSinceAggro = GameState.endTime - GameState.firstChase;
+            }
             NumberofAggro data = new NumberofAggro()
             {
                 numAggro = GameState.numAggro,
                 wasSuccessful = GameState.LastAttemptWasSuccess,
-                duration = GameState.endTime - GameState.firstChase
+                timeSinceFirstAggro = timeSinceAggro
             };
             string dataString = JsonUtility.ToJson(data);
             DBController.WriteToDB(urlPath, dataString);  

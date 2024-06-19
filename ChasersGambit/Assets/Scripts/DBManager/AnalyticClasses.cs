@@ -11,6 +11,6 @@ namespace DBManager
     {
         public int numAggro;
         public bool wasSuccessful;
-        public float duration;
+        public float timeSinceFirstAggro;
     }
 }
