@@ -19,6 +19,7 @@ namespace Controllers
 
         public float thresholdDistance = 5.0f;
 
+        private bool isCurrentlyChasing = false;
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -46,8 +47,27 @@ namespace Controllers
 
                 if (CheckHuntedProximity())
                 {
+                    if (!isCurrentlyChasing)
+                    {
+                        isCurrentlyChasing = true;
+                        GameState.numAggro++;
+                        Debug.Log("Chase started!");
+                        if (GameState.firstChase == -1.0f)
+                        {
+                            GameState.firstChase = Time.time; // Record the start time of the first chase
+                        }
+                    }
+
                     Debug.Log("Chasing!");
                     agent.SetDestination(target.transform.position);
+                }
+                else
+                {
+                    if (isCurrentlyChasing)
+                    {
+                        isCurrentlyChasing = false;
+                        Debug.Log("Chase ended!");
+                    }
                 }
             }
             else

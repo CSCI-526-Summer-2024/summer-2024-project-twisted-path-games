@@ -1,3 +1,4 @@
+using Controllers;
 using UnityEngine;
 namespace DBManager
 {
@@ -10,6 +11,18 @@ namespace DBManager
             {
                 numberOfSwitches = GameState.NumberOfSwitches,
                 wasSuccessfull = GameState.LastAttemptWasSuccess
+            };
+            string dataString = JsonUtility.ToJson(data);
+            DBController.WriteToDB(urlPath, dataString);  
+        } 
+        public static void WriteAggro()
+        {
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber++}.json";
+            NumberofAggro data = new NumberofAggro()
+            {
+                numAggro = GameState.numAggro,
+                wasSuccessful = GameState.LastAttemptWasSuccess,
+                duration = GameState.endTime - GameState.firstChase
             };
             string dataString = JsonUtility.ToJson(data);
             DBController.WriteToDB(urlPath, dataString);  
