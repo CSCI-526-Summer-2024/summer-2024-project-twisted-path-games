@@ -7,12 +7,14 @@ using Controllers;
 public class SwitchHunted : MonoBehaviour
 {
     public GameObject hunted1;
+    public Camera hunted1Cam;
 
     public GameObject hunted2;
+    public Camera hunted2Cam;
 
     public GameObject hunter;
-    public Camera hunted1Cam;
-    public Camera hunted2Cam;
+    private HunterController hunterController;
+
     private MonoBehaviour[] _scripts;
     private bool _isHunted1Enabled;
     
@@ -26,12 +28,14 @@ public class SwitchHunted : MonoBehaviour
         Debug.Log(GameState.SessionId);
         
         SetCameraPerspective();
+
+        hunterController = hunter.GetComponent<HunterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
+        if (hunterController.isChaseActive && Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
         {
             SwitchHuntedFocus();
             UpdateHunter();
