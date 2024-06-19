@@ -6,7 +6,7 @@ namespace DBManager
     {
         public static void WriteNumberOfSwitches()
         {
-            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber++}.json";
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber++}/switches.json";
             NumberOfSwitches data = new NumberOfSwitches()
             {
                 numberOfSwitches = GameState.NumberOfSwitches,
@@ -17,7 +17,7 @@ namespace DBManager
         } 
         public static void WriteAggro()
         {
-            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber++}.json";
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/aggro.json";
             NumberofAggro data = new NumberofAggro()
             {
                 numAggro = GameState.numAggro,

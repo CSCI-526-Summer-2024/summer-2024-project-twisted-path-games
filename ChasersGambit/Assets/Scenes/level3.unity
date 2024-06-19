@@ -259,10 +259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hunted1: {fileID: 2095705914}
-  hunted2: {fileID: 611426813}
-  hunter: {fileID: 1977468906}
   hunted1Cam: {fileID: 119359660}
+  hunted2: {fileID: 611426813}
   hunted2Cam: {fileID: 192198640}
+  hunter: {fileID: 1977468906}
 --- !u!1 &61793265
 GameObject:
   m_ObjectHideFlags: 0
@@ -7399,7 +7399,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1943256777
 Canvas:
   m_ObjectHideFlags: 0
