@@ -1,6 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Controllers;
+using DBManager;
 
 public class CollisionManager : MonoBehaviour
 {
@@ -23,6 +25,7 @@ public class CollisionManager : MonoBehaviour
     public GameManager gameManager;
 
     public bool isHuntedActive = true;
+    public List<Vector3> hunterPos;
 
     void Awake()
     {
@@ -46,6 +49,7 @@ public class CollisionManager : MonoBehaviour
     {
         // Log a message to the console
         Debug.Log("Hunted collided with a PowerUp!");
+        GameState.PowerUpNumber++;
 
         // Start the coroutine to switch roles for 5 seconds
         StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted));
@@ -148,9 +152,16 @@ public class CollisionManager : MonoBehaviour
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
 
+        hunterPos = new List<Vector3>();
         // Wait for the specified duration
-        yield return new WaitForSeconds(duration);
+        for (int i = 0; i < 10; i++)
+        {
+            yield return new WaitForSeconds(duration/10);
+            hunterPos.Add(hunter.transform.position);
+        }
 
+        AnalyticManager.WritePositions(hunterPos);
+        
         // Return to dark lighting for first person view
         mazeLights.enabled = false;
 

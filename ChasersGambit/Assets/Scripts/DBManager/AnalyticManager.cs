@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Controllers;
 using UnityEngine;
 namespace DBManager
@@ -33,6 +34,17 @@ namespace DBManager
             };
             string dataString = JsonUtility.ToJson(data);
             DBController.WriteToDB(urlPath, dataString);  
-        } 
+        }
+        
+        public static void WritePositions(List<Vector3> hunterPositions)
+        {
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/hunterPositions/{GameState.PowerUpNumber}.json";
+            HunterMovement data = new HunterMovement()
+            {
+                positions = hunterPositions
+            };
+            string dataString = JsonUtility.ToJson(data);
+            DBController.WriteToDB(urlPath, dataString);
+        }
     }
 }
