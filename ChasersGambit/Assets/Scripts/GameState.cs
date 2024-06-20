@@ -10,6 +10,7 @@ public static class GameState
     public static int numAggro = 0;
     public static int LevelNumber = 1;
     public static int TryNumber = 1;
+    public static int PowerUpNumber = 0;
     public static bool LastAttemptWasSuccess = false;
 
     public static float firstChase = -1.0f;
@@ -22,6 +23,7 @@ public static class GameState
         DidAnyHuntedExit = false;
         endTime = -1.0f;
         firstChase = -1.0f;
+        PowerUpNumber = 0;
     }
     private static string GenerateSessionId(int length)
     {
