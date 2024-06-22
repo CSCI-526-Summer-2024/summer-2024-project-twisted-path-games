@@ -11,6 +11,7 @@ TagManager:
   - Hunted2
   - Exit1
   - Exit2
+  - HunterControls
   layers:
   - Default
   - TransparentFX

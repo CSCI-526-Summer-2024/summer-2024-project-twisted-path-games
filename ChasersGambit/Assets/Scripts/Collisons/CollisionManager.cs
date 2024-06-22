@@ -53,14 +53,50 @@ public class CollisionManager : MonoBehaviour
         // Log a message to the console
         Debug.Log("Hunted collided with a PowerUp!");
         GameState.PowerUpNumber++;
-
+        
         // Start the coroutine to switch roles for 5 seconds
         StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted));
-
+            
         // Optionally, destroy the power-up after collision
         Destroy(powerUp);
     }
 
+    private void EnableArrowsAroundHunters()
+    {
+        List<GameObject> hunterControls = GetAllInactiveGameObjectsWithTag("HunterControls");
+
+        foreach (GameObject hunterControl in hunterControls)
+        {
+            hunterControl.SetActive(true);
+        }
+    }
+
+    private void DisableArrowsAroundHunters()
+    {
+        List<GameObject> hunterControls = GetAllInactiveGameObjectsWithTag("HunterControls");
+
+        foreach (GameObject hunterControl in hunterControls)
+        {
+            hunterControl.SetActive(false);
+        }
+    }
+    
+    List<GameObject> GetAllInactiveGameObjectsWithTag(string tag)
+    {
+        List<GameObject> gameObjectsWithTag = new List<GameObject>();
+        GameObject[] allGameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject go in allGameObjects)
+        {
+            if (go.CompareTag(tag))
+            {
+                gameObjectsWithTag.Add(go);
+            }
+        }
+
+        return gameObjectsWithTag;
+    }
+    
     public void OnHuntedCollisionWithHunter()
     {
         // Log a message to the console
@@ -146,6 +182,9 @@ public class CollisionManager : MonoBehaviour
         {
             Debug.LogError("No Light component found on this GameObject.");
         }
+        
+        //Enable the arrows around hunters
+        EnableArrowsAroundHunters();
 
         // Brighten the map so the player can see
         mazeLights.enabled = true;
@@ -181,6 +220,9 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
+        
+        //Enable the arrows around hunters
+        DisableArrowsAroundHunters();
     }
 
     void DisableHuntedAfterExiting(GameObject huntedThatExited)
