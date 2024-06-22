@@ -915,10 +915,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hunted1: {fileID: 261396205}
-  hunted2: {fileID: 873508873}
-  hunter: {fileID: 1340915161}
   hunted1Cam: {fileID: 1916267823}
+  hunted2: {fileID: 873508873}
   hunted2Cam: {fileID: 2032213588}
+  hunter: {fileID: 1340915161}
 --- !u!114 &488473874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +942,7 @@ MonoBehaviour:
   mazeLights: {fileID: 1926496192}
   gameManager: {fileID: 519146534}
   isHuntedActive: 1
+  hunterPos: []
 --- !u!4 &488473875
 Transform:
   m_ObjectHideFlags: 0
@@ -3840,7 +3841,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -4238,7 +4239,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
