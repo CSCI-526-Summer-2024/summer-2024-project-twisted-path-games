@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Controllers;
 using DBManager;
+using TMPro;
 
 public class CollisionManager : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class CollisionManager : MonoBehaviour
 
     public bool isHuntedActive = true;
     public List<Vector3> hunterPos;
+
+    public TextMeshProUGUI countdown;
 
     void Awake()
     {
@@ -151,15 +154,24 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
-
+        
+        countdown.gameObject.SetActive(true);
+        int countdownText = 5;
+        countdown.text = countdownText.ToString();
         hunterPos = new List<Vector3>();
+        
         // Wait for the specified duration
         for (int i = 0; i < 10; i++)
         {
+            if (i % 2 == 0)
+            {
+                countdown.text = countdownText--.ToString();  
+            }
             yield return new WaitForSeconds(duration/10);
             hunterPos.Add(hunter.transform.position);
         }
-
+        
+        countdown.gameObject.SetActive(false);
         AnalyticManager.WritePositions(hunterPos);
         
         // Return to dark lighting for first person view
