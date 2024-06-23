@@ -16,10 +16,12 @@ public class CollisionManager : MonoBehaviour
     public GameObject hunted1;
     public Camera huntedCam1;
     public GameObject cameraHolder1;
+    public GameObject hunted1ExitIcon;
     
     public GameObject hunted2;
     public Camera huntedCam2;
     public GameObject cameraHolder2;
+    public GameObject hunted2ExitIcon;
 
     public Light mazeLights;
     
@@ -72,6 +74,14 @@ public class CollisionManager : MonoBehaviour
 
     public void OnHuntedCollisionWithExit(GameObject huntedThatExited, GameObject otherHunted)
     {
+        if (huntedThatExited.CompareTag("Hunted1"))
+        { 
+            hunted1ExitIcon.SetActive(true);
+        }
+        else
+        {
+            hunted2ExitIcon.SetActive(true);
+        }
         if (GameState.DidAnyHuntedExit)
         {
             OnBothHuntedExitMaze();
