@@ -9,7 +9,8 @@ public class CollisionManager : MonoBehaviour
 {
     public static CollisionManager Instance;
 
-    public GameObject hunter;
+    public GameObject hunter1;
+    public GameObject hunter2;
     public Camera hunterCam;
     private HunterController hunterController;
 
@@ -52,14 +53,12 @@ public class CollisionManager : MonoBehaviour
 
     public void OnHuntedCollisionWithPowerUp(GameObject powerUp, GameObject collidingHunted)
     {
-        // Log a message to the console
         Debug.Log("Hunted collided with a PowerUp!");
         GameState.PowerUpNumber++;
 
         // Start the coroutine to switch roles for 5 seconds
         StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted));
 
-        // Optionally, destroy the power-up after collision
         Destroy(powerUp);
     }
 
@@ -113,7 +112,7 @@ public class CollisionManager : MonoBehaviour
         {
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
-            hunterController = hunter.GetComponent<HunterController>();
+            hunterController = hunter1.GetComponent<HunterController>();
 
             if (hunterController == null)
             {
@@ -143,7 +142,10 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted2.GetComponent<HuntedController>().enabled = true;
             }
-            hunter.GetComponent<HunterController>().isChaseActive = true;
+            hunter1.GetComponent<HunterController>().isChaseActive = true;
+            if (hunter2){
+                hunter2.GetComponent<HunterController>().isChaseActive = true;
+            }
         }
         else
         {
@@ -151,11 +153,20 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted1.GetComponent<HuntedController>().enabled = false;
             }
-            else
+            else if (hunter2)
             {
                 hunted2.GetComponent<HuntedController>().enabled = false;
             }
-            hunter.GetComponent<HunterController>().isChaseActive = false;
+            hunter1.GetComponent<HunterController>().isChaseActive = false;
+            if (hunter2){
+                hunter2.GetComponent<HunterController>().isChaseActive = false;
+            }
+            //where you decide which hunter to give control to first. can change to a different method
+            //proximity...last controlled...etc
+            hunter1.GetComponent<HunterController>().controlled = true;
+            if (hunter2){
+                hunter2.GetComponent<HunterController>().controlled = false;
+            }
         }
     }
 
@@ -201,7 +212,7 @@ public class CollisionManager : MonoBehaviour
                 countdown.text = countdownText--.ToString();  
             }
             yield return new WaitForSeconds(duration/10);
-            hunterPos.Add(hunter.transform.position);
+            hunterPos.Add(hunter1.transform.position);
         }
         
         countdown.gameObject.SetActive(false);

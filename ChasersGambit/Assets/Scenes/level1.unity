@@ -1140,7 +1140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a88797cb4136540e89a96ff8d876720f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hunter: {fileID: 1340915161}
+  hunter1: {fileID: 1340915161}
+  hunter2: {fileID: 0}
   hunterCam: {fileID: 877231323}
   hunted1: {fileID: 261396205}
   huntedCam1: {fileID: 1916267823}
@@ -2975,6 +2976,7 @@ MonoBehaviour:
   agent: {fileID: 1340915164}
   isChaseActive: 1
   thresholdDistance: 5
+  controlled: 0
 --- !u!23 &1340915166
 MeshRenderer:
   m_ObjectHideFlags: 0
