@@ -10,15 +10,17 @@ public class SwitchHunter : MonoBehaviour
 
     public GameObject hunter1;
     public GameObject hunter2;
+    public Light h1indicator;
+    public Light h2indicator;
     private MonoBehaviour[] _scripts;
     private bool _isHunter1Enabled;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameState.DisableGo(hunted2);
-        GameState.EnableGo(hunted1);
-        _isHunter1Enabled = true;
+        // GameState.DisableGo(hunted2);
+        // GameState.EnableGo(hunted1);
+        // _isHunter1Enabled = true;
 
     }
 
