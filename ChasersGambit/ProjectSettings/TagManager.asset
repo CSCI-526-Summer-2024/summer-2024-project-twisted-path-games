@@ -11,6 +11,9 @@ TagManager:
   - Hunted2
   - Exit1
   - Exit2
+  - Tutorial
+  - Level1
+  - Level2
   layers:
   - Default
   - TransparentFX

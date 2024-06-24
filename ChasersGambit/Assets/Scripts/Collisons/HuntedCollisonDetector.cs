@@ -17,6 +17,8 @@ public class HuntedCollisionDetector : MonoBehaviour
             // Notify the CollisionManager of the collision
             CollisionManager.Instance.OnHuntedCollisionWithHunter();
         }
+
+
         else if (this.gameObject.CompareTag("Hunted1") && collision.collider.CompareTag("Exit1"))
         {
             // Notify the CollisionManager of the collision
