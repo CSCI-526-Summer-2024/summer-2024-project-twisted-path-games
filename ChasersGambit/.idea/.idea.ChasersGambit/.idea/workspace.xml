@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e983b4b-96f4-42f2-a8a8-e5fa425b1adb" name="Changes" comment="" />
+    <list default="true" id="9e983b4b-96f4-42f2-a8a8-e5fa425b1adb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ChasersGambit/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ChasersGambit/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level picker.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level picker.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,13 +29,32 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/85ecbbc217182545d69038eb5098461795f53730c5c9559c5ba9dcdf067a1/FirestoreClient.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f3981d658666ec9cc1e6958fe22f8614bfe02ccb6625b056c3ece3729c9262/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="2iKbrFw7nG3ObuMrMWkOWmlQcjh" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
-    "git-widget-placeholder": "main",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "shashankmg/UIBetweenLevels",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/shashankmg/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/Users/shashankmg/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/Users/shashankmg/Library/Application Support/Symbols/src"
+    ]
   }
 }]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -57,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="9110">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="9110" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -68,38 +95,42 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9e983b4b-96f4-42f2-a8a8-e5fa425b1adb" name="Changes" comment="" />
+      <created>1719242415515</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1719242415515</updated>
+      <workItem from="1719242417624" duration="4517000" />
+    </task>
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/DBManager/DBController.cs</url>
-          <line>22</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/DBManager/DBController.cs" containingFunctionPresentation="Method 'WriteToDB'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs</url>
+          <line>99</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" containingFunctionPresentation="Method 'OnHuntedCollisionWithExit'">
             <startOffsets>
-              <option value="976" />
+              <option value="2682" />
             </startOffsets>
             <endOffsets>
-              <option value="1044" />
+              <option value="2725" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Controllers/HunterController.cs</url>
-          <line>49</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Controllers/HunterController.cs" containingFunctionPresentation="Method 'Update'">
-            <startOffsets>
-              <option value="1327" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1372" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -17,8 +17,11 @@ public class HuntedCollisionDetector : MonoBehaviour
             // Notify the CollisionManager of the collision
             CollisionManager.Instance.OnHuntedCollisionWithHunter();
         }
-
-
+        else if (collision.collider.CompareTag("Hunter"))
+        {
+            // Notify the CollisionManager of the collision
+            CollisionManager.Instance.OnHuntedCollisionWithHunter();
+        }
         else if (this.gameObject.CompareTag("Hunted1") && collision.collider.CompareTag("Exit1"))
         {
             // Notify the CollisionManager of the collision
@@ -28,6 +31,11 @@ public class HuntedCollisionDetector : MonoBehaviour
         {
             // Notify the CollisionManager of the collision
             CollisionManager.Instance.OnHuntedCollisionWithExit(this.gameObject, otherHunted);
+        }
+        else if (collision.collider.CompareTag("Level1") || collision.collider.CompareTag("Level2") ||
+                 collision.collider.CompareTag("Tutorial"))
+        {
+            CollisionManager.Instance.OnHunterCollisionWithLevelDoor(collision.collider.tag);
         }
     }
 }

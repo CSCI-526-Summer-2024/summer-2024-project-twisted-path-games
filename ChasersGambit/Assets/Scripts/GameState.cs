@@ -25,6 +25,7 @@ public static class GameState
         firstChase = -1.0f;
         PowerUpNumber = 0;
     }
+    
     private static string GenerateSessionId(int length)
     {
         const string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-_";
