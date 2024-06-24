@@ -10,8 +10,6 @@ public class SwitchHunter : MonoBehaviour
 
     public GameObject hunter1;
     public GameObject hunter2;
-    public Camera hunted1Cam;
-    public Camera hunted2Cam;
     private MonoBehaviour[] _scripts;
     private bool _isHunter1Enabled;
 
@@ -39,20 +37,5 @@ public class SwitchHunter : MonoBehaviour
         hunter2.GetComponent<HunterController>().controlled = !hunter2.GetComponent<HunterController>().controlled;
         hunter1.GetComponent<HunterController>().controlled = !hunter1.GetComponent<HunterController>().controlled;
     }
-
-    // void UpdateHunter()
-    // {
-    //     if (_isHunter1Enabled)
-    //     {
-    //         hunter1.GetComponent<HunterController>().hunted = hunted2;
-    //         Debug.Log("Hunter is hunting P2");
-    //     }
-    //     else
-    //     {
-    //         hunter1.GetComponent<HunterController>().hunted = hunted1;
-    //         Debug.Log("Hunter is hunting P1");
-    //     }
-    //     _isHunter1Enabled = !_isHunter1Enabled;
-    // }
 
 }
