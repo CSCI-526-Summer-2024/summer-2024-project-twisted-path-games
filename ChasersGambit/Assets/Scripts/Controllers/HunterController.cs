@@ -5,6 +5,7 @@ namespace Controllers
     public class HunterController : MonoBehaviour
     {
         public float speed;
+        public Light indicator;
         public float paceSpeed;
         public float increasedSpeed;
         float horizontalInput;
@@ -28,12 +29,14 @@ namespace Controllers
 
         private bool isCurrentlyChasing = false;
         public bool controlled = false;
+        public bool lightOn= false;
         void Start()
         {
             // Prevent rotation based on physics interactions
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
-            
+            indicator.enabled = false;
+
             agent = GetComponent<NavMeshAgent>();
             agent.updateRotation = false;
             agent.speed = speed;
@@ -65,7 +68,7 @@ namespace Controllers
         {
             agent.isStopped = false;
             capsuleCollider.enabled = true;
-
+            indicator.enabled = false;
             if (CheckHuntedProximity())
             {
                 StartChase();
@@ -92,11 +95,14 @@ namespace Controllers
             agent.isStopped = true;
             rb.isKinematic = false;
             capsuleCollider.enabled = false;
-            // GetInputs();
-            // MoveHunter();
+
             if (controlled){
                 GetInputs();
                 MoveHunter();
+                indicator.enabled = true;
+            }
+            else{
+                indicator.enabled = false;
             }
         }
 
