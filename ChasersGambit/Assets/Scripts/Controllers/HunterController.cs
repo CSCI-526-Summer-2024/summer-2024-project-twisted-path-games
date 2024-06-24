@@ -27,7 +27,7 @@ namespace Controllers
         public float thresholdDistance = 5.0f;
 
         private bool isCurrentlyChasing = false;
-
+        public bool controlled = false;
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -92,8 +92,12 @@ namespace Controllers
             agent.isStopped = true;
             rb.isKinematic = false;
             capsuleCollider.enabled = false;
-            GetInputs();
-            MoveHunter();
+            // GetInputs();
+            // MoveHunter();
+            if (controlled){
+                GetInputs();
+                MoveHunter();
+            }
         }
 
         void StartChase()
