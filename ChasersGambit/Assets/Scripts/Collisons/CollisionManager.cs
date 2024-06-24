@@ -63,6 +63,25 @@ public class CollisionManager : MonoBehaviour
         Destroy(powerUp);
     }
 
+    public void OnHunterCollisionWithLevelDoor(string tag)
+    {
+        switch (tag)
+        {
+            case "Tutorial":
+                UnityEngine.SceneManagement.SceneManager.LoadScene("powerup-tutorial");
+                break;
+            case "Level1":
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
+                break;
+            case "Level2":
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
+                break;
+            default:
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level picker");
+                break;
+        }
+    }
+
     public void OnHuntedCollisionWithHunter()
     {
         // Log a message to the console

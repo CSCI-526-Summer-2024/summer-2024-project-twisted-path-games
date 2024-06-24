@@ -11,9 +11,9 @@ TagManager:
   - Hunted2
   - Exit1
   - Exit2
-  - Tutorial
   - Level1
   - Level2
+  - Tutorial
   layers:
   - Default
   - TransparentFX
@@ -22,7 +22,7 @@ TagManager:
   - Water
   - UI
   - PowerUp
-  - 
+  - Levels
   - 
   - 
   - whatIsGround
