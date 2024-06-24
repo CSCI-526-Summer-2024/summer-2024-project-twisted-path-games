@@ -9,10 +9,11 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level picker.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level picker.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collisons/HuntedCollisonDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collisons/HuntedCollisonDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719242415515</updated>
-      <workItem from="1719242417624" duration="976000" />
+      <workItem from="1719242417624" duration="3811000" />
     </task>
     <servers />
   </component>
@@ -121,17 +122,17 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/DBManager/DBController.cs</url>
-          <line>21</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/DBManager/DBController.cs" containingFunctionPresentation="Method 'WriteToDB'">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs</url>
+          <line>99</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" containingFunctionPresentation="Method 'OnHuntedCollisionWithExit'">
             <startOffsets>
-              <option value="976" />
+              <option value="2682" />
             </startOffsets>
             <endOffsets>
-              <option value="1044" />
+              <option value="2725" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="4" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

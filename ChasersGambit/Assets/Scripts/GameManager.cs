@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject loseUI;
     public GameObject playAgainButtonObject;
     public GameObject playNextLevelButtonObject;
+    public GameObject goBackButtonObject;
    
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,9 @@ public class GameManager : MonoBehaviour
         
         Button playNextLevelButton = playNextLevelButtonObject.GetComponent<Button>();
         playNextLevelButton.onClick.AddListener(OnNextLevelButtonClick);
+        
+        Button goBackButton = goBackButtonObject.GetComponent<Button>();
+        goBackButton.onClick.AddListener(OnGoToLevelPickerButtonClick);
     }
 
     public void WinGame()
@@ -48,6 +52,7 @@ public class GameManager : MonoBehaviour
             winUI.SetActive(true);   
         }
         
+        goBackButtonObject.SetActive(true);
         playAgainButtonObject.SetActive(true);
         
         DBManager.AnalyticManager.WriteAggro();
@@ -93,6 +98,11 @@ public class GameManager : MonoBehaviour
     void OnReplayButtonClick()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
-        Debug.Log("Button Clicked");
+    }
+
+    void OnGoToLevelPickerButtonClick()
+    {
+        GameState.LevelNumber = 0;
+        UnityEngine.SceneManagement.SceneManager.LoadScene("level picker");
     }
 }
