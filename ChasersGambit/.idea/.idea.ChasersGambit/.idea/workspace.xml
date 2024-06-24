@@ -11,9 +11,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/powerup-tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Collisons/CollisionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameState.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719242415515</updated>
-      <workItem from="1719242417624" duration="3811000" />
+      <workItem from="1719242417624" duration="4517000" />
     </task>
     <servers />
   </component>

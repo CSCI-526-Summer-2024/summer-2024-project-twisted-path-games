@@ -1274,9 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e9f93e680cd4402aa16a29bb5dca5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winUI: {fileID: 1171618903}
-  winL1: {fileID: 1067080715}
-  winL2: {fileID: 557344867}
+  winText: {fileID: 1067080717}
   loseUI: {fileID: 1374459928}
   playAgainButtonObject: {fileID: 1806083074}
   playNextLevelButtonObject: {fileID: 889104813}
@@ -2810,7 +2808,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 334.09998, y: -125.5}
+  m_AnchoredPosition: {x: 334.1, y: -125.5}
   m_SizeDelta: {x: 35.4333, y: 72.7481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1120722632
@@ -3006,8 +3004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -2.5399}
+  m_SizeDelta: {x: 200, y: 55.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1171618905
 MonoBehaviour:

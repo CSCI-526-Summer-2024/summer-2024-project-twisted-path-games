@@ -1,11 +1,10 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject winUI;
-    public GameObject winL1;
-    public GameObject winL2;
+    public TextMeshProUGUI winText;
     public GameObject loseUI;
     public GameObject playAgainButtonObject;
     public GameObject playNextLevelButtonObject;
@@ -39,17 +38,20 @@ public class GameManager : MonoBehaviour
         GameState.LastAttemptWasSuccess = true;
         if (GameState.LevelNumber == 1)
         {
-            winL1.SetActive(true);   
+            winText.text = "YOU COMPLETED LEVEL 1!";
+            winText.gameObject.SetActive(true);   
             playNextLevelButtonObject.SetActive(true);
         }
         else if (GameState.LevelNumber == 2)
         {
-            winL2.SetActive(true);   
+            winText.text = "YOU COMPLETED LEVEL 2!";
+            winText.gameObject.SetActive(true);   
             playNextLevelButtonObject.SetActive(true);
         }
         else if (GameState.LevelNumber == 3)
         {
-            winUI.SetActive(true);   
+            winText.text = "YOU WIN!";
+            winText.gameObject.SetActive(true);   
         }
         
         goBackButtonObject.SetActive(true);

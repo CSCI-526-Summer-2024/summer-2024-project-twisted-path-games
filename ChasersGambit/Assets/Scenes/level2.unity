@@ -2114,9 +2114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e9f93e680cd4402aa16a29bb5dca5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winUI: {fileID: 453639087}
-  winL1: {fileID: 617065169}
-  winL2: {fileID: 500585500}
+  winText: {fileID: 617065171}
   loseUI: {fileID: 790456703}
   playAgainButtonObject: {fileID: 39298258}
   playNextLevelButtonObject: {fileID: 674453841}
