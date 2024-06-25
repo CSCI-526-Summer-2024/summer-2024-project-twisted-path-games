@@ -7759,7 +7759,7 @@ MonoBehaviour:
   huntedProximityDistance: 5
   indicator: {fileID: 1063502363}
   lightOn: 0
-  target: {fileID: 611426813}
+  target: {fileID: 2095705914}
   isChaseActive: 1
   controlled: 0
 --- !u!23 &1553972231
