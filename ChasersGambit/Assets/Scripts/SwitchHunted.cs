@@ -1,5 +1,3 @@
-using System.Security.Cryptography;
-using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 using Controllers;
@@ -12,10 +10,10 @@ public class SwitchHunted : MonoBehaviour
     public GameObject hunted2;
     public Camera hunted2Cam;
 
-    public GameObject hunter;
+    public GameObject[] hunters;
+
     private HunterController hunterController;
 
-    private MonoBehaviour[] _scripts;
     private bool _isHunted1Enabled;
     
     // Start is called before the first frame update
@@ -29,7 +27,7 @@ public class SwitchHunted : MonoBehaviour
         
         SetCameraPerspective();
 
-        hunterController = hunter.GetComponent<HunterController>();
+        hunterController = hunters[0].GetComponent<HunterController>();
     }
 
     // Update is called once per frame
@@ -63,12 +61,18 @@ public class SwitchHunted : MonoBehaviour
     {
         if (_isHunted1Enabled)
         {
-            hunter.GetComponent<HunterController>().target = hunted2;
+            foreach (var hunter in hunters)
+            {
+                hunter.GetComponent<HunterController>().target = hunted2;
+            }
             Debug.Log("Hunter is hunting P2");
         }
         else
         {
-            hunter.GetComponent<HunterController>().target = hunted1;
+            foreach (var hunter in hunters)
+            {
+                hunter.GetComponent<HunterController>().target = hunted1;
+            }
             Debug.Log("Hunter is hunting P1");
         }
         _isHunted1Enabled = !_isHunted1Enabled;
