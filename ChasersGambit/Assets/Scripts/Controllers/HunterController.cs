@@ -131,7 +131,7 @@ namespace Controllers
                 Debug.Log("Chase ended!");
             }
 
-            if (agent.remainingDistance < positionThreshold && !agent.pathPending)
+            if (patrolPoints.Length != 0 && agent.remainingDistance < positionThreshold && !agent.pathPending)
             {
                 // Move to the next patrol point
                 currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;

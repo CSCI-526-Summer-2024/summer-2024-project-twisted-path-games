@@ -1202,7 +1202,9 @@ MonoBehaviour:
   hunted1Cam: {fileID: 1916267823}
   hunted2: {fileID: 873508873}
   hunted2Cam: {fileID: 2032213588}
-  hunter: {fileID: 1340915161}
+  hunters:
+  - {fileID: 1340915161}
+  - {fileID: 2083864178}
 --- !u!114 &488473874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,17 +3319,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  indicator: {fileID: 2082660686}
-  paceSpeed: 0
+  patrolSpeed: 0
   increasedSpeed: 3
-  checkPoint1: {x: 0, y: 0, z: 0}
-  checkPoint2: {x: 0, y: 0, z: 0}
-  target: {fileID: 261396205}
-  agent: {fileID: 1340915164}
-  isChaseActive: 1
-  thresholdDistance: 5
-  controlled: 0
+  patrolPoints: []
+  huntedProximityDistance: 5
+  indicator: {fileID: 2082660686}
   lightOn: 0
+  target: {fileID: 261396205}
+  isChaseActive: 1
+  controlled: 0
 --- !u!23 &1340915166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6248,17 +6248,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
-  indicator: {fileID: 1346697191}
-  paceSpeed: 0
+  patrolSpeed: 0
   increasedSpeed: 3
-  checkPoint1: {x: 0, y: 0, z: 0}
-  checkPoint2: {x: 0, y: 0, z: 0}
-  target: {fileID: 261396205}
-  agent: {fileID: 2083864181}
-  isChaseActive: 1
-  thresholdDistance: 5
-  controlled: 0
+  patrolPoints: []
+  huntedProximityDistance: 5
+  indicator: {fileID: 1346697191}
   lightOn: 0
+  target: {fileID: 261396205}
+  isChaseActive: 1
+  controlled: 0
 --- !u!23 &2083864183
 MeshRenderer:
   m_ObjectHideFlags: 0
