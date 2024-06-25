@@ -9,10 +9,12 @@ public class CollisionManager : MonoBehaviour
 {
     public static CollisionManager Instance;
 
+    // TODO update hunter and hunter controllers to array
     public GameObject hunter1;
     public GameObject hunter2;
     public Camera hunterCam;
-    private HunterController hunterController;
+    private HunterController hunterController1;
+    private HunterController hunterController2;
 
     public GameObject hunted1;
     public Camera huntedCam1;
@@ -112,15 +114,18 @@ public class CollisionManager : MonoBehaviour
         {
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
-            hunterController = hunter1.GetComponent<HunterController>();
+            hunterController1 = hunter1.GetComponent<HunterController>();
+            hunterController2 = hunter2.GetComponent<HunterController>();
 
-            if (hunterController == null)
+
+            if (hunterController1 == null || hunterController2 == null)
             {
                 Debug.LogError("HunterController component not found on otherHunted");
                 return;
             }
 
-            hunterController.UpdateTarget(otherHunted);
+            hunterController1.UpdateTarget(otherHunted);
+            hunterController2.UpdateTarget(otherHunted);
         }
     }
     
