@@ -4,32 +4,37 @@ namespace Controllers
 {
     public class HunterController : MonoBehaviour
     {
-        public float speed;
-        public Light indicator;
-        public float paceSpeed;
-        public float increasedSpeed;
+        // Speed fields
+        public float speed; // normal chase speed
+        public float patrolSpeed;
+        public float increasedSpeed; // speed when the player gains control
+
+        // Direction Controls
         float horizontalInput;
         float verticalInput;
 
-        private Vector3 startLocation;
-        public Vector3 checkPoint1;
-        public Vector3 checkPoint2;
+        // Patrolling fields
+        public Transform[] patrolPoints;
+        private int currentPatrolIndex;
+
         private float positionThreshold = 0.1f;
-        private Vector3 currentMovementTarget;
+        public float huntedProximityDistance = 5.0f;
 
         // Hunter rigid body component
         private Rigidbody rb;
         private CapsuleCollider capsuleCollider;
+        public Light indicator;
+        public bool lightOn = false;
 
+        // Hunted target and AI fields
         public GameObject target;
-        public NavMeshAgent agent;
+        private NavMeshAgent agent;
+
+        // Control bools
         public bool isChaseActive = true;
-
-        public float thresholdDistance = 5.0f;
-
         private bool isCurrentlyChasing = false;
         public bool controlled = false;
-        public bool lightOn= false;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -43,8 +48,11 @@ namespace Controllers
 
             capsuleCollider = GetComponent<CapsuleCollider>();
 
-            startLocation = transform.position;
-            currentMovementTarget = startLocation;
+            if (patrolPoints.Length > 0)
+            {
+                currentPatrolIndex = 0;
+                agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+            }
 
             if (isChaseActive)
             {
@@ -69,20 +77,10 @@ namespace Controllers
             agent.isStopped = false;
             capsuleCollider.enabled = true;
             indicator.enabled = false;
+
             if (CheckHuntedProximity())
             {
                 StartChase();
-            }
-            else if (GameState.DidAnyHuntedExit)
-            {
-                if (IsAtPosition(transform.position, startLocation))
-                {
-                    HandlePatrolling();
-                }
-                else
-                {
-                    ReturnToStartLocation();
-                }
             }
             else
             {
@@ -108,7 +106,6 @@ namespace Controllers
 
         void StartChase()
         {
-            currentMovementTarget = target.transform.position;
             if (!isCurrentlyChasing)
             {
                 isCurrentlyChasing = true;
@@ -120,47 +117,25 @@ namespace Controllers
                 }
             }
 
-            Debug.Log("Chasing!");
             agent.speed = speed;
             agent.SetDestination(target.transform.position);
-        }
-
-        void ReturnToStartLocation()
-        {
-            currentMovementTarget = startLocation;
-            agent.SetDestination(startLocation);
+            Debug.Log("Chasing!");
         }
 
         void HandlePatrolling()
         {
+            agent.speed = patrolSpeed;
             if (isCurrentlyChasing)
             {
                 isCurrentlyChasing = false;
                 Debug.Log("Chase ended!");
             }
-            else
-            {
-                if (IsAtPosition(transform.position, currentMovementTarget))
-                {
-                    UpdatePatrolTarget();
-                }
-            }
-        }
 
-        void UpdatePatrolTarget()
-        {
-            agent.speed = paceSpeed;
-            if (currentMovementTarget == startLocation || currentMovementTarget == checkPoint2)
+            if (agent.remainingDistance < positionThreshold && !agent.pathPending)
             {
-                currentMovementTarget = checkPoint1;
-                agent.SetDestination(checkPoint1);
-                Debug.Log("Moving to checkPoint1");
-            }
-            else if (currentMovementTarget == checkPoint1)
-            {
-                currentMovementTarget = checkPoint2;
-                agent.SetDestination(checkPoint2);
-                Debug.Log("Moving to checkPoint2");
+                // Move to the next patrol point
+                currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
+                agent.SetDestination(patrolPoints[currentPatrolIndex].position);
             }
         }
 
@@ -186,13 +161,7 @@ namespace Controllers
         private bool CheckHuntedProximity()
         {
             float distance = Vector3.Distance(target.transform.position, rb.transform.position);
-            return distance <= thresholdDistance;
-        }
-
-        private bool IsAtPosition(Vector3 currentPos, Vector3 checkPoint)
-        {
-            return Vector3.Distance(currentPos, checkPoint) < positionThreshold;
+            return distance <= huntedProximityDistance;
         }
     }
-
 }
