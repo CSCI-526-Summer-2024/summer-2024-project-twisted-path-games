@@ -6,9 +6,11 @@ public class SwitchHunted : MonoBehaviour
 {
     public GameObject hunted1;
     public Camera hunted1Cam;
+    public GameObject hunted1PlayIcon;
 
     public GameObject hunted2;
     public Camera hunted2Cam;
+    public GameObject hunted2PlayIcon;
 
     public GameObject[] hunters = new GameObject[0];
 
@@ -22,6 +24,8 @@ public class SwitchHunted : MonoBehaviour
         GameState.DisableGo(hunted2);
         GameState.EnableGo(hunted1);
         _isHunted1Enabled = true;
+
+        hunted1PlayIcon.SetActive(true);
 
         Debug.Log(GameState.SessionId);
         
@@ -51,11 +55,17 @@ public class SwitchHunted : MonoBehaviour
         {
             GameState.DisableGo(hunted1);
             GameState.EnableGo(hunted2);
+            
+            hunted1PlayIcon.SetActive(false); 
+            hunted2PlayIcon.SetActive(true);
         }
         else
         {
             GameState.DisableGo(hunted2);
             GameState.EnableGo(hunted1);
+
+            hunted1PlayIcon.SetActive(true);
+            hunted2PlayIcon.SetActive(false);
         }
     }
 
