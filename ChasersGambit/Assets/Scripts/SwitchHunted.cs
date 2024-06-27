@@ -10,7 +10,7 @@ public class SwitchHunted : MonoBehaviour
     public GameObject hunted2;
     public Camera hunted2Cam;
 
-    public GameObject[] hunters;
+    public GameObject[] hunters = new GameObject[0];
 
     private HunterController hunterController;
 
@@ -27,13 +27,16 @@ public class SwitchHunted : MonoBehaviour
         
         SetCameraPerspective();
 
-        hunterController = hunters[0].GetComponent<HunterController>();
+        if (hunters.Length != 0)
+        {
+            hunterController = hunters[0].GetComponent<HunterController>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hunterController.isChaseActive && Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
+        if (hunterController != null && hunterController.isChaseActive && Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
         {
             SwitchHuntedFocus();
             UpdateHunter();
@@ -59,23 +62,26 @@ public class SwitchHunted : MonoBehaviour
     
     void UpdateHunter()
     {
-        if (_isHunted1Enabled)
+        if (hunters.Length != 0)
         {
-            foreach (var hunter in hunters)
+            if (_isHunted1Enabled)
             {
-                hunter.GetComponent<HunterController>().target = hunted2;
+                foreach (var hunter in hunters)
+                {
+                    hunter.GetComponent<HunterController>().target = hunted2;
+                }
+                Debug.Log("Hunter is hunting P2");
             }
-            Debug.Log("Hunter is hunting P2");
-        }
-        else
-        {
-            foreach (var hunter in hunters)
+            else
             {
-                hunter.GetComponent<HunterController>().target = hunted1;
+                foreach (var hunter in hunters)
+                {
+                    hunter.GetComponent<HunterController>().target = hunted1;
+                }
+                Debug.Log("Hunter is hunting P1");
             }
-            Debug.Log("Hunter is hunting P1");
+            _isHunted1Enabled = !_isHunted1Enabled;
         }
-        _isHunted1Enabled = !_isHunted1Enabled;
     }
     
 
