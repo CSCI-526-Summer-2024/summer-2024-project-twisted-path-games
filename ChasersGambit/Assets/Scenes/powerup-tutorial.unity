@@ -4143,10 +4143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hunted1: {fileID: 1469245435}
   hunted1Cam: {fileID: 630067750}
-  hunted1PlayIcon: {fileID: 0}
+  hunted1PlayIcon: {fileID: 550484859}
   hunted2: {fileID: 762239292}
   hunted2Cam: {fileID: 1558269157}
-  hunted2PlayIcon: {fileID: 0}
+  hunted2PlayIcon: {fileID: 1093852311}
   hunters:
   - {fileID: 896824026}
 --- !u!114 &1128637905
@@ -4164,12 +4164,12 @@ MonoBehaviour:
   hunter1: {fileID: 896824026}
   hunter2: {fileID: 1323787924}
   hunterCam: {fileID: 1465284122}
-  hunted1PlayIcon: {fileID: 0}
+  hunted1PlayIcon: {fileID: 550484859}
   hunted1: {fileID: 1469245435}
   huntedCam1: {fileID: 630067750}
   cameraHolder1: {fileID: 743829772}
   hunted1ExitIcon: {fileID: 221668788}
-  hunted2PlayIcon: {fileID: 0}
+  hunted2PlayIcon: {fileID: 1093852311}
   hunted2: {fileID: 762239292}
   huntedCam2: {fileID: 1558269157}
   cameraHolder2: {fileID: 1478222250}
