@@ -36,12 +36,13 @@ namespace DBManager
             DBController.WriteToDB(urlPath, dataString);  
         }
         
-        public static void WritePositions(List<Vector3> hunterPositions)
+        public static void WritePositions(List<Vector3> hunter1Positions, List<Vector3> hunter2Positions)
         {
             string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/hunterPositions/{GameState.PowerUpNumber}.json";
             HunterMovement data = new HunterMovement()
             {
-                positions = hunterPositions
+                hunter1Positions = hunter1Positions,
+                hunter2Positions = hunter2Positions,
             };
             string dataString = JsonUtility.ToJson(data);
             DBController.WriteToDB(urlPath, dataString);
