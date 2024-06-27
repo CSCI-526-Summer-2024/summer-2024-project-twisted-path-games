@@ -19,6 +19,7 @@ namespace DBManager
 
     public class HunterMovement
     {
-        public List<Vector3> positions;
+        public List<Vector3> hunter1Positions;
+        public List<Vector3> hunter2Positions;
     }
 }

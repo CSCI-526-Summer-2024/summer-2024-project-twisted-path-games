@@ -31,7 +31,8 @@ public class CollisionManager : MonoBehaviour
     public GameManager gameManager;
 
     public bool isHuntedActive = true;
-    public List<Vector3> hunterPos;
+    private List<Vector3> hunter1Pos;
+    private List<Vector3> hunter2Pos;
 
     public TextMeshProUGUI countdown;
 
@@ -207,7 +208,8 @@ public class CollisionManager : MonoBehaviour
         countdown.gameObject.SetActive(true);
         int countdownText = 5;
         countdown.text = countdownText.ToString();
-        hunterPos = new List<Vector3>();
+        hunter1Pos = new List<Vector3>();
+        hunter2Pos = new List<Vector3>();
         
         // Wait for the specified duration
         for (int i = 0; i < 10; i++)
@@ -217,11 +219,12 @@ public class CollisionManager : MonoBehaviour
                 countdown.text = countdownText--.ToString();  
             }
             yield return new WaitForSeconds(duration/10);
-            hunterPos.Add(hunter1.transform.position);
+            hunter1Pos.Add(hunter1.transform.position);
+            hunter2Pos.Add(hunter2.transform.position);
         }
         
         countdown.gameObject.SetActive(false);
-        AnalyticManager.WritePositions(hunterPos);
+        AnalyticManager.WritePositions(hunter1Pos, hunter2Pos);
         
         // Return to dark lighting for first person view
         mazeLights.enabled = false;
