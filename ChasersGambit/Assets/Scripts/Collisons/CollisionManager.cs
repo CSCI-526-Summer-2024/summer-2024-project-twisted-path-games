@@ -69,6 +69,42 @@ public class CollisionManager : MonoBehaviour
 
         Destroy(powerUp);
     }
+    
+    private void EnableArrowsAroundHunters()
+    {
+        List<GameObject> hunterControls = GetAllInactiveGameObjectsWithTag("HunterControls");
+
+        foreach (GameObject hunterControl in hunterControls)
+        {
+            hunterControl.SetActive(true);
+        }
+    }
+
+    private void DisableArrowsAroundHunters()
+    {
+        List<GameObject> hunterControls = GetAllInactiveGameObjectsWithTag("HunterControls");
+
+        foreach (GameObject hunterControl in hunterControls)
+        {
+            hunterControl.SetActive(false);
+        }
+    }
+
+    List<GameObject> GetAllInactiveGameObjectsWithTag(string tag)
+    {
+        List<GameObject> gameObjectsWithTag = new List<GameObject>();
+        GameObject[] allGameObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject go in allGameObjects)
+        {
+            if (go.CompareTag(tag))
+            {
+                gameObjectsWithTag.Add(go);
+            }
+        }
+
+        return gameObjectsWithTag;
+    }
 
     public void OnHunterCollisionWithLevelDoor(string tag)
     {
@@ -211,6 +247,8 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
+        //Enable the arrows around hunters
+        EnableArrowsAroundHunters();
         
         countdown.gameObject.SetActive(true);
         int countdownText = 5;
@@ -240,6 +278,9 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
+        
+        //Disable the arrows around hunters
+        DisableArrowsAroundHunters();
     }
 
     void DisableHuntedAfterExiting(GameObject huntedThatExited)
