@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace Cameras
 {
     public class HuntedCam : MonoBehaviour
@@ -40,31 +42,35 @@ namespace Cameras
 
         void Update()
         {
-            // Get mouse inputs for first person viewing control
-            float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-            float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+            if (SplashScreen.isFinished)
+            {
+                // Get mouse inputs for first person viewing control
+                float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+                float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
 
-            if (Application.platform == RuntimePlatform.WebGLPlayer) {
-                mouseX = DampenedMovement(mouseX);
-                mouseY = DampenedMovement(mouseY);
+                if (Application.platform == RuntimePlatform.WebGLPlayer)
+                {
+                    mouseX = DampenedMovement(mouseX);
+                    mouseY = DampenedMovement(mouseY);
+                }
+
+                // Rotate the camera left and right
+                yRotation += mouseX;
+
+                // Rotate the camera up and down and prevent camera flips
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+                // Apply camera rotation
+                transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+
+                // Update the rotation of the orientation object
+                // Ensures the player's forward direction matches where the camera is looking horizontally
+                orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+
+                // Apply rotation to the flashlight
+                flashlight.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             }
-
-            // Rotate the camera left and right
-            yRotation += mouseX;
-
-            // Rotate the camera up and down and prevent camera flips
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-            // Apply camera rotation
-            transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-
-            // Update the rotation of the orientation object
-            // Ensures the player's forward direction matches where the camera is looking horizontally
-            orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-
-            // Apply rotation to the flashlight
-            flashlight.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         }
     }
 }
