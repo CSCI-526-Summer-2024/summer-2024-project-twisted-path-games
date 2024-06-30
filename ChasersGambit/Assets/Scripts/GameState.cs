@@ -2,6 +2,8 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
+using Controllers;
+
 public static class GameState
 {
     public static bool DidAnyHuntedExit = false;
@@ -53,6 +55,9 @@ public static class GameState
         {
             script.enabled = false;
         }
+
+        HuntedController huntedController = gb.GetComponent<HuntedController>();
+        huntedController.flashlight.enabled = false;
     }
 
     public static void EnableGo(GameObject gb)
@@ -63,5 +68,8 @@ public static class GameState
         {
             script.enabled = true;
         }
+
+        HuntedController huntedController = gb.GetComponent<HuntedController>();
+        huntedController.flashlight.enabled = true;
     }
 }

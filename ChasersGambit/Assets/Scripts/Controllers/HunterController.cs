@@ -28,6 +28,7 @@ namespace Controllers
 
         // Hunted target and AI fields
         public GameObject target;
+        private HuntedController huntedController;
         private NavMeshAgent agent;
 
         // Control bools
@@ -106,6 +107,8 @@ namespace Controllers
 
         void StartChase()
         {
+            huntedController = target.GetComponent<HuntedController>();
+
             if (!isCurrentlyChasing)
             {
                 isCurrentlyChasing = true;
@@ -117,9 +120,12 @@ namespace Controllers
                 }
             }
 
-            agent.speed = speed;
-            agent.SetDestination(target.transform.position);
-            Debug.Log("Chasing!");
+            if (huntedController.flashlight.enabled)
+            {
+                agent.speed = speed;
+                agent.SetDestination(target.transform.position);
+                Debug.Log("Chasing!");
+            }
         }
 
         void HandlePatrolling()

@@ -15,7 +15,6 @@ public class SwitchHunted : MonoBehaviour
     public GameObject[] hunters = new GameObject[0];
 
     private HunterController hunterController;
-
     private bool _isHunted1Enabled;
     
     // Start is called before the first frame update
