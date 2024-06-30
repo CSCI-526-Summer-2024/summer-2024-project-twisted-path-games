@@ -381,7 +381,6 @@ MonoBehaviour:
   mazeLights: {fileID: 305995090}
   gameManager: {fileID: 962236938}
   isHuntedActive: 1
-  hunterPos: []
   countdown: {fileID: 1430314197}
 --- !u!4 &21017757
 Transform:
@@ -3208,6 +3207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
+  flashlight: {fileID: 1031132259}
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -3929,7 +3929,6 @@ GameObject:
   m_Component:
   - component: {fileID: 813758479}
   - component: {fileID: 813758480}
-  - component: {fileID: 813758481}
   m_Layer: 8
   m_Name: Flashlight
   m_TagString: Untagged
@@ -4014,18 +4013,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &813758481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 813758478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7af784a0c9d41f2a86af382cf5a9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &836848023
 GameObject:
   m_ObjectHideFlags: 0
@@ -5291,7 +5278,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1031132257}
   - component: {fileID: 1031132259}
-  - component: {fileID: 1031132258}
   m_Layer: 8
   m_Name: Flashlight
   m_TagString: Untagged
@@ -5314,18 +5300,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 611426817}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &1031132258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031132256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e7af784a0c9d41f2a86af382cf5a9b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &1031132259
 Light:
   m_ObjectHideFlags: 0
@@ -7864,7 +7838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &1553972227
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9086,11 +9060,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   patrolSpeed: 1
-  increasedSpeed: 2.5
-  patrolPoints:
-  - {fileID: 137839610}
-  - {fileID: 213538627}
-  - {fileID: 216991411}
+  increasedSpeed: 1.97
+  patrolPoints: []
   huntedProximityDistance: 5
   indicator: {fileID: 991280279}
   lightOn: 0
@@ -9761,6 +9732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
+  flashlight: {fileID: 813758480}
   groundDrag: 5
   playerHeight: 2
   whatIsGround:

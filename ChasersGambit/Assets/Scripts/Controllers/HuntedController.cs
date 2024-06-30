@@ -9,7 +9,7 @@ namespace Controllers
         float verticalInput;
         Vector3 moveDirection;
 
-        private Light flashlight;
+        public Light flashlight;
 
         // Ground drag properties so the player doesn't skate across ice-like ground
         public float groundDrag;
