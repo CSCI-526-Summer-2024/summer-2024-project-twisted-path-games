@@ -111,19 +111,19 @@ public class CollisionManager : MonoBehaviour
         switch (tag)
         {
             case "Tutorial":
-                GameState.LevelNumber = 1;
-                UnityEngine.SceneManagement.SceneManager.LoadScene("powerup-tutorial");
+                GameState.LevelName = "tutorial1";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("tutorial1");
                 break;
             case "Level1":
-                GameState.LevelNumber = 2;
-                UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
+                GameState.LevelName = "level1";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level1");
                 break;
             case "Level2":
-                GameState.LevelNumber = 3;
-                UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
+                GameState.LevelName = "level2";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
                 break;
             default:
-                GameState.LevelNumber = 0;
+                GameState.LevelName = "level_picker";
                 UnityEngine.SceneManagement.SceneManager.LoadScene("level picker");
                 break;
         }

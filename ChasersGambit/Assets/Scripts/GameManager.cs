@@ -36,25 +36,32 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         GameState.endTime = Time.time;
         GameState.LastAttemptWasSuccess = true;
-        if (GameState.LevelNumber == 1)
+        if (GameState.LevelName == "tutorial1")
+        {
+            winText.text = "YOU COMPLETED TUTORIAL 1!";
+            winText.gameObject.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+        }
+        if (GameState.LevelName == "tutorial3")
+        {
+            winText.text = "YOU COMPLETED TUTORIAL 3!";
+            winText.gameObject.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+        }
+        else if (GameState.LevelName == "level1")
         {
             winText.text = "YOU COMPLETED LEVEL 1!";
             winText.gameObject.SetActive(true);   
             playNextLevelButtonObject.SetActive(true);
+            goBackButtonObject.SetActive(true);
         }
-        else if (GameState.LevelNumber == 2)
-        {
-            winText.text = "YOU COMPLETED LEVEL 2!";
-            winText.gameObject.SetActive(true);   
-            playNextLevelButtonObject.SetActive(true);
-        }
-        else if (GameState.LevelNumber == 3)
+        else if (GameState.LevelName == "level3")
         {
             winText.text = "YOU WIN!";
-            winText.gameObject.SetActive(true);   
+            winText.gameObject.SetActive(true);
+            goBackButtonObject.SetActive(true);
         }
         
-        goBackButtonObject.SetActive(true);
         playAgainButtonObject.SetActive(true);
         
         DBManager.AnalyticManager.WriteAggro();
@@ -84,17 +91,23 @@ public class GameManager : MonoBehaviour
 
     void OnNextLevelButtonClick()
     {
-        if (GameState.LevelNumber == 1)
+        if (GameState.LevelName == "tutorial1")
         {
             GameState.TryNumber = 1;
-            GameState.LevelNumber = 2;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
+            GameState.LevelName = "tutorial3";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("tutorial3");
         }
-        else if (GameState.LevelNumber == 2)
+        else if (GameState.LevelName == "tutorial3")
         {
             GameState.TryNumber = 1;
-            GameState.LevelNumber = 3;
-            UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
+            GameState.LevelName = "level1";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level1");
+        }
+        else if (GameState.LevelName == "level1")
+        {
+            GameState.TryNumber = 1;
+            GameState.LevelName = "level2";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
         }
     }
     void OnReplayButtonClick()
@@ -104,7 +117,7 @@ public class GameManager : MonoBehaviour
 
     void OnGoToLevelPickerButtonClick()
     {
-        GameState.LevelNumber = 0;
+        GameState.LevelName = "level_picker";
         UnityEngine.SceneManagement.SceneManager.LoadScene("level picker");
     }
 }
