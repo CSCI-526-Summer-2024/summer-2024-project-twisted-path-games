@@ -389,7 +389,7 @@ GameObject:
   - component: {fileID: 261396208}
   - component: {fileID: 261396207}
   - component: {fileID: 261396210}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Hunted1
   m_TagString: Hunted1
   m_Icon: {fileID: 0}
@@ -697,7 +697,7 @@ GameObject:
   - component: {fileID: 316875911}
   - component: {fileID: 316875910}
   - component: {fileID: 316875909}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: PlayerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1145,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 364766936}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: CameraPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1281,7 +1281,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441962328}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 614239381}
   - component: {fileID: 614239380}
   - component: {fileID: 614239379}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: PlayerObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +1852,7 @@ GameObject:
   - component: {fileID: 873508876}
   - component: {fileID: 873508875}
   - component: {fileID: 873508878}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Hunted2
   m_TagString: Hunted2
   m_Icon: {fileID: 0}
@@ -2395,7 +2395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963374782}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: CameraPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3769,7 +3769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361163201}
   - component: {fileID: 1361163203}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4626,7 +4626,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693930458}
   - component: {fileID: 1693930460}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1835043218}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
