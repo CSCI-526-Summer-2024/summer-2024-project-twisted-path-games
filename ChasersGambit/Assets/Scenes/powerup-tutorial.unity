@@ -3017,6 +3017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
+  flashlight: {fileID: 0}
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -4831,7 +4832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e97da84f9d794370a01f735ba1c50c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  glowImage: {fileID: 1246578195}
+  glowSprite: {fileID: 1246578195}
   glowSpeed: 10
 --- !u!1 &1297178511
 GameObject:
@@ -5612,6 +5613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
+  flashlight: {fileID: 0}
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
