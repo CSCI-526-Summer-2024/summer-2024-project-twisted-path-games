@@ -14,6 +14,7 @@ TagManager:
   - Level1
   - Level2
   - Tutorial
+  - HunterControls
   layers:
   - Default
   - TransparentFX
