@@ -10,7 +10,7 @@ public static class GameState
     public static readonly string SessionId = GenerateSessionId(16);
     public static int NumberOfSwitches = 0;
     public static int numAggro = 0;
-    public static int LevelNumber = 1;
+    public static string LevelName = "level_picker";
     public static int TryNumber = 1;
     public static int PowerUpNumber = 0;
     public static bool LastAttemptWasSuccess = false;

@@ -7,7 +7,7 @@ namespace DBManager
     {
         public static void WriteNumberOfSwitches()
         {
-            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber++}/switches.json";
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelName}/{GameState.TryNumber++}/switches.json";
             NumberOfSwitches data = new NumberOfSwitches()
             {
                 numberOfSwitches = GameState.NumberOfSwitches,
@@ -18,7 +18,7 @@ namespace DBManager
         } 
         public static void WriteAggro()
         {
-            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/aggro.json";
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelName}/{GameState.TryNumber}/aggro.json";
             float timeSinceAggro;
             if (GameState.firstChase < 0){
                 timeSinceAggro = 0;
@@ -38,7 +38,7 @@ namespace DBManager
         
         public static void WritePositions(List<Vector3> hunter1Positions, List<Vector3> hunter2Positions)
         {
-            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelNumber}/{GameState.TryNumber}/hunterPositions/{GameState.PowerUpNumber}.json";
+            string urlPath = $"sessions/{GameState.SessionId}/{GameState.LevelName}/{GameState.TryNumber}/hunterPositions/{GameState.PowerUpNumber}.json";
             HunterMovement data = new HunterMovement()
             {
                 hunter1Positions = hunter1Positions,
