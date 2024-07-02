@@ -27,15 +27,22 @@ namespace Controllers
         public bool lightOn = false;
 
         // Hunted target and AI fields
-        public GameObject target;
-        private HuntedController huntedController;
+        public GameObject hunted1;
+        public GameObject hunted2;
+        
+        public float hunted1Proximity;
+        public float hunted2Proximity;
+        
+        private HuntedController hunted1Controller;
+        private HuntedController hunted2Controller;
+        
         private NavMeshAgent agent;
 
         // Control bools
         public bool isChaseActive = true;
         private bool isCurrentlyChasing = false;
         public bool controlled = false;
-
+        private bool shouldPatrol = true;
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -48,6 +55,8 @@ namespace Controllers
             agent.speed = speed;
 
             capsuleCollider = GetComponent<CapsuleCollider>();
+            hunted1Controller = hunted1.GetComponent<HuntedController>();
+            hunted2Controller = hunted2.GetComponent<HuntedController>();
 
             if (patrolPoints.Length > 0)
             {
@@ -59,7 +68,7 @@ namespace Controllers
             {
                 rb.isKinematic = true;
             }
-    }
+        }
 
         void Update()
         {
@@ -71,19 +80,44 @@ namespace Controllers
             {
                 HandlePlayerControl();
             }
-         }
+        }
 
         private void HandleAgent()
         {
             agent.isStopped = false;
             capsuleCollider.enabled = true;
             indicator.enabled = false;
+            hunted1Proximity = Vector3.Distance(hunted1.transform.position, rb.transform.position);
+            hunted2Proximity = Vector3.Distance(hunted2.transform.position, rb.transform.position);
 
-            if (CheckHuntedProximity())
+            if (hunted1Proximity < huntedProximityDistance)
             {
-                StartChase();
+                if (hunted1Controller.flashlight.enabled)
+                {
+                    StartChase(hunted1);   
+                }
+                else
+                {
+                    agent.SetDestination(agent.transform.position);
+                }
+
+                shouldPatrol = false;
             }
-            else
+
+            if (hunted2Proximity < huntedProximityDistance)
+            {
+                if (hunted2Controller.flashlight.enabled)
+                {
+                    StartChase(hunted2);   
+                }
+                else
+                {
+                    agent.SetDestination(agent.transform.position);
+                }
+                shouldPatrol = false;
+            }
+            
+            if(shouldPatrol)
             {
                 HandlePatrolling();
             }
@@ -107,10 +141,8 @@ namespace Controllers
             }
         }
 
-        void StartChase()
+        void StartChase(GameObject hunted)
         {
-            huntedController = target.GetComponent<HuntedController>();
-
             if (!isCurrentlyChasing)
             {
                 isCurrentlyChasing = true;
@@ -121,13 +153,11 @@ namespace Controllers
                     GameState.firstChase = Time.time; // Record the start time of the first chase
                 }
             }
-
-            if (huntedController.flashlight.enabled)
-            {
-                agent.speed = speed;
-                agent.SetDestination(target.transform.position);
-                Debug.Log("Chasing!");
-            }
+            
+            agent.speed = speed;
+            agent.SetDestination(hunted.transform.position);
+            Debug.Log("Chasing!");
+            
         }
 
         void HandlePatrolling()
@@ -147,11 +177,6 @@ namespace Controllers
             }
         }
 
-        public void UpdateTarget(GameObject newTarget)
-        {
-            target = newTarget;
-        }
-
         // Get keyboard inputs
         private void GetInputs()
         {
@@ -168,7 +193,7 @@ namespace Controllers
 
         private bool CheckHuntedProximity()
         {
-            float distance = Vector3.Distance(target.transform.position, rb.transform.position);
+            float distance = Vector3.Distance(hunted1.transform.position, rb.transform.position);
             return distance <= huntedProximityDistance;
         }
     }

@@ -4287,7 +4287,10 @@ MonoBehaviour:
   huntedProximityDistance: 5
   indicator: {fileID: 988612141}
   lightOn: 0
-  target: {fileID: 261396205}
+  hunted1: {fileID: 261396205}
+  hunted2: {fileID: 873508873}
+  hunted1Proximity: 0
+  hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
 --- !u!23 &1340915166
@@ -5492,7 +5495,10 @@ MonoBehaviour:
   huntedProximityDistance: 5
   indicator: {fileID: 1537629907}
   lightOn: 0
-  target: {fileID: 261396205}
+  hunted1: {fileID: 261396205}
+  hunted2: {fileID: 873508873}
+  hunted1Proximity: 0
+  hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
 --- !u!23 &1651940512

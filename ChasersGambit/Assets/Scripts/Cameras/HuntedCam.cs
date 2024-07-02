@@ -38,6 +38,9 @@ namespace Cameras
             // Lock the cursor to the center of the game window for first person view
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            
+            xRotation = orientation.eulerAngles.x;
+            yRotation = orientation.eulerAngles.y;
         }
 
         void Update()
@@ -53,21 +56,21 @@ namespace Cameras
                     mouseX = DampenedMovement(mouseX);
                     mouseY = DampenedMovement(mouseY);
                 }
-
+                
                 // Rotate the camera left and right
                 yRotation += mouseX;
-
+                
                 // Rotate the camera up and down and prevent camera flips
                 xRotation -= mouseY;
                 xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
+                
                 // Apply camera rotation
                 transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-
+                
                 // Update the rotation of the orientation object
                 // Ensures the player's forward direction matches where the camera is looking horizontally
                 orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-
+                
                 // Apply rotation to the flashlight
                 flashlight.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
             }
