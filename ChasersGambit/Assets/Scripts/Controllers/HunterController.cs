@@ -108,7 +108,7 @@ namespace Controllers
                 shouldPatrol = false;
             }
 
-            if (hunted2Proximity < huntedProximityDistance)
+            else if (hunted2Proximity < huntedProximityDistance)
             {
                 if (hunted2Controller.flashlight.enabled)
                 {
@@ -124,7 +124,6 @@ namespace Controllers
                 }
                 shouldPatrol = false;
             }
-            
             if(shouldPatrol)
             {
                 HandlePatrolling();

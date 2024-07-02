@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
             playNextLevelButtonObject.SetActive(true);
             goBackButtonObject.SetActive(true);
         }
-        else if (GameState.LevelName == "level3")
+        else if (GameState.LevelName == "level2")
         {
             winText.text = "YOU WIN!";
             winText.gameObject.SetActive(true);
