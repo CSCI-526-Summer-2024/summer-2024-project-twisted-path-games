@@ -42,6 +42,12 @@ public class GameManager : MonoBehaviour
             winText.gameObject.SetActive(true);   
             playNextLevelButtonObject.SetActive(true);
         }
+        if (GameState.LevelName == "tutorial2")
+        {
+            winText.text = "YOU COMPLETED TUTORIAL 2!";
+            winText.gameObject.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+        }
         if (GameState.LevelName == "tutorial3")
         {
             winText.text = "YOU COMPLETED TUTORIAL 3!";
@@ -92,6 +98,12 @@ public class GameManager : MonoBehaviour
     void OnNextLevelButtonClick()
     {
         if (GameState.LevelName == "tutorial1")
+        {
+            GameState.TryNumber = 1;
+            GameState.LevelName = "tutorial2";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("tutorial2");
+        }
+        else if (GameState.LevelName == "tutorial2")
         {
             GameState.TryNumber = 1;
             GameState.LevelName = "tutorial3";
