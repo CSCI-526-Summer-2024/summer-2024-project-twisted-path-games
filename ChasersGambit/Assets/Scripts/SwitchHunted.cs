@@ -42,7 +42,8 @@ public class SwitchHunted : MonoBehaviour
         if (hunterController != null && hunterController.isChaseActive && Input.GetKeyDown(KeyCode.Space) && !GameState.DidAnyHuntedExit)
         {
             SwitchHuntedFocus();
-            UpdateHunter();
+            //UpdateHunter();
+            _isHunted1Enabled = !_isHunted1Enabled;
             SetCameraPerspective();
 
             GameState.NumberOfSwitches++;
@@ -73,32 +74,6 @@ public class SwitchHunted : MonoBehaviour
             //hunted2.SetActive(false);
         }
     }
-
-    
-    void UpdateHunter()
-    {
-        if (hunters.Length != 0)
-        {
-            if (_isHunted1Enabled)
-            {
-                foreach (var hunter in hunters)
-                {
-                    hunter.GetComponent<HunterController>().target = hunted2;
-                }
-                Debug.Log("Hunter is hunting P2");
-            }
-            else
-            {
-                foreach (var hunter in hunters)
-                {
-                    hunter.GetComponent<HunterController>().target = hunted1;
-                }
-                Debug.Log("Hunter is hunting P1");
-            }
-            _isHunted1Enabled = !_isHunted1Enabled;
-        }
-    }
-    
 
     void SetCameraPerspective()
     {

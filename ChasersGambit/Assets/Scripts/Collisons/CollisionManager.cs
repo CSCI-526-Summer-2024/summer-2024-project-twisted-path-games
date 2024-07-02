@@ -167,9 +167,6 @@ public class CollisionManager : MonoBehaviour
                 Debug.LogError("HunterController component not found on otherHunted");
                 return;
             }
-
-            hunterController1.UpdateTarget(otherHunted);
-            hunterController2.UpdateTarget(otherHunted);
         }
     }
     
