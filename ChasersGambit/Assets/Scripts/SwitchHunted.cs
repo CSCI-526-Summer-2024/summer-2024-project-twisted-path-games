@@ -44,6 +44,7 @@ public class SwitchHunted : MonoBehaviour
             SwitchHuntedFocus();
             UpdateHunter();
             SetCameraPerspective();
+
             GameState.NumberOfSwitches++;
         }
     }
@@ -55,8 +56,11 @@ public class SwitchHunted : MonoBehaviour
             GameState.DisableGo(hunted1);
             GameState.EnableGo(hunted2);
             
+            
             hunted1PlayIcon.SetActive(false); 
             hunted2PlayIcon.SetActive(true);
+
+            //hunted1.SetActive(false);
         }
         else
         {
@@ -65,6 +69,8 @@ public class SwitchHunted : MonoBehaviour
 
             hunted1PlayIcon.SetActive(true);
             hunted2PlayIcon.SetActive(false);
+
+            //hunted2.SetActive(false);
         }
     }
 
