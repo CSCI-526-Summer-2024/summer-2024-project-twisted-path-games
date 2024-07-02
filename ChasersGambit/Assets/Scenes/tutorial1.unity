@@ -2914,7 +2914,7 @@ GameObject:
   m_Component:
   - component: {fileID: 988612142}
   - component: {fileID: 988612141}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4189,7 +4189,7 @@ GameObject:
   - component: {fileID: 1340915164}
   - component: {fileID: 1340915163}
   - component: {fileID: 1340915162}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter1
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -4579,7 +4579,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.5970096, g: 0.63941276, b: 0.9811321, a: 1}
+  m_Color: {r: 0.3254902, g: 0.40392157, b: 0.9811321, a: 1}
   m_Intensity: 1
   m_Range: 6
   m_SpotAngle: 70
@@ -4954,7 +4954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537629908}
   - component: {fileID: 1537629907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5394,7 +5394,7 @@ GameObject:
   - component: {fileID: 1651940510}
   - component: {fileID: 1651940509}
   - component: {fileID: 1651940508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter2
   m_TagString: Hunter
   m_Icon: {fileID: 0}

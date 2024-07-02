@@ -417,7 +417,6 @@ MonoBehaviour:
   hunted2PlayIcon: {fileID: 2056600635}
   hunters:
   - {fileID: 1977468906}
-  - {fileID: 1553972226}
 --- !u!114 &21017759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3962,7 +3961,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.7122642, g: 0.74402726, b: 1, a: 1}
+  m_Color: {r: 0.3254902, g: 0.40392157, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 6
   m_SpotAngle: 70
@@ -5184,7 +5183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 991280278}
   - component: {fileID: 991280279}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5372,7 +5371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1063502362}
   - component: {fileID: 1063502363}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7832,7 +7831,7 @@ GameObject:
   - component: {fileID: 1553972229}
   - component: {fileID: 1553972228}
   - component: {fileID: 1553972227}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter2
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -8973,7 +8972,7 @@ GameObject:
   - component: {fileID: 1977468914}
   - component: {fileID: 1977468916}
   - component: {fileID: 1977468915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter1
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -9060,7 +9059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   patrolSpeed: 1
-  increasedSpeed: 1.97
+  increasedSpeed: 2.5
   patrolPoints: []
   huntedProximityDistance: 5
   indicator: {fileID: 991280279}
@@ -9793,8 +9792,8 @@ SceneRoots:
   - {fileID: 1977468911}
   - {fileID: 1553972233}
   - {fileID: 2095705915}
-  - {fileID: 611426817}
   - {fileID: 349038682}
+  - {fileID: 611426817}
   - {fileID: 2036568269}
   - {fileID: 21017757}
   - {fileID: 354304133}

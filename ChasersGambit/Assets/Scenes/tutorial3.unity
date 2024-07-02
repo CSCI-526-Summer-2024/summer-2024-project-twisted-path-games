@@ -387,7 +387,7 @@ Transform:
   m_GameObject: {fileID: 79968996}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.3199983, y: 0, z: -1.4000034}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -476,7 +476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 89063443}
   - component: {fileID: 89063442}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ Transform:
   m_GameObject: {fileID: 183144261}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.079998, y: 0, z: -1.9000025}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -687,7 +687,7 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 0.7122642, g: 0.74402726, b: 1, a: 1}
+  m_Color: {r: 0.3254902, g: 0.40392157, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 8
   m_SpotAngle: 90
@@ -1146,7 +1146,7 @@ Transform:
   m_GameObject: {fileID: 263150187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.079998, y: 0, z: -1.9000025}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1369,7 +1369,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413969493}
   - component: {fileID: 413969494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Down
   m_TagString: HunterControls
   m_Icon: {fileID: 0}
@@ -1721,7 +1721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504563308}
   - component: {fileID: 504563309}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Left
   m_TagString: HunterControls
   m_Icon: {fileID: 0}
@@ -2351,7 +2351,7 @@ Transform:
   m_GameObject: {fileID: 630067747}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.079998, y: 0, z: -1.9000025}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2903,7 +2903,7 @@ Transform:
   m_GameObject: {fileID: 716297257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3199987, y: 0, z: -1.4000034}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3073,7 +3073,7 @@ Transform:
   m_GameObject: {fileID: 743829772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.21, y: 0.5, z: -8.6}
+  m_LocalPosition: {x: 2.7, y: 0.5, z: -9.16}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3230,7 +3230,7 @@ Transform:
   m_GameObject: {fileID: 762239292}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.17, y: 0.5, z: -8.81}
+  m_LocalPosition: {x: -4.6, y: 0.5, z: -8.81}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3338,7 +3338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 775382381}
   - component: {fileID: 775382382}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: right
   m_TagString: HunterControls
   m_Icon: {fileID: 0}
@@ -3876,7 +3876,7 @@ GameObject:
   - component: {fileID: 896824029}
   - component: {fileID: 896824028}
   - component: {fileID: 896824027}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter1
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -3967,9 +3967,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.5
   patrolSpeed: 0
-  increasedSpeed: 3
+  increasedSpeed: 2.5
   patrolPoints: []
   huntedProximityDistance: 5
   indicator: {fileID: 1083444320}
@@ -4467,7 +4467,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1083444321}
   - component: {fileID: 1083444320}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5035,7 +5035,7 @@ GameObject:
   - component: {fileID: 1323787927}
   - component: {fileID: 1323787926}
   - component: {fileID: 1323787925}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Hunter2
   m_TagString: Hunter
   m_Icon: {fileID: 0}
@@ -5128,7 +5128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   patrolSpeed: 0
-  increasedSpeed: 3
+  increasedSpeed: 2.5
   patrolPoints: []
   huntedProximityDistance: 5
   indicator: {fileID: 89063442}
@@ -5737,7 +5737,7 @@ Transform:
   m_GameObject: {fileID: 1469245435}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.21, y: 0.5, z: -8.6}
+  m_LocalPosition: {x: 2.7, y: 0.5, z: -9.16}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5799,7 +5799,7 @@ Transform:
   m_GameObject: {fileID: 1478222250}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.17, y: 0.5, z: -8.81}
+  m_LocalPosition: {x: -4.6, y: 0.5, z: -8.81}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5833,7 +5833,7 @@ Transform:
   m_GameObject: {fileID: 1558269154}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3199987, y: 0, z: -1.4000034}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6519,7 +6519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911075001}
   - component: {fileID: 1911075002}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Top
   m_TagString: HunterControls
   m_Icon: {fileID: 0}
@@ -6917,12 +6917,12 @@ SceneRoots:
   - {fileID: 1104799495}
   - {fileID: 572802965}
   - {fileID: 1469245439}
+  - {fileID: 743829774}
   - {fileID: 762239296}
+  - {fileID: 1478222252}
   - {fileID: 896824033}
   - {fileID: 1323787931}
   - {fileID: 1465284123}
-  - {fileID: 743829774}
-  - {fileID: 1478222252}
   - {fileID: 733593672}
   - {fileID: 1760032985}
   - {fileID: 527825029}

@@ -95,6 +95,8 @@ namespace Controllers
             rb.isKinematic = false;
             capsuleCollider.enabled = false;
 
+            agent.SetDestination(transform.position);
+
             if (controlled){
                 GetInputs();
                 MoveHunter();
