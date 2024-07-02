@@ -96,6 +96,10 @@ namespace Controllers
                 {
                     StartChase(hunted1);   
                 }
+                else if(hunted2Proximity < huntedProximityDistance)
+                {
+                    StartChase(hunted2);
+                }
                 else
                 {
                     agent.SetDestination(agent.transform.position);
@@ -108,7 +112,11 @@ namespace Controllers
             {
                 if (hunted2Controller.flashlight.enabled)
                 {
-                    StartChase(hunted2);   
+                    StartChase(hunted2);
+                }
+                else if(hunted1Proximity < huntedProximityDistance)
+                {
+                    StartChase(hunted1);
                 }
                 else
                 {
