@@ -90,13 +90,13 @@ namespace Controllers
             hunted1Proximity = Vector3.Distance(hunted1.transform.position, rb.transform.position);
             hunted2Proximity = Vector3.Distance(hunted2.transform.position, rb.transform.position);
 
-            if (hunted1Proximity < huntedProximityDistance)
+            if (hunted1Proximity < huntedProximityDistance && hunted1.activeSelf)
             {
                 if (hunted1Controller.flashlight.enabled)
                 {
                     StartChase(hunted1);   
                 }
-                else if(hunted2Proximity < huntedProximityDistance)
+                else if(hunted2Proximity < huntedProximityDistance && hunted2.activeSelf)
                 {
                     StartChase(hunted2);
                 }
@@ -106,13 +106,13 @@ namespace Controllers
                 }
             }
 
-            else if (hunted2Proximity < huntedProximityDistance)
+            else if (hunted2Proximity < huntedProximityDistance && hunted2.activeSelf)
             {
                 if (hunted2Controller.flashlight.enabled)
                 {
                     StartChase(hunted2);
                 }
-                else if(hunted1Proximity < huntedProximityDistance)
+                else if(hunted1Proximity < huntedProximityDistance && hunted1.activeSelf)
                 {
                     StartChase(hunted1);
                 }
