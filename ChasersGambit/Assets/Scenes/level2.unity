@@ -981,7 +981,7 @@ Transform:
   m_GameObject: {fileID: 137839609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 0, z: 3.93}
+  m_LocalPosition: {x: -4.74, y: 0, z: 4.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1518,7 +1518,7 @@ Transform:
   m_GameObject: {fileID: 213538626}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.93, y: 0, z: 6.98}
+  m_LocalPosition: {x: 1.61, y: 0, z: 3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1549,7 +1549,7 @@ Transform:
   m_GameObject: {fileID: 216991410}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.91, y: 0.566, z: 4.17}
+  m_LocalPosition: {x: 1.42, y: 0.566, z: -1.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9041,7 +9041,7 @@ Transform:
   m_GameObject: {fileID: 1977468906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.91, y: 0.566, z: 4.17}
+  m_LocalPosition: {x: 1.61, y: 0, z: 3.6}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9064,6 +9064,8 @@ MonoBehaviour:
   patrolSpeed: 1
   increasedSpeed: 2.5
   patrolPoints:
+  - {fileID: 137839610}
+  - {fileID: 213538627}
   - {fileID: 216991411}
   huntedProximityDistance: 5
   indicator: {fileID: 991280279}
