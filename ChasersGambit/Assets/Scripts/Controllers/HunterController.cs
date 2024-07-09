@@ -42,7 +42,7 @@ namespace Controllers
         public bool isChaseActive = true;
         private bool isCurrentlyChasing = false;
         public bool controlled = false;
-        private bool shouldPatrol = true;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -104,8 +104,6 @@ namespace Controllers
                 {
                     agent.SetDestination(agent.transform.position);
                 }
-
-                shouldPatrol = false;
             }
 
             else if (hunted2Proximity < huntedProximityDistance)
@@ -122,9 +120,9 @@ namespace Controllers
                 {
                     agent.SetDestination(agent.transform.position);
                 }
-                shouldPatrol = false;
             }
-            if(shouldPatrol)
+
+            else
             {
                 HandlePatrolling();
             }
