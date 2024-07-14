@@ -3680,7 +3680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &896824027
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4532,8 +4532,8 @@ MonoBehaviour:
   huntedProximityDistance: 5
   indicator: {fileID: 107580029}
   lightOn: 0
-  hunted1: {fileID: 0}
-  hunted2: {fileID: 0}
+  hunted1: {fileID: 1111254196}
+  hunted2: {fileID: 983797361}
   hunted1Proximity: 0
   hunted2Proximity: 0
   isChaseActive: 1
@@ -6127,8 +6127,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979327745}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.25, y: 0, z: 0.32}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.250008, y: 0, z: 0.3199997}
   m_LocalScale: {x: 1.0125, y: 3, z: 2.3047755}
   m_ConstrainProportionsScale: 0
   m_Children: []
