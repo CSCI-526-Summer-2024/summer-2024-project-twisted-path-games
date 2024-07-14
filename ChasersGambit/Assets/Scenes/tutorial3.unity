@@ -2404,8 +2404,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -3975,7 +3975,7 @@ MonoBehaviour:
   indicator: {fileID: 1083444320}
   lightOn: 0
   hunted1: {fileID: 1469245435}
-  hunted2: {fileID: 1323787924}
+  hunted2: {fileID: 762239292}
   hunted1Proximity: 0
   hunted2Proximity: 0
   isChaseActive: 1
@@ -4553,7 +4553,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.764151, g: 0.5586953, b: 0.5586953, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5892,8 +5892,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.01
-  far clip plane: 1000
+  near clip plane: 0.1
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
