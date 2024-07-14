@@ -3307,9 +3307,7 @@ MonoBehaviour:
   speed: 1.5
   patrolSpeed: 1
   increasedSpeed: 2.5
-  patrolPoints:
-  - {fileID: 1232148198}
-  - {fileID: 1145401251}
+  patrolPoints: []
   huntedProximityDistance: 9
   indicator: {fileID: 965784371}
   lightOn: 0
@@ -3690,15 +3688,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479918, guid: 9c25864566bc2a7489bef25ecb47dd6c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.654
+      value: -0.65
       objectReference: {fileID: 0}
     - target: {fileID: 479918, guid: 9c25864566bc2a7489bef25ecb47dd6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.237
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 479918, guid: 9c25864566bc2a7489bef25ecb47dd6c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 479918, guid: 9c25864566bc2a7489bef25ecb47dd6c, type: 3}
       propertyPath: m_LocalRotation.w
