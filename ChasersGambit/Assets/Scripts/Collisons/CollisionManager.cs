@@ -59,13 +59,13 @@ public class CollisionManager : MonoBehaviour
         UpdatePlayerControl(hunted1);
     }
 
-    public void OnHuntedCollisionWithPowerUp(GameObject powerUp, GameObject collidingHunted)
+    public void OnHuntedCollisionWithPowerUp(GameObject powerUp, GameObject collidingHunted, GameObject otherHunted)
     {
         Debug.Log("Hunted collided with a PowerUp!");
         GameState.PowerUpNumber++;
 
         // Start the coroutine to switch roles for 5 seconds
-        StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted));
+        StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted, otherHunted));
 
         Destroy(powerUp);
     }
@@ -230,15 +230,18 @@ public class CollisionManager : MonoBehaviour
         hunterCam.gameObject.SetActive(!isHuntedActive);
     }
 
-    IEnumerator SwitchRolesForDuration(float duration, GameObject collidingHunted)
+    IEnumerator SwitchRolesForDuration(float duration, GameObject collidingHunted, GameObject otherHunted)
     {        
         if (mazeLights == null)
         {
             Debug.LogError("No Light component found on this GameObject.");
         }
 
-        // Brighten the map so the player can see
+        // Brighten the map so the player can see and increase flashlight intensity
         mazeLights.enabled = true;
+        otherHunted.GetComponent<HuntedController>().flashlight.enabled = enabled;
+        otherHunted.GetComponent<HuntedController>().flashlight.intensity = 2;
+        collidingHunted.GetComponent<HuntedController>().flashlight.intensity = 2;
 
         // Switch roles
         isHuntedActive = !isHuntedActive;
@@ -270,6 +273,9 @@ public class CollisionManager : MonoBehaviour
         
         // Return to dark lighting for first person view
         mazeLights.enabled = false;
+        otherHunted.GetComponent<HuntedController>().flashlight.enabled = !enabled;
+        otherHunted.GetComponent<HuntedController>().flashlight.intensity = 1;
+        collidingHunted.GetComponent<HuntedController>().flashlight.intensity = 1;
 
         // Revert the roles back
         isHuntedActive = !isHuntedActive;
