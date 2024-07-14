@@ -10,7 +10,7 @@ public class HuntedCollisionDetector : MonoBehaviour
         if (collision.collider.CompareTag("PowerUp"))
         {
             // Notify the CollisionManager of the collision
-            CollisionManager.Instance.OnHuntedCollisionWithPowerUp(collision.collider.gameObject, this.gameObject);
+            CollisionManager.Instance.OnHuntedCollisionWithPowerUp(collision.collider.gameObject, this.gameObject, otherHunted);
         }
         else if (collision.collider.CompareTag("Hunter"))
         {
