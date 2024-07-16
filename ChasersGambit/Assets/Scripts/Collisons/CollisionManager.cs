@@ -40,6 +40,8 @@ public class CollisionManager : MonoBehaviour
     private List<Vector3> hunter2Pos;
 
     public TextMeshProUGUI countdown;
+    public TextMeshProUGUI PowerupText;
+
 
     void Awake()
     {
@@ -78,6 +80,11 @@ public class CollisionManager : MonoBehaviour
         {
             hunterControl.SetActive(true);
         }
+    }
+
+    private void EnablePowerupUI()
+    {
+        PowerupText.gameObject.SetActive(true);
     }
 
     private void DisableArrowsAroundHunters()
@@ -247,6 +254,10 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
+
+        //enable UI indicator to move the hunter
+        //EnablePowerupUI();
+
         //Enable the arrows around hunters
         EnableArrowsAroundHunters();
         
@@ -255,6 +266,8 @@ public class CollisionManager : MonoBehaviour
         countdown.text = countdownText.ToString();
         hunter1Pos = new List<Vector3>();
         hunter2Pos = new List<Vector3>();
+
+        
         
         // Wait for the specified duration
         for (int i = 0; i < 10; i++)
@@ -266,9 +279,12 @@ public class CollisionManager : MonoBehaviour
             yield return new WaitForSeconds(duration/10);
             hunter1Pos.Add(hunter1.transform.position);
             hunter2Pos.Add(hunter2.transform.position);
+            
         }
         
+
         countdown.gameObject.SetActive(false);
+        
         AnalyticManager.WritePositions(hunter1Pos, hunter2Pos);
         
         // Return to dark lighting for first person view
