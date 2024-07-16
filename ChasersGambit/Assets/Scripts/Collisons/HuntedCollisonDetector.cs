@@ -33,7 +33,7 @@ public class HuntedCollisionDetector : MonoBehaviour
             CollisionManager.Instance.OnHuntedCollisionWithExit(this.gameObject, otherHunted);
         }
         else if (collision.collider.CompareTag("Level1") || collision.collider.CompareTag("Level2") ||
-                 collision.collider.CompareTag("Tutorial"))
+                 collision.collider.CompareTag("Level3") || collision.collider.CompareTag("Tutorial"))
         {
             CollisionManager.Instance.OnHunterCollisionWithLevelDoor(collision.collider.tag);
         }

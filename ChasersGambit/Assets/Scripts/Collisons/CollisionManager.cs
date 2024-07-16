@@ -129,6 +129,10 @@ public class CollisionManager : MonoBehaviour
                 GameState.LevelName = "level2";
                 UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
                 break;
+            case "Level3":
+                GameState.LevelName = "level3";
+                UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
+                break;
             default:
                 GameState.LevelName = "level_picker";
                 UnityEngine.SceneManagement.SceneManager.LoadScene("level picker");
