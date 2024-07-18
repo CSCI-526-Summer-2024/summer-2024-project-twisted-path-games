@@ -56,9 +56,9 @@ public static class GameState
         {
             script.enabled = false;
         }
-
-        HuntedController huntedController = gb.GetComponent<HuntedController>();
-        huntedController.flashlight.enabled = false;
+        
+        //huntedController.flashlight.enabled = false;
+        
         //set Is Kinematic boolean to true for game object rigid body
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         if (rb != null){
@@ -74,9 +74,9 @@ public static class GameState
         {
             script.enabled = true;
         }
-
-        HuntedController huntedController = gb.GetComponent<HuntedController>();
-        huntedController.flashlight.enabled = true;
+        
+        //huntedController.flashlight.enabled = true;
+        
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         if (rb != null){
             rb.isKinematic = false;

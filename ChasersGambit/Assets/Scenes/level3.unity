@@ -3146,6 +3146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
   flashlight: {fileID: 1031132259}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -9724,6 +9725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
   flashlight: {fileID: 813758480}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
