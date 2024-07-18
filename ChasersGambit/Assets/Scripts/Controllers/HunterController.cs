@@ -33,8 +33,8 @@ namespace Controllers
         public float hunted1Proximity;
         public float hunted2Proximity;
         
-        private HuntedController hunted1Controller;
-        private HuntedController hunted2Controller;
+        private FlashlightToggle hunted1FlashlightToggle;
+        private FlashlightToggle hunted2FlashlightToggle;
         
         private NavMeshAgent agent;
 
@@ -55,8 +55,8 @@ namespace Controllers
             agent.speed = speed;
 
             capsuleCollider = GetComponent<CapsuleCollider>();
-            hunted1Controller = hunted1.GetComponent<HuntedController>();
-            hunted2Controller = hunted2.GetComponent<HuntedController>();
+            hunted1FlashlightToggle = hunted1.GetComponentInChildren<FlashlightToggle>();
+            hunted2FlashlightToggle = hunted2.GetComponentInChildren<FlashlightToggle>();
 
             if (patrolPoints.Length > 0)
             {
@@ -92,7 +92,7 @@ namespace Controllers
 
             if (hunted1Proximity < huntedProximityDistance && hunted1.activeSelf)
             {
-                if (hunted1Controller.flashlight.enabled)
+                if (hunted1FlashlightToggle.isOn)
                 {
                     StartChase(hunted1);   
                 }
@@ -108,7 +108,7 @@ namespace Controllers
 
             else if (hunted2Proximity < huntedProximityDistance && hunted2.activeSelf)
             {
-                if (hunted2Controller.flashlight.enabled)
+                if (hunted2FlashlightToggle.isOn)
                 {
                     StartChase(hunted2);
                 }

@@ -62,7 +62,7 @@ namespace Cameras
                 
                 // Rotate the camera up and down and prevent camera flips
                 xRotation -= mouseY;
-                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                xRotation = Mathf.Clamp(xRotation, -50f, 50f);
                 
                 // Apply camera rotation
                 transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
@@ -72,7 +72,7 @@ namespace Cameras
                 orientation.rotation = Quaternion.Euler(0, yRotation, 0);
                 
                 // Apply rotation to the flashlight
-                flashlight.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+                flashlight.transform.rotation = Quaternion.Euler(xRotation + 90, yRotation, 0);
             }
         }
     }
