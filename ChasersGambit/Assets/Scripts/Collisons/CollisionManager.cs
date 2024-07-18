@@ -36,6 +36,7 @@ public class CollisionManager : MonoBehaviour
     public GameManager gameManager;
 
     public bool isHuntedActive = true;
+    public int powerupTime;
     private List<Vector3> hunter1Pos;
     private List<Vector3> hunter2Pos;
 
@@ -67,7 +68,7 @@ public class CollisionManager : MonoBehaviour
         GameState.PowerUpNumber++;
 
         // Start the coroutine to switch roles for 5 seconds
-        StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted, otherHunted));
+        StartCoroutine(SwitchRolesForDuration(powerupTime, collidingHunted, otherHunted));
 
         Destroy(powerUp);
     }
@@ -266,7 +267,7 @@ public class CollisionManager : MonoBehaviour
         EnableArrowsAroundHunters();
         
         countdown.gameObject.SetActive(true);
-        int countdownText = 5;
+        int countdownText = powerupTime;
         countdown.text = countdownText.ToString();
         hunter1Pos = new List<Vector3>();
         hunter2Pos = new List<Vector3>();
@@ -274,13 +275,13 @@ public class CollisionManager : MonoBehaviour
         
         
         // Wait for the specified duration
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < duration*2; i++)
         {
             if (i % 2 == 0)
             {
                 countdown.text = countdownText--.ToString();  
             }
-            yield return new WaitForSeconds(duration/10);
+            yield return new WaitForSeconds(0.5f);
             hunter1Pos.Add(hunter1.transform.position);
             hunter2Pos.Add(hunter2.transform.position);
             

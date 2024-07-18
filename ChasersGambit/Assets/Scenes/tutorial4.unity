@@ -4730,6 +4730,7 @@ MonoBehaviour:
   mazeLights: {fileID: 1104799494}
   gameManager: {fileID: 527825028}
   isHuntedActive: 1
+  powerupTime: 6
   countdown: {fileID: 245589831}
   PowerupText: {fileID: 0}
 --- !u!4 &1128637906
