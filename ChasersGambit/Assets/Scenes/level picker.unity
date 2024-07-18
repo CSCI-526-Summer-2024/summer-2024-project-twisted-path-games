@@ -1959,7 +1959,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 315740069}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
@@ -4653,6 +4653,7 @@ MonoBehaviour:
   mazeLights: {fileID: 546249345}
   gameManager: {fileID: 1512498081}
   isHuntedActive: 1
+  powerupTime: 0
   countdown: {fileID: 1881973400}
   PowerupText: {fileID: 0}
 --- !u!4 &791237945
@@ -7315,6 +7316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   flashlight: {fileID: 315740070}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -9673,6 +9675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 2.5
   flashlight: {fileID: 178107294}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
