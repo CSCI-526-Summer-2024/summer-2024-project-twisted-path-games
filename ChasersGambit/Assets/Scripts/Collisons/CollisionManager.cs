@@ -170,6 +170,10 @@ public class CollisionManager : MonoBehaviour
         if (GameState.DidAnyHuntedExit)
         {
             OnBothHuntedExitMaze();
+            hunted1PlayIcon.SetActive(false); 
+            hunted1ExitIcon.SetActive(true);
+            hunted2PlayIcon.SetActive(false); 
+            hunted2ExitIcon.SetActive(true);
         }
         else
         {
