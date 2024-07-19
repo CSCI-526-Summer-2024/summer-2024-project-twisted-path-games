@@ -69,6 +69,13 @@ public class GameManager : MonoBehaviour
         }
         else if (GameState.LevelName == "level2")
         {
+            winText.text = "YOU COMPLETED LEVEL 2!";
+            winText.gameObject.SetActive(true);   
+            playNextLevelButtonObject.SetActive(true);
+            goBackButtonObject.SetActive(true);
+        }
+        else if (GameState.LevelName == "level3")
+        {
             winText.text = "YOU WIN!";
             winText.gameObject.SetActive(true);
             goBackButtonObject.SetActive(true);
@@ -132,6 +139,12 @@ public class GameManager : MonoBehaviour
             GameState.TryNumber = 1;
             GameState.LevelName = "level2";
             UnityEngine.SceneManagement.SceneManager.LoadScene("level2");
+        }
+        else if (GameState.LevelName == "level2")
+        {
+            GameState.TryNumber = 1;
+            GameState.LevelName = "level3";
+            UnityEngine.SceneManagement.SceneManager.LoadScene("level3");
         }
     }
     void OnReplayButtonClick()
