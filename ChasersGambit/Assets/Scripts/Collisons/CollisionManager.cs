@@ -157,7 +157,7 @@ public class CollisionManager : MonoBehaviour
             hunted1ExitIcon.SetActive(true);
             hunted1PlayIcon.SetActive(false); 
 
-            hunted2PlayIcon.SetActive(true); 
+            hunted2PlayIcon.SetActive(true);
         }
         else//if hunted 2 (blue) exits 
         {
@@ -165,7 +165,6 @@ public class CollisionManager : MonoBehaviour
             hunted2PlayIcon.SetActive(false); 
             
             hunted1PlayIcon.SetActive(true); 
-
         }
         if (GameState.DidAnyHuntedExit)
         {
@@ -323,12 +322,14 @@ public class CollisionManager : MonoBehaviour
             GameState.EnableGo(hunted2);
             cameraHolder1.SetActive(false);
             huntedCam2.gameObject.SetActive(true);
+            hunted2.GetComponent<HuntedController>().ToggleFlashlightOn();
         }
         else
         {
             GameState.EnableGo(hunted1);
             cameraHolder2.SetActive(false);
             huntedCam1.gameObject.SetActive(true);
+            hunted1.GetComponent<HuntedController>().ToggleFlashlightOn();
         }
         huntedThatExited.SetActive(false);
     }
