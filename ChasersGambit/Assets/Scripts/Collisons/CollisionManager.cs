@@ -151,15 +151,20 @@ public class CollisionManager : MonoBehaviour
 
     public void OnHuntedCollisionWithExit(GameObject huntedThatExited, GameObject otherHunted)
     {
-        if (huntedThatExited.CompareTag("Hunted1"))
+        if (huntedThatExited.CompareTag("Hunted1"))//if hunted 1 (blue) exits 
         { 
             hunted1ExitIcon.SetActive(true);
             hunted1PlayIcon.SetActive(false); 
+
+            hunted2PlayIcon.SetActive(true); 
         }
-        else
+        else//if hunted 2 (blue) exits 
         {
             hunted2ExitIcon.SetActive(true);
             hunted2PlayIcon.SetActive(false); 
+            
+            hunted1PlayIcon.SetActive(true); 
+
         }
         if (GameState.DidAnyHuntedExit)
         {
