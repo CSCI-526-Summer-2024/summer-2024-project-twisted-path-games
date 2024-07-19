@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.AI;
+
 namespace Controllers
 {
     public class HunterController : MonoBehaviour
