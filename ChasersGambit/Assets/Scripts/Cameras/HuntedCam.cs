@@ -38,6 +38,7 @@ namespace Cameras
             // Lock the cursor to the center of the game window for first person view
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
             
             xRotation = orientation.eulerAngles.x;
             yRotation = orientation.eulerAngles.y;
