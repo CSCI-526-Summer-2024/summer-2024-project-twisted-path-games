@@ -8008,6 +8008,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1216593108}
+  camera: {fileID: 137456829}
+  shake: 0
 --- !u!54 &1293784504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -12245,6 +12247,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 558555585}
+  camera: {fileID: 1001338853}
+  shake: 0
 --- !u!54 &2135919054
 Rigidbody:
   m_ObjectHideFlags: 0

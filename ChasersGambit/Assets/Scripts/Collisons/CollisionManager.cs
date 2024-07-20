@@ -141,6 +141,10 @@ public class CollisionManager : MonoBehaviour
         }
     }
 
+    public void onHuntedCollisionWithWrongExit(GameObject hunted)
+    {
+        hunted.GetComponent<HuntedController>().shake = 2;   
+    }
     public void OnHuntedCollisionWithHunter()
     {
         // Log a message to the console
