@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 namespace Controllers
+
 {
     public class HuntedController : MonoBehaviour
     {
@@ -23,11 +24,19 @@ namespace Controllers
         // Hunted rigid body component
         Rigidbody rb;
 
+        public FlashlightToggle flashlightToggle;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
+
+            flashlightToggle = GetComponent<FlashlightToggle>();
+            if (flashlightToggle == null)
+            {
+                Debug.Log("flashlight toggle not found");
+            }
         }
 
         void Update()
@@ -100,28 +109,40 @@ namespace Controllers
 
         IEnumerator FadeOutLight()
         {
-            float startIntensity = flashlight.intensity;
+            float startIntensityOuter = flashlightToggle.outer.intensity;
+            float startIntensityMid = flashlightToggle.mid.intensity;
+            float startIntensityInner = flashlightToggle.inner.intensity;
+
             float elapsedTime = 0f;
 
             while (elapsedTime < fadeDuration)
             {
-                flashlight.intensity = Mathf.Lerp(startIntensity, 0, elapsedTime / fadeDuration);
+                flashlightToggle.outer.intensity = Mathf.Lerp(startIntensityOuter, 0, elapsedTime / fadeDuration);
+                flashlightToggle.mid.intensity = Mathf.Lerp(startIntensityMid, 0, elapsedTime / fadeDuration);
+                flashlightToggle.inner.intensity = Mathf.Lerp(startIntensityInner, 0, elapsedTime / fadeDuration);
+
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
             
-            flashlight.enabled = false;
+            flashlightToggle.isOn = false;
         }
         
         IEnumerator FadeInLight()
         {
-            flashlight.enabled = true;
-            float endIntensity = 1;
+            flashlightToggle.enabled = true;
+            float endIntensityOuter = 1.5f;
+            float endIntensityMid = 1.2f;
+            float endIntensityInner = 1.5f;
+
             float elapsedTime = 0f;
             
             while (elapsedTime < fadeDuration)
             {
-                flashlight.intensity = Mathf.Lerp(0, endIntensity, elapsedTime / fadeDuration);
+                flashlightToggle.outer.intensity = Mathf.Lerp(0, endIntensityOuter, elapsedTime / fadeDuration);
+                flashlightToggle.mid.intensity = Mathf.Lerp(0, endIntensityMid, elapsedTime / fadeDuration);
+                flashlightToggle.inner.intensity = Mathf.Lerp(0, endIntensityInner, elapsedTime / fadeDuration);
+
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
