@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using Controllers;
+using System.Collections;
 
 public class SwitchHunted : MonoBehaviour
 {
@@ -16,10 +18,15 @@ public class SwitchHunted : MonoBehaviour
 
     private HunterController hunterController;
     private bool _isHunted1Enabled;
-    
+
+    HuntedController hunted1Controller;
+    HuntedController hunted2Controller;
     // Start is called before the first frame update
     void Start()
     {
+        hunted1Controller = hunted1.GetComponent<HuntedController>();
+        hunted2Controller = hunted2.GetComponent<HuntedController>();
+        
         GameState.DisableGo(hunted2);
         GameState.EnableGo(hunted1);
         _isHunted1Enabled = true;
@@ -43,13 +50,28 @@ public class SwitchHunted : MonoBehaviour
         {
             SwitchHuntedFocus();
             //UpdateHunter();
+            if (_isHunted1Enabled)
+            {
+                hunted1Controller.ToggleFlashlightOff();            
+            }
+            else
+            {
+                hunted2Controller.ToggleFlashlightOff();
+            }
+        
             _isHunted1Enabled = !_isHunted1Enabled;
+            sleepFor1s();
             SetCameraPerspective();
 
             GameState.NumberOfSwitches++;
         }
     }
 
+    IEnumerator sleepFor1s()
+    {
+        yield return new WaitForSeconds(1f);        
+    }
+    
     void SwitchHuntedFocus()
     {
         if (_isHunted1Enabled)
@@ -79,6 +101,14 @@ public class SwitchHunted : MonoBehaviour
     {
         hunted1Cam.GameObject().SetActive(_isHunted1Enabled);
         hunted2Cam.GameObject().SetActive(!_isHunted1Enabled);
+        if (_isHunted1Enabled)
+        {
+            hunted1Controller.ToggleFlashlightOn();            
+        }
+        else
+        {
+            hunted2Controller.ToggleFlashlightOn();
+        }
     }
     
 }

@@ -36,6 +36,7 @@ public class CollisionManager : MonoBehaviour
     public GameManager gameManager;
 
     public bool isHuntedActive = true;
+    public int powerupTime;
     private List<Vector3> hunter1Pos;
     private List<Vector3> hunter2Pos;
 
@@ -67,7 +68,7 @@ public class CollisionManager : MonoBehaviour
         GameState.PowerUpNumber++;
 
         // Start the coroutine to switch roles for 5 seconds
-        StartCoroutine(SwitchRolesForDuration(5.0f, collidingHunted, otherHunted));
+        StartCoroutine(SwitchRolesForDuration(powerupTime, collidingHunted, otherHunted));
 
         Destroy(powerUp);
     }
@@ -151,19 +152,27 @@ public class CollisionManager : MonoBehaviour
 
     public void OnHuntedCollisionWithExit(GameObject huntedThatExited, GameObject otherHunted)
     {
-        if (huntedThatExited.CompareTag("Hunted1"))
+        if (huntedThatExited.CompareTag("Hunted1"))//if hunted 1 (blue) exits 
         { 
             hunted1ExitIcon.SetActive(true);
             hunted1PlayIcon.SetActive(false); 
+
+            hunted2PlayIcon.SetActive(true);
         }
-        else
+        else//if hunted 2 (blue) exits 
         {
             hunted2ExitIcon.SetActive(true);
             hunted2PlayIcon.SetActive(false); 
+            
+            hunted1PlayIcon.SetActive(true); 
         }
         if (GameState.DidAnyHuntedExit)
         {
             OnBothHuntedExitMaze();
+            hunted1PlayIcon.SetActive(false); 
+            hunted1ExitIcon.SetActive(true);
+            hunted2PlayIcon.SetActive(false); 
+            hunted2ExitIcon.SetActive(true);
         }
         else
         {
@@ -266,19 +275,19 @@ public class CollisionManager : MonoBehaviour
         EnableArrowsAroundHunters();
         
         countdown.gameObject.SetActive(true);
-        int countdownText = 5;
+        int countdownText = powerupTime;
         countdown.text = countdownText.ToString();
         hunter1Pos = new List<Vector3>();
         hunter2Pos = new List<Vector3>();
         
         // Wait for the specified duration
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < duration*2; i++)
         {
             if (i % 2 == 0)
             {
                 countdown.text = countdownText--.ToString();  
             }
-            yield return new WaitForSeconds(duration/10);
+            yield return new WaitForSeconds(0.5f);
             hunter1Pos.Add(hunter1.transform.position);
             hunter2Pos.Add(hunter2.transform.position);
             
@@ -311,12 +320,14 @@ public class CollisionManager : MonoBehaviour
             GameState.EnableGo(hunted2);
             cameraHolder1.SetActive(false);
             huntedCam2.gameObject.SetActive(true);
+            hunted2.GetComponent<HuntedController>().ToggleFlashlightOn();
         }
         else
         {
             GameState.EnableGo(hunted1);
             cameraHolder2.SetActive(false);
             huntedCam1.gameObject.SetActive(true);
+            hunted1.GetComponent<HuntedController>().ToggleFlashlightOn();
         }
         huntedThatExited.SetActive(false);
     }

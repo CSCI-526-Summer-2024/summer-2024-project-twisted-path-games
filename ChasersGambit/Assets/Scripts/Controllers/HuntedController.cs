@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 namespace Controllers
 {
     public class HuntedController : MonoBehaviour
@@ -8,6 +9,7 @@ namespace Controllers
         float horizontalInput;
         float verticalInput;
         Vector3 moveDirection;
+        public float fadeDuration;
 
         // Ground drag properties so the player doesn't skate across ice-like ground
         public float groundDrag;
@@ -83,6 +85,45 @@ namespace Controllers
 
                 // Apply the limit to the player
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+            }
+        }
+        
+        public void ToggleFlashlightOff()
+        {
+            StartCoroutine(FadeOutLight());
+        }
+        
+        public void ToggleFlashlightOn()
+        {
+            StartCoroutine(FadeInLight());
+        }
+
+        IEnumerator FadeOutLight()
+        {
+            float startIntensity = flashlight.intensity;
+            float elapsedTime = 0f;
+
+            while (elapsedTime < fadeDuration)
+            {
+                flashlight.intensity = Mathf.Lerp(startIntensity, 0, elapsedTime / fadeDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            
+            flashlight.enabled = false;
+        }
+        
+        IEnumerator FadeInLight()
+        {
+            flashlight.enabled = true;
+            float endIntensity = 1;
+            float elapsedTime = 0f;
+            
+            while (elapsedTime < fadeDuration)
+            {
+                flashlight.intensity = Mathf.Lerp(0, endIntensity, elapsedTime / fadeDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
             }
         }
     }

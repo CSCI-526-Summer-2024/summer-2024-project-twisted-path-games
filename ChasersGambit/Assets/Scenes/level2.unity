@@ -3879,6 +3879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
   flashlight: {fileID: 716297260}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
@@ -5329,6 +5330,7 @@ MonoBehaviour:
   mazeLights: {fileID: 1104799494}
   gameManager: {fileID: 527825028}
   isHuntedActive: 1
+  powerupTime: 5
   countdown: {fileID: 245589831}
   PowerupText: {fileID: 0}
 --- !u!4 &1128637906
@@ -6772,6 +6774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 1.75
   flashlight: {fileID: 183144264}
+  fadeDuration: 1
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
