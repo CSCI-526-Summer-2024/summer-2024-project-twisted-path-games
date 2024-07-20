@@ -209,7 +209,7 @@ namespace Controllers
 
         private void UpdateVignette()
         {
-            if (hunted1Proximity <= dangerProximityDistance || hunted2Proximity <= dangerProximityDistance)
+            if ((hunted1Proximity <= dangerProximityDistance && hunted1.activeSelf) || (hunted2Proximity <= dangerProximityDistance && hunted2.activeSelf))
             {
                 ShowVignette(true);
             }
@@ -223,11 +223,11 @@ namespace Controllers
         {
             float distance = Mathf.Min(hunted1Proximity, hunted2Proximity);
             Color color = dangerVignette.color;
-            if (distance <= dangerProximityDistance)
+            if ((hunted1Proximity <= dangerProximityDistance && hunted1.activeSelf) || (hunted2Proximity <= dangerProximityDistance && hunted2.activeSelf))
             {
                 color.a = Mathf.Clamp01(1 - (distance / dangerProximityDistance)) * 0.4f;
                 dangerVignette.color = color;
-            }         
+            }      
             else {
                 color.a = 0;
                 dangerVignette.color = color;

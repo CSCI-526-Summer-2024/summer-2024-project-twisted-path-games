@@ -62,7 +62,7 @@ namespace Controllers
                 Debug.Log("F key pressed");
                 flashlight.enabled = !flashlight.enabled;
             }
-            
+
             if (shake > 0) {
                 camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
                 shake -= Time.deltaTime * decreaseFactor;
@@ -72,7 +72,6 @@ namespace Controllers
                 camera.transform.localPosition = Vector3.zero;
             }
             
-            // UpdateVignette();
         }
 
         // Use this for physics calculations since the MoveHunted method is applying
