@@ -3153,6 +3153,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 552623054}
+  camera: {fileID: 192198640}
+  shake: 0
 --- !u!54 &611426816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9812,6 +9814,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 2087110446}
+  camera: {fileID: 119359660}
+  shake: 0
 --- !u!114 &2095705918
 MonoBehaviour:
   m_ObjectHideFlags: 0

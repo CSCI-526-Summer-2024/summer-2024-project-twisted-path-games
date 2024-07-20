@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
 namespace Controllers
 {
     public class HuntedController : MonoBehaviour
@@ -25,6 +24,11 @@ namespace Controllers
 
         // Hunted rigid body component
         Rigidbody rb;
+        
+        public Camera camera;
+        public float shake = 0;
+        float shakeAmount = 0.7f;
+        float decreaseFactor = 1.0f;
 
         void Start()
         {
@@ -58,6 +62,16 @@ namespace Controllers
                 Debug.Log("F key pressed");
                 flashlight.enabled = !flashlight.enabled;
             }
+            
+            if (shake > 0) {
+                camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+                shake -= Time.deltaTime * decreaseFactor;
+
+            } else {
+                shake = 0.0f;
+                camera.transform.localPosition = Vector3.zero;
+            }
+            
             // UpdateVignette();
         }
 
