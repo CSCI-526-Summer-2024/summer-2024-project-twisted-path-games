@@ -1,5 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 namespace Controllers
 {
     public class HunterController : MonoBehaviour
@@ -75,6 +77,7 @@ namespace Controllers
             if (isChaseActive)
             {
                 HandleAgent();
+                UpdateVignetteNew();
             }
             else
             {
@@ -200,6 +203,43 @@ namespace Controllers
         {
             float distance = Vector3.Distance(hunted1.transform.position, rb.transform.position);
             return distance <= huntedProximityDistance;
+        }
+        public float dangerProximityDistance = 3.0f;
+        public Image dangerVignette;
+
+        private void UpdateVignette()
+        {
+            if (hunted1Proximity <= dangerProximityDistance || hunted2Proximity <= dangerProximityDistance)
+            {
+                ShowVignette(true);
+            }
+            else
+            {
+                ShowVignette(false);
+            }
+        }
+
+        private void UpdateVignetteNew()
+        {
+            float distance = Mathf.Min(hunted1Proximity, hunted2Proximity);
+            Color color = dangerVignette.color;
+            if (distance <= dangerProximityDistance)
+            {
+                color.a = Mathf.Clamp01(1 - (distance / dangerProximityDistance)) * 0.4f;
+                dangerVignette.color = color;
+            }         
+            else {
+                color.a = 0;
+                dangerVignette.color = color;
+            }
+    
+        }
+
+        private void ShowVignette(bool show)
+        {
+            Color color = dangerVignette.color;
+            color.a = show ? 0.5f : 0.0f; // Adjust the alpha value to make it visible/invisible
+            dangerVignette.color = color;
         }
     }
 }

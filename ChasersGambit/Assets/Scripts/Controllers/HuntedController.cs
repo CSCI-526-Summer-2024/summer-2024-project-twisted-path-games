@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 namespace Controllers
 {
     public class HuntedController : MonoBehaviour
@@ -57,6 +58,7 @@ namespace Controllers
                 Debug.Log("F key pressed");
                 flashlight.enabled = !flashlight.enabled;
             }
+            // UpdateVignette();
         }
 
         // Use this for physics calculations since the MoveHunted method is applying
@@ -136,5 +138,7 @@ namespace Controllers
                 yield return null;
             }
         }
+        
     }
-}
+
+    }
