@@ -58,7 +58,6 @@ namespace Controllers
                 Debug.Log("F key pressed");
                 flashlight.enabled = !flashlight.enabled;
             }
-            // UpdateVignette();
         }
 
         // Use this for physics calculations since the MoveHunted method is applying

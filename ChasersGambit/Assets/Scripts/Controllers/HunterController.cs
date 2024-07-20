@@ -209,7 +209,7 @@ namespace Controllers
 
         private void UpdateVignette()
         {
-            if (hunted1Proximity <= dangerProximityDistance || hunted2Proximity <= dangerProximityDistance)
+            if ((hunted1Proximity <= dangerProximityDistance && hunted1.activeSelf) || (hunted2Proximity <= dangerProximityDistance && hunted2.activeSelf))
             {
                 ShowVignette(true);
             }
