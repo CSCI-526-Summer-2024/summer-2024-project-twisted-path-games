@@ -28,6 +28,7 @@ public class SwitchHunted : MonoBehaviour
         hunted2Controller = hunted2.GetComponent<HuntedController>();
         
         GameState.DisableGo(hunted2);
+        hunted2Controller.ToggleFlashlightOff();
         GameState.EnableGo(hunted1);
         _isHunted1Enabled = true;
 
