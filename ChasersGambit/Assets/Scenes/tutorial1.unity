@@ -925,6 +925,7 @@ RectTransform:
   - {fileID: 1080924382}
   - {fileID: 1138538842}
   - {fileID: 1640758737}
+  - {fileID: 1326312714}
   - {fileID: 1510617363}
   - {fileID: 1650986240}
   - {fileID: 1991109719}
@@ -1049,11 +1050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 0
-  increasedSpeed: 2.5
   patrolPoints: []
-  huntedProximityDistance: 5
   indicator: {fileID: 834102603}
   lightOn: 0
   hunted1: {fileID: 2135919050}
@@ -1062,8 +1059,7 @@ MonoBehaviour:
   hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
-  dangerProximityDistance: 3
-  dangerVignette: {fileID: 1640758738}
+  dangerVignette: {fileID: 1326312715}
 --- !u!23 &208053300
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2642,11 +2638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 1
-  increasedSpeed: 2.5
   patrolPoints: []
-  huntedProximityDistance: 9
   indicator: {fileID: 902895308}
   lightOn: 0
   hunted1: {fileID: 2135919050}
@@ -2655,8 +2647,7 @@ MonoBehaviour:
   hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
-  dangerProximityDistance: 3
-  dangerVignette: {fileID: 1640758738}
+  dangerVignette: {fileID: 1326312715}
 --- !u!23 &550732720
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7616,17 +7607,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  fadeDuration: 0
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1216593108}
+  flashlightToggle: {fileID: 1293784506}
   camera: {fileID: 137456829}
   shake: 0
-  flashlightToggle: {fileID: 1293784506}
 --- !u!54 &1293784504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7690,7 +7677,6 @@ MonoBehaviour:
   outer: {fileID: 1837512822}
   mid: {fileID: 1837512820}
   inner: {fileID: 1837512819}
-  adjustmentFactor: 2
 --- !u!1 &1319409067
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,6 +7710,81 @@ Transform:
   - {fileID: 1061645597}
   m_Father: {fileID: 1995917815}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1326312713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1326312714}
+  - component: {fileID: 1326312716}
+  - component: {fileID: 1326312715}
+  m_Layer: 5
+  m_Name: DangerVignette
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1326312714
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326312713}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8, y: 6, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 154334517}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.000061035156, y: 0.000030517578}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1326312715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326312713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: ddf54886bf2764e17be0c952336a20a1, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1326312716
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1326312713}
+  m_CullTransparentMesh: 1
 --- !u!1 &1341730337
 GameObject:
   m_ObjectHideFlags: 0
@@ -11396,17 +11457,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  fadeDuration: 0
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 558555585}
+  flashlightToggle: {fileID: 2135919055}
   camera: {fileID: 1001338853}
   shake: 0
-  flashlightToggle: {fileID: 2135919055}
 --- !u!54 &2135919054
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11451,7 +11508,6 @@ MonoBehaviour:
   outer: {fileID: 1197959346}
   mid: {fileID: 1197959344}
   inner: {fileID: 1197959343}
-  adjustmentFactor: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

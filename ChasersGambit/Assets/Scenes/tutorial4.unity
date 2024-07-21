@@ -1930,7 +1930,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &351115882
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1963,7 +1963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9782,6 +9782,7 @@ RectTransform:
   - {fileID: 1104869393}
   - {fileID: 1086356462}
   - {fileID: 1917129532}
+  - {fileID: 351115882}
   - {fileID: 1627194898}
   - {fileID: 2071538128}
   - {fileID: 1471865709}
@@ -9792,7 +9793,6 @@ RectTransform:
   - {fileID: 591635953}
   - {fileID: 1007751179}
   - {fileID: 1154473173}
-  - {fileID: 351115882}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

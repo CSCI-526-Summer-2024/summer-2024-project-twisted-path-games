@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -201,7 +202,7 @@ namespace Controllers
             transform.Translate(Vector3.right * Time.deltaTime * increasedSpeed * horizontalInput);
         }
 
-        public float dangerProximityDistance = 3.0f;
+        private float dangerProximityDistance = 5.0f;
         public Image dangerVignette;
 
         private void UpdateVignetteNew()
@@ -210,6 +211,7 @@ namespace Controllers
             Color color = dangerVignette.color;
             if ((hunted1Proximity <= dangerProximityDistance && hunted1.activeSelf) || (hunted2Proximity <= dangerProximityDistance && hunted2.activeSelf))
             {
+                Debug.Log("DANGER DANGER!");
                 float distance = Mathf.Min(hunted1Proximity, hunted2Proximity);
                 color.a = Mathf.Clamp01(1 - (distance / dangerProximityDistance)) * 0.4f;
                 dangerVignette.color = color;
