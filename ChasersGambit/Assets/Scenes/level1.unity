@@ -220,6 +220,7 @@ RectTransform:
   - {fileID: 245589830}
   - {fileID: 617065170}
   - {fileID: 500585501}
+  - {fileID: 815153084}
   - {fileID: 790456704}
   - {fileID: 39298259}
   - {fileID: 674453842}
@@ -4702,6 +4703,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1931541364}
+  camera: {fileID: 1558269157}
+  shake: 0
   flashlightToggle: {fileID: 762239298}
 --- !u!54 &762239295
 Rigidbody:
@@ -5771,6 +5774,8 @@ MonoBehaviour:
   hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
+  dangerProximityDistance: 3
+  dangerVignette: {fileID: 815153085}
 --- !u!23 &896824031
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7748,6 +7753,8 @@ MonoBehaviour:
   hunted2Proximity: 0
   isChaseActive: 1
   controlled: 0
+  dangerProximityDistance: 3
+  dangerVignette: {fileID: 815153085}
 --- !u!23 &1323787929
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8662,6 +8669,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1839855940}
+  camera: {fileID: 630067750}
+  shake: 0
   flashlightToggle: {fileID: 1469245441}
 --- !u!54 &1469245438
 Rigidbody:

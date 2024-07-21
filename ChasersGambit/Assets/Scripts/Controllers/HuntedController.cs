@@ -26,6 +26,12 @@ namespace Controllers
 
         public FlashlightToggle flashlightToggle;
 
+        
+        public Camera camera;
+        public float shake = 0;
+        float shakeAmount = 0.7f;
+        float decreaseFactor = 1.0f;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -56,6 +62,22 @@ namespace Controllers
             {
                 rb.drag = 0;
             }
+
+            if (flashlight != null && Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("F key pressed");
+                flashlight.enabled = !flashlight.enabled;
+            }
+
+            if (shake > 0) {
+                camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+                shake -= Time.deltaTime * decreaseFactor;
+
+            } else {
+                shake = 0.0f;
+                camera.transform.localPosition = Vector3.zero;
+            }
+            
         }
 
         // Use this for physics calculations since the MoveHunted method is applying
@@ -147,5 +169,7 @@ namespace Controllers
                 yield return null;
             }
         }
+        
     }
-}
+
+    }

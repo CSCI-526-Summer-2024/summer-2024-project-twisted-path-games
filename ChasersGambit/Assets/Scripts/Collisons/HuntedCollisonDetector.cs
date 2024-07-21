@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Controllers;
 public class HuntedCollisionDetector : MonoBehaviour
 {
     public GameObject otherHunted;
@@ -31,6 +31,14 @@ public class HuntedCollisionDetector : MonoBehaviour
         {
             // Notify the CollisionManager of the collision
             CollisionManager.Instance.OnHuntedCollisionWithExit(this.gameObject, otherHunted);
+        }
+        else if (this.gameObject.CompareTag("Hunted1") && collision.collider.CompareTag("Exit2"))
+        {
+            CollisionManager.Instance.onHuntedCollisionWithWrongExit(this.gameObject);
+        }
+        else if (this.gameObject.CompareTag("Hunted2") && collision.collider.CompareTag("Exit1"))
+        {
+            CollisionManager.Instance.onHuntedCollisionWithWrongExit(this.gameObject);
         }
         else if (collision.collider.CompareTag("Level1") || collision.collider.CompareTag("Level2") ||
                  collision.collider.CompareTag("Level3") || collision.collider.CompareTag("Tutorial"))
