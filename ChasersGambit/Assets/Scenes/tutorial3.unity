@@ -3766,7 +3766,7 @@ GameObject:
   - component: {fileID: 591149519}
   - component: {fileID: 591149518}
   m_Layer: 5
-  m_Name: Image
+  m_Name: DangerVignette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4962,7 +4962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46f42d58b5c84b59a3da9f44c7c80a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightGO: {fileID: 969910128}
+  lightGO: {fileID: 1483426854}
   isOn: 1
   outer: {fileID: 969910127}
   mid: {fileID: 969910126}
@@ -8274,6 +8274,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 486f62fac68241f41b0ee233cb2d3c44, type: 3}
   m_PrefabInstance: {fileID: 1923736230}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1367757431 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1229193494168842, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
+  m_PrefabInstance: {fileID: 1321296688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367992942
 GameObject:
   m_ObjectHideFlags: 0
@@ -8926,7 +8931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46f42d58b5c84b59a3da9f44c7c80a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightGO: {fileID: 1321296693}
+  lightGO: {fileID: 1367757431}
   isOn: 1
   outer: {fileID: 1321296692}
   mid: {fileID: 1321296691}
@@ -9051,6 +9056,11 @@ Transform:
   - {fileID: 1558269155}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1483426854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1229193494168842, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
+  m_PrefabInstance: {fileID: 969910123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1493661865
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,7 +23,10 @@ namespace Cameras
         // Camera rotation
         float xRotation;
         float yRotation;
- 
+
+        private Vector2 currentMouseDelta;
+        private Vector2 currentMouseDeltaVelocity;
+
         public static float DampenedMovement (float value) {
 
             if (Mathf.Abs (value) > 1f) {
@@ -39,7 +42,6 @@ namespace Cameras
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            
             xRotation = orientation.eulerAngles.x;
             yRotation = orientation.eulerAngles.y;
         }
@@ -57,21 +59,24 @@ namespace Cameras
                     mouseX = DampenedMovement(mouseX);
                     mouseY = DampenedMovement(mouseY);
                 }
-                
+
+                currentMouseDelta.x = Mathf.Lerp(currentMouseDelta.x, mouseX, 1f / 0.1f);
+                currentMouseDelta.y = Mathf.Lerp(currentMouseDelta.y, mouseY, 1f / 0.1f);
+
                 // Rotate the camera left and right
-                yRotation += mouseX;
-                
+                yRotation += currentMouseDelta.x;
+
                 // Rotate the camera up and down and prevent camera flips
-                xRotation -= mouseY;
+                xRotation -= currentMouseDelta.y;
                 xRotation = Mathf.Clamp(xRotation, -50f, 50f);
-                
-                // Apply camera rotation
-                transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-                
+
                 // Update the rotation of the orientation object
                 // Ensures the player's forward direction matches where the camera is looking horizontally
                 orientation.rotation = Quaternion.Euler(0, yRotation, 0);
-                
+
+                // Apply camera rotation
+                transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+
                 // Apply rotation to the flashlight
                 flashlight.transform.rotation = Quaternion.Euler(xRotation + 90, yRotation, 0);
             }

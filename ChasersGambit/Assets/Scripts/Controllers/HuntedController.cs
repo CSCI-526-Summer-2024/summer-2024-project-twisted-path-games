@@ -29,7 +29,7 @@ namespace Controllers
         
         public Camera camera;
         public float shake = 0;
-        float shakeAmount = 0.7f;
+        float shakeAmount = 0.3f;
         float decreaseFactor = 1.0f;
 
         void Start()

@@ -143,7 +143,7 @@ public class CollisionManager : MonoBehaviour
 
     public void onHuntedCollisionWithWrongExit(GameObject hunted)
     {
-        hunted.GetComponent<HuntedController>().shake = 2;   
+        hunted.GetComponent<HuntedController>().shake = 1.5f;
     }
     public void OnHuntedCollisionWithHunter()
     {
