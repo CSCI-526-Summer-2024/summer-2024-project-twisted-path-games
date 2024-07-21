@@ -218,6 +218,10 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted1.GetComponent<HuntedController>().enabled = false;
             }
+            else
+            {
+                hunted2.GetComponent<HuntedController>().enabled = false;
+            }
 
             hunter1.GetComponent<HunterController>().isChaseActive = false;
 
@@ -259,9 +263,6 @@ public class CollisionManager : MonoBehaviour
         isHuntedActive = !isHuntedActive;
         UpdatePlayerControl(collidingHunted);
         UpdateCameraState(collidingHunted);
-
-        //enable UI indicator to move the hunter
-        //EnablePowerupUI();
 
         //Enable the arrows around hunters
         EnableArrowsAroundHunters();
