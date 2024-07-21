@@ -10,7 +10,7 @@ namespace Controllers
         // Speed fields
         private float speed = 2.8f; // normal chase speed
         private float patrolSpeed = 2;
-        private float increasedSpeed = 3; // speed when the player gains control
+        private float increasedSpeed = 4; // speed when the player gains control
 
         // Direction Controls
         float horizontalInput;
