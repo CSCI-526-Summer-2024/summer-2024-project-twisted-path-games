@@ -4884,17 +4884,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  fadeDuration: 0
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1931541364}
+  flashlightToggle: {fileID: 762239298}
   camera: {fileID: 1558269157}
   shake: 0
-  flashlightToggle: {fileID: 762239298}
 --- !u!54 &762239295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5764,13 +5760,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.8
-  patrolSpeed: 2
-  increasedSpeed: 2.5
   patrolPoints:
   - {fileID: 183040616}
   - {fileID: 1808448176}
-  huntedProximityDistance: 9
   indicator: {fileID: 1083444320}
   lightOn: 0
   hunted1: {fileID: 1469245435}
@@ -6978,7 +6970,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104799493}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -7838,7 +7830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 108003487599132438, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
       propertyPath: m_Range
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 108003487599132438, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
       propertyPath: m_Color.b
@@ -7857,6 +7849,10 @@ PrefabInstance:
       value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 108598554077249260, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
+      propertyPath: m_Range
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 108598554077249260, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -7871,6 +7867,10 @@ PrefabInstance:
     - target: {fileID: 108598554077249260, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
       propertyPath: m_Intensity
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108910276342904206, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
+      propertyPath: m_Range
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 108910276342904206, guid: 0ddea81a21def2441b61569e0a44ca14, type: 3}
       propertyPath: m_Color.b
@@ -8025,11 +8025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 0
-  increasedSpeed: 2.5
   patrolPoints: []
-  huntedProximityDistance: 5
   indicator: {fileID: 89063442}
   lightOn: 0
   hunted1: {fileID: 1469245435}
@@ -8852,17 +8848,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  fadeDuration: 0
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1839855940}
+  flashlightToggle: {fileID: 1469245441}
   camera: {fileID: 630067750}
   shake: 0
-  flashlightToggle: {fileID: 1469245441}
 --- !u!54 &1469245438
 Rigidbody:
   m_ObjectHideFlags: 0

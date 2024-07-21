@@ -409,17 +409,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 441962328}
+  flashlightToggle: {fileID: 261396211}
   camera: {fileID: 1916267823}
   shake: 0
-  flashlightToggle: {fileID: 261396211}
 --- !u!54 &261396208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2104,17 +2100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1835043218}
+  flashlightToggle: {fileID: 873508879}
   camera: {fileID: 2032213588}
   shake: 0
-  flashlightToggle: {fileID: 873508879}
 --- !u!54 &873508876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3761,11 +3753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 0
-  increasedSpeed: 3
   patrolPoints: []
-  huntedProximityDistance: 5
   indicator: {fileID: 988612141}
   lightOn: 0
   hunted1: {fileID: 261396205}
@@ -5131,11 +5119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 0
-  increasedSpeed: 3
   patrolPoints: []
-  huntedProximityDistance: 5
   indicator: {fileID: 1537629907}
   lightOn: 0
   hunted1: {fileID: 261396205}
@@ -5816,7 +5800,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0
@@ -6041,7 +6025,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0

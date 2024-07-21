@@ -938,7 +938,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0
@@ -1253,7 +1253,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0
@@ -3321,17 +3321,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 552623054}
+  flashlightToggle: {fileID: 611426819}
   camera: {fileID: 192198640}
   shake: 0
-  flashlightToggle: {fileID: 611426819}
 --- !u!54 &611426816
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8086,14 +8082,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 1
-  increasedSpeed: 2.5
   patrolPoints:
   - {fileID: 9975798}
   - {fileID: 1779010617}
   - {fileID: 1308596037}
-  huntedProximityDistance: 5
   indicator: {fileID: 1063502363}
   lightOn: 0
   hunted1: {fileID: 2095705914}
@@ -9302,14 +9294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 1
-  increasedSpeed: 2.5
   patrolPoints:
   - {fileID: 137839610}
   - {fileID: 213538627}
   - {fileID: 216991411}
-  huntedProximityDistance: 5
   indicator: {fileID: 991280279}
   lightOn: 0
   hunted1: {fileID: 2095705914}
@@ -9984,17 +9972,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 2087110446}
+  flashlightToggle: {fileID: 2095705919}
   camera: {fileID: 119359660}
   shake: 0
-  flashlightToggle: {fileID: 2095705919}
 --- !u!114 &2095705918
 MonoBehaviour:
   m_ObjectHideFlags: 0

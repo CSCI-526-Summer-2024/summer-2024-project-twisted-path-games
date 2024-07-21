@@ -3007,7 +3007,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0
@@ -3872,17 +3872,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1931541364}
+  flashlightToggle: {fileID: 762239298}
   camera: {fileID: 1558269157}
   shake: 0
-  flashlightToggle: {fileID: 762239298}
 --- !u!54 &762239295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4694,13 +4690,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 1
-  increasedSpeed: 2.5
   patrolPoints:
   - {fileID: 1661444971}
   - {fileID: 747450134}
-  huntedProximityDistance: 5
   indicator: {fileID: 1090720406}
   lightOn: 0
   hunted1: {fileID: 1469245435}
@@ -5637,11 +5629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
-  patrolSpeed: 1
-  increasedSpeed: 2.5
   patrolPoints: []
-  huntedProximityDistance: 5
   indicator: {fileID: 107580029}
   lightOn: 0
   hunted1: {fileID: 1469245435}
@@ -6958,17 +6946,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1.75
-  fadeDuration: 1
-  groundDrag: 5
-  playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1839855940}
+  flashlightToggle: {fileID: 1469245441}
   camera: {fileID: 630067750}
   shake: 0
-  flashlightToggle: {fileID: 1469245441}
 --- !u!54 &1469245438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7276,7 +7260,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.15
   far clip plane: 50
   field of view: 60
   orthographic: 0

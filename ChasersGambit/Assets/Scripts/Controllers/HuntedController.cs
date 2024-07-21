@@ -63,12 +63,6 @@ namespace Controllers
                 rb.drag = 0;
             }
 
-            if (flashlight != null && Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("F key pressed");
-                flashlight.enabled = !flashlight.enabled;
-            }
-
             if (shake > 0) {
                 camera.transform.localPosition = Random.insideUnitSphere * shakeAmount;
                 shake -= Time.deltaTime * decreaseFactor;

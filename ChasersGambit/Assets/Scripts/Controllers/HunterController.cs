@@ -20,7 +20,7 @@ namespace Controllers
         private int currentPatrolIndex;
 
         private float positionThreshold = 0.1f;
-        private float huntedProximityDistance = 5.0f;
+        private float huntedProximityDistance = 8.0f;
 
         // Hunter rigid body component
         private Rigidbody rb;
