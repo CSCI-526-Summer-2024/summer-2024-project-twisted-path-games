@@ -7,9 +7,9 @@ namespace Controllers
     public class HunterController : MonoBehaviour
     {
         // Speed fields
-        public float speed; // normal chase speed
-        public float patrolSpeed;
-        public float increasedSpeed; // speed when the player gains control
+        private float speed = 2.8f; // normal chase speed
+        private float patrolSpeed = 2;
+        private float increasedSpeed = 3; // speed when the player gains control
 
         // Direction Controls
         float horizontalInput;
@@ -20,7 +20,7 @@ namespace Controllers
         private int currentPatrolIndex;
 
         private float positionThreshold = 0.1f;
-        public float huntedProximityDistance = 5.0f;
+        private float huntedProximityDistance = 8.0f;
 
         // Hunter rigid body component
         private Rigidbody rb;
@@ -35,8 +35,8 @@ namespace Controllers
         public float hunted1Proximity;
         public float hunted2Proximity;
         
-        private HuntedController hunted1Controller;
-        private HuntedController hunted2Controller;
+        private FlashlightToggle hunted1FlashlightToggle;
+        private FlashlightToggle hunted2FlashlightToggle;
         
         private NavMeshAgent agent;
 
@@ -57,8 +57,8 @@ namespace Controllers
             agent.speed = speed;
 
             capsuleCollider = GetComponent<CapsuleCollider>();
-            hunted1Controller = hunted1.GetComponent<HuntedController>();
-            hunted2Controller = hunted2.GetComponent<HuntedController>();
+            hunted1FlashlightToggle = hunted1.GetComponentInChildren<FlashlightToggle>();
+            hunted2FlashlightToggle = hunted2.GetComponentInChildren<FlashlightToggle>();
 
             if (patrolPoints.Length > 0)
             {
@@ -95,7 +95,7 @@ namespace Controllers
 
             if (hunted1Proximity < huntedProximityDistance && hunted1.activeSelf)
             {
-                if (hunted1Controller.flashlight.enabled)
+                if (hunted1FlashlightToggle.isOn)
                 {
                     StartChase(hunted1);   
                 }
@@ -111,7 +111,7 @@ namespace Controllers
 
             else if (hunted2Proximity < huntedProximityDistance && hunted2.activeSelf)
             {
-                if (hunted2Controller.flashlight.enabled)
+                if (hunted2FlashlightToggle.isOn)
                 {
                     StartChase(hunted2);
                 }

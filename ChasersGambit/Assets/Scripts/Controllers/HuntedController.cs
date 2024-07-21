@@ -1,21 +1,20 @@
 using UnityEngine;
 using System.Collections;
 namespace Controllers
+
 {
     public class HuntedController : MonoBehaviour
     {
-        public float moveSpeed;
+        private float moveSpeed = 3;
 
         float horizontalInput;
         float verticalInput;
         Vector3 moveDirection;
-
-        public Light flashlight;
-        public float fadeDuration;
+        private float fadeDuration = 0.3f;
 
         // Ground drag properties so the player doesn't skate across ice-like ground
-        public float groundDrag;
-        public float playerHeight;
+        private float groundDrag = 5;
+        private float playerHeight = 2;
         public LayerMask whatIsGround;
         bool grounded;
 
@@ -24,6 +23,9 @@ namespace Controllers
 
         // Hunted rigid body component
         Rigidbody rb;
+
+        public FlashlightToggle flashlightToggle;
+
         
         public Camera camera;
         public float shake = 0;
@@ -36,7 +38,11 @@ namespace Controllers
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
 
-            flashlight = GetComponentInChildren<Light>();
+            flashlightToggle = GetComponent<FlashlightToggle>();
+            if (flashlightToggle == null)
+            {
+                Debug.Log("flashlight toggle not found");
+            }
         }
 
         void Update()
@@ -55,12 +61,6 @@ namespace Controllers
             else
             {
                 rb.drag = 0;
-            }
-
-            if (flashlight != null && Input.GetKeyDown(KeyCode.F))
-            {
-                Debug.Log("F key pressed");
-                flashlight.enabled = !flashlight.enabled;
             }
 
             if (shake > 0) {
@@ -125,28 +125,40 @@ namespace Controllers
 
         IEnumerator FadeOutLight()
         {
-            float startIntensity = flashlight.intensity;
+            float startIntensityOuter = flashlightToggle.outer.intensity;
+            float startIntensityMid = flashlightToggle.mid.intensity;
+            float startIntensityInner = flashlightToggle.inner.intensity;
+
             float elapsedTime = 0f;
 
             while (elapsedTime < fadeDuration)
             {
-                flashlight.intensity = Mathf.Lerp(startIntensity, 0, elapsedTime / fadeDuration);
+                flashlightToggle.outer.intensity = Mathf.Lerp(startIntensityOuter, 0, elapsedTime / fadeDuration);
+                flashlightToggle.mid.intensity = Mathf.Lerp(startIntensityMid, 0, elapsedTime / fadeDuration);
+                flashlightToggle.inner.intensity = Mathf.Lerp(startIntensityInner, 0, elapsedTime / fadeDuration);
+
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
             
-            flashlight.enabled = false;
+            flashlightToggle.isOn = false;
         }
         
         IEnumerator FadeInLight()
         {
-            flashlight.enabled = true;
-            float endIntensity = 1;
+            flashlightToggle.enabled = true;
+            float endIntensityOuter = 1.5f;
+            float endIntensityMid = 1.2f;
+            float endIntensityInner = 1.5f;
+
             float elapsedTime = 0f;
             
             while (elapsedTime < fadeDuration)
             {
-                flashlight.intensity = Mathf.Lerp(0, endIntensity, elapsedTime / fadeDuration);
+                flashlightToggle.outer.intensity = Mathf.Lerp(0, endIntensityOuter, elapsedTime / fadeDuration);
+                flashlightToggle.mid.intensity = Mathf.Lerp(0, endIntensityMid, elapsedTime / fadeDuration);
+                flashlightToggle.inner.intensity = Mathf.Lerp(0, endIntensityInner, elapsedTime / fadeDuration);
+
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }

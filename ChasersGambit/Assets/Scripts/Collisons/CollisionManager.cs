@@ -263,9 +263,9 @@ public class CollisionManager : MonoBehaviour
 
         // Brighten the map so the player can see and increase flashlight intensity
         mazeLights.enabled = true;
-        otherHunted.GetComponent<HuntedController>().flashlight.enabled = enabled;
-        otherHunted.GetComponent<HuntedController>().flashlight.intensity = 2;
-        collidingHunted.GetComponent<HuntedController>().flashlight.intensity = 2;
+        otherHunted.GetComponent<FlashlightToggle>().isOn = enabled;
+        otherHunted.GetComponent<FlashlightToggle>().IncreaseIntensity();
+        collidingHunted.GetComponent<FlashlightToggle>().IncreaseIntensity();
 
         // Switch roles
         isHuntedActive = !isHuntedActive;
@@ -283,8 +283,6 @@ public class CollisionManager : MonoBehaviour
         countdown.text = countdownText.ToString();
         hunter1Pos = new List<Vector3>();
         hunter2Pos = new List<Vector3>();
-
-        
         
         // Wait for the specified duration
         for (int i = 0; i < duration*2; i++)
@@ -306,9 +304,9 @@ public class CollisionManager : MonoBehaviour
         
         // Return to dark lighting for first person view
         mazeLights.enabled = false;
-        otherHunted.GetComponent<HuntedController>().flashlight.enabled = !enabled;
-        otherHunted.GetComponent<HuntedController>().flashlight.intensity = 1;
-        collidingHunted.GetComponent<HuntedController>().flashlight.intensity = 1;
+        otherHunted.GetComponent<FlashlightToggle>().isOn = false;
+        otherHunted.GetComponent<FlashlightToggle>().DecreaseIntensity();
+        collidingHunted.GetComponent<FlashlightToggle>().DecreaseIntensity();
 
         // Revert the roles back
         isHuntedActive = !isHuntedActive;

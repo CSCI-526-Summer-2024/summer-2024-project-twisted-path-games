@@ -55,10 +55,17 @@ public static class GameState
         foreach(var script in scripts)
         {
             script.enabled = false;
+            Debug.Log(script);
         }
-        
-        //huntedController.flashlight.enabled = false;
-        
+
+        FlashlightToggle flashlightToggle = gb.GetComponent<FlashlightToggle>();
+        Debug.Log(scripts);
+        if (flashlightToggle == null)
+        {
+            Debug.LogError("flashlight toggle null");
+        }
+
+        flashlightToggle.isOn = false;
         //set Is Kinematic boolean to true for game object rigid body
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         if (rb != null){
@@ -74,9 +81,9 @@ public static class GameState
         {
             script.enabled = true;
         }
-        
-        //huntedController.flashlight.enabled = true;
-        
+
+        FlashlightToggle flashlightToggle = gb.GetComponent<FlashlightToggle>();
+        flashlightToggle.isOn = true;
         Rigidbody rb = gb.GetComponent<Rigidbody>();
         if (rb != null){
             rb.isKinematic = false;
