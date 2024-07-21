@@ -5,16 +5,16 @@ namespace Controllers
 {
     public class HuntedController : MonoBehaviour
     {
-        public float moveSpeed;
+        private float moveSpeed = 3;
 
         float horizontalInput;
         float verticalInput;
         Vector3 moveDirection;
-        public float fadeDuration;
+        private float fadeDuration = 0.3f;
 
         // Ground drag properties so the player doesn't skate across ice-like ground
-        public float groundDrag;
-        public float playerHeight;
+        private float groundDrag = 5;
+        private float playerHeight = 2;
         public LayerMask whatIsGround;
         bool grounded;
 

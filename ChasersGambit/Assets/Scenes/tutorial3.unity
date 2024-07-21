@@ -4816,7 +4816,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1931541364}
-  flashlightToggle: {fileID: 0}
+  flashlightToggle: {fileID: 762239298}
 --- !u!54 &762239295
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4893,7 +4893,6 @@ MonoBehaviour:
   outer: {fileID: 969910127}
   mid: {fileID: 969910126}
   inner: {fileID: 969910125}
-  adjustmentFactor: 2
 --- !u!1 &762691053
 GameObject:
   m_ObjectHideFlags: 0
@@ -8779,7 +8778,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1839855940}
-  flashlightToggle: {fileID: 0}
+  flashlightToggle: {fileID: 1469245441}
 --- !u!54 &1469245438
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8856,7 +8855,6 @@ MonoBehaviour:
   outer: {fileID: 1321296692}
   mid: {fileID: 1321296691}
   inner: {fileID: 1321296690}
-  adjustmentFactor: 2
 --- !u!1001 &1472839967
 PrefabInstance:
   m_ObjectHideFlags: 0

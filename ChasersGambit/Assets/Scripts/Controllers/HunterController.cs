@@ -6,9 +6,9 @@ namespace Controllers
     public class HunterController : MonoBehaviour
     {
         // Speed fields
-        public float speed; // normal chase speed
-        public float patrolSpeed;
-        public float increasedSpeed; // speed when the player gains control
+        private float speed = 2.8f; // normal chase speed
+        private float patrolSpeed = 2;
+        private float increasedSpeed = 3; // speed when the player gains control
 
         // Direction Controls
         float horizontalInput;
@@ -19,7 +19,7 @@ namespace Controllers
         private int currentPatrolIndex;
 
         private float positionThreshold = 0.1f;
-        public float huntedProximityDistance = 5.0f;
+        private float huntedProximityDistance = 5.0f;
 
         // Hunter rigid body component
         private Rigidbody rb;

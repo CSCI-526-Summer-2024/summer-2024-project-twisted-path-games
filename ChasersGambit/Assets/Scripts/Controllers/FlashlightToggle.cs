@@ -14,7 +14,7 @@ namespace Controllers
         public Light mid;
         public Light inner;
 
-        public float adjustmentFactor;
+        private float adjustmentFactor = 5;
 
         // Use this for initialization
         void Start()

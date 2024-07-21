@@ -7636,12 +7636,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  fadeDuration: 0
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 187108516}
+  flashlightToggle: {fileID: 1240476567}
 --- !u!54 &1240476565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10089,12 +10091,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
+  fadeDuration: 0
   groundDrag: 5
   playerHeight: 2
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1024
   orientation: {fileID: 1260014101}
+  flashlightToggle: {fileID: 1741925534}
 --- !u!54 &1741925533
 Rigidbody:
   m_ObjectHideFlags: 0
