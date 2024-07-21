@@ -11,7 +11,6 @@ public class CollisionManager : MonoBehaviour
 
     // TODO update hunter and hunter controllers to array
     public GameObject hunter1;
-    public GameObject hunter2;
     public Camera hunterCam;
     private HunterController hunterController1;
     private HunterController hunterController2;
@@ -183,7 +182,6 @@ public class CollisionManager : MonoBehaviour
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
             hunterController1 = hunter1.GetComponent<HunterController>();
-            hunterController2 = hunter2.GetComponent<HunterController>();
 
 
             if (hunterController1 == null || hunterController2 == null)
@@ -213,9 +211,6 @@ public class CollisionManager : MonoBehaviour
                 hunted2.GetComponent<HuntedController>().enabled = true;
             }
             hunter1.GetComponent<HunterController>().isChaseActive = true;
-            if (hunter2){
-                hunter2.GetComponent<HunterController>().isChaseActive = true;
-            }
         }
         else
         {
@@ -223,20 +218,13 @@ public class CollisionManager : MonoBehaviour
             {
                 hunted1.GetComponent<HuntedController>().enabled = false;
             }
-            else if (hunter2)
-            {
-                hunted2.GetComponent<HuntedController>().enabled = false;
-            }
+
             hunter1.GetComponent<HunterController>().isChaseActive = false;
-            if (hunter2){
-                hunter2.GetComponent<HunterController>().isChaseActive = false;
-            }
+
             //where you decide which hunter to give control to first. can change to a different method
             //proximity...last controlled...etc
             hunter1.GetComponent<HunterController>().controlled = true;
-            if (hunter2){
-                hunter2.GetComponent<HunterController>().controlled = false;
-            }
+
         }
     }
 
@@ -282,7 +270,7 @@ public class CollisionManager : MonoBehaviour
         int countdownText = powerupTime;
         countdown.text = countdownText.ToString();
         hunter1Pos = new List<Vector3>();
-        hunter2Pos = new List<Vector3>();
+
         
         // Wait for the specified duration
         for (int i = 0; i < duration*2; i++)
@@ -293,7 +281,7 @@ public class CollisionManager : MonoBehaviour
             }
             yield return new WaitForSeconds(0.5f);
             hunter1Pos.Add(hunter1.transform.position);
-            hunter2Pos.Add(hunter2.transform.position);
+
             
         }
         
