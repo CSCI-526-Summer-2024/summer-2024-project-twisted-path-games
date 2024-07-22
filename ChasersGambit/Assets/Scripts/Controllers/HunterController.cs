@@ -84,6 +84,8 @@ namespace Controllers
             {
                 HandleAgent();
                 UpdateVignetteNew();
+                //update animator 
+                //animator.SetBool("isWalking", true);
             }
             else
             {
@@ -136,6 +138,8 @@ namespace Controllers
             else
             {
                 HandlePatrolling();
+                //update animator 
+                //animator.SetBool("isWalking", true);
             }
         }
 
