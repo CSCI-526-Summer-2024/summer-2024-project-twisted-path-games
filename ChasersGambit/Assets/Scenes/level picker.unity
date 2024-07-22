@@ -4820,7 +4820,6 @@ MonoBehaviour:
   isHuntedActive: 1
   powerupTime: 0
   countdown: {fileID: 1881973400}
-  PowerupText: {fileID: 0}
 --- !u!4 &791237945
 Transform:
   m_ObjectHideFlags: 0
@@ -7446,13 +7445,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
   orientation: {fileID: 187108516}
   flashlightToggle: {fileID: 1240476567}
   camera: {fileID: 644399868}
   shake: 0
+  shouldOnFlashLightOnStart: 0
 --- !u!54 &1240476565
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9880,13 +9877,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
   orientation: {fileID: 1260014101}
   flashlightToggle: {fileID: 1741925534}
   camera: {fileID: 1344508268}
   shake: 0
+  shouldOnFlashLightOnStart: 1
 --- !u!54 &1741925533
 Rigidbody:
   m_ObjectHideFlags: 0

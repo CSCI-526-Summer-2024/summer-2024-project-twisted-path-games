@@ -40,7 +40,6 @@ public class CollisionManager : MonoBehaviour
     private List<Vector3> hunter2Pos;
 
     public TextMeshProUGUI countdown;
-    public TextMeshProUGUI PowerupText;
 
 
     void Awake()
@@ -80,11 +79,6 @@ public class CollisionManager : MonoBehaviour
         {
             hunterControl.SetActive(true);
         }
-    }
-
-    private void EnablePowerupUI()
-    {
-        PowerupText.gameObject.SetActive(true);
     }
 
     private void DisableArrowsAroundHunters()
