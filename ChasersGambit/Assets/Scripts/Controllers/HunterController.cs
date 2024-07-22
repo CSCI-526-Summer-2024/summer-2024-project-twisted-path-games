@@ -46,6 +46,8 @@ namespace Controllers
         private bool isCurrentlyChasing = false;
         public bool controlled = false;
 
+        Animator animator;
+
         void Start()
         {
             // Prevent rotation based on physics interactions
@@ -60,6 +62,9 @@ namespace Controllers
             capsuleCollider = GetComponent<CapsuleCollider>();
             hunted1FlashlightToggle = hunted1.GetComponentInChildren<FlashlightToggle>();
             hunted2FlashlightToggle = hunted2.GetComponentInChildren<FlashlightToggle>();
+
+            animator = GetComponent<Animator>();
+            Debug.Log(animator);
 
             if (patrolPoints.Length > 0)
             {
@@ -168,7 +173,18 @@ namespace Controllers
             agent.speed = speed;
             agent.SetDestination(hunted.transform.position);
             Debug.Log("Chasing!");
+            FaceTarget();
             
+        }
+
+        void FaceTarget()
+        {
+            if (agent.destination != Vector3.zero)
+            {
+                Vector3 direction = (agent.destination - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * speed);
+            }
         }
 
         void HandlePatrolling()
@@ -185,6 +201,15 @@ namespace Controllers
                 // Move to the next patrol point
                 currentPatrolIndex = (currentPatrolIndex + 1) % patrolPoints.Length;
                 agent.SetDestination(patrolPoints[currentPatrolIndex].position);
+
+            }
+
+            if (agent.velocity.sqrMagnitude > Mathf.Epsilon)
+            {
+                //rotate the hunter to face movement direction
+                Quaternion targetRotation = Quaternion.LookRotation(agent.velocity.normalized);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * patrolSpeed);
+                  
             }
         }
 
