@@ -227,8 +227,8 @@ namespace Controllers
         // Move Hunter independent of frame rate
         private void MoveHunter()
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * increasedSpeed * verticalInput);
-            transform.Translate(Vector3.right * Time.deltaTime * increasedSpeed * horizontalInput);
+            transform.Translate(Vector3.forward * Time.deltaTime * increasedSpeed * verticalInput, Space.World);
+            transform.Translate(Vector3.right * Time.deltaTime * increasedSpeed * horizontalInput, Space.World);
         }
 
         private float dangerProximityDistance = 5.0f;
