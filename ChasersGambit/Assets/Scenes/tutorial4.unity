@@ -2887,6 +2887,7 @@ GameObject:
   - component: {fileID: 484839681}
   - component: {fileID: 484839680}
   - component: {fileID: 484839679}
+  - component: {fileID: 484839684}
   m_Layer: 8
   m_Name: Hunted1
   m_TagString: Hunted1
@@ -2989,6 +2990,25 @@ Transform:
   - {fileID: 1067254786}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &484839684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484839678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &487171631
 GameObject:
   m_ObjectHideFlags: 0
@@ -12909,6 +12929,7 @@ GameObject:
   - component: {fileID: 2033246447}
   - component: {fileID: 2033246446}
   - component: {fileID: 2033246445}
+  - component: {fileID: 2033246450}
   m_Layer: 8
   m_Name: Hunted2
   m_TagString: Hunted2
@@ -13011,6 +13032,25 @@ Transform:
   - {fileID: 2136070253}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033246450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033246444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2038862319
 GameObject:
   m_ObjectHideFlags: 0
