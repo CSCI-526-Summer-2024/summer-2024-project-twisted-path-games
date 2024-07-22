@@ -30,7 +30,6 @@ namespace Controllers
         public float shake = 0;
         float shakeAmount = 0.05f;
         float decreaseFactor = 1.0f;
-        public bool shouldOnFlashLightOnStart;
 
         void Start()
         {
@@ -38,15 +37,8 @@ namespace Controllers
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
 
-            flashlightToggle = GetComponent<FlashlightToggle>();
-            if (shouldOnFlashLightOnStart)
-            {
-                ToggleFlashlightOn();
-            }
-            if (flashlightToggle == null)
-            {
-                Debug.Log("flashlight toggle not found");
-            }
+            flashlightToggle = GetComponent<FlashlightToggle>(); 
+            ToggleFlashlightOn();
         }
 
         void Update()
@@ -144,7 +136,10 @@ namespace Controllers
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-            
+
+            flashlightToggle.outer.intensity = 0;
+            flashlightToggle.mid.intensity = 0;
+            flashlightToggle.inner.intensity = 0;
             flashlightToggle.isOn = false;
         }
         
@@ -166,6 +161,11 @@ namespace Controllers
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
+            
+            flashlightToggle.outer.intensity = 1.5f;
+            flashlightToggle.mid.intensity = 1.2f;
+            flashlightToggle.inner.intensity = 1.5f;
+            flashlightToggle.isOn = true;
         }
         
     }
