@@ -4512,6 +4512,7 @@ GameObject:
   - component: {fileID: 762239294}
   - component: {fileID: 762239297}
   - component: {fileID: 762239298}
+  - component: {fileID: 762239299}
   m_Layer: 8
   m_Name: Hunted2
   m_TagString: Hunted2
@@ -4612,6 +4613,25 @@ MonoBehaviour:
   outer: {fileID: 795726512}
   mid: {fileID: 795726510}
   inner: {fileID: 795726509}
+--- !u!114 &762239299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762239292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1001 &762907997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8404,6 +8424,7 @@ GameObject:
   - component: {fileID: 1469245437}
   - component: {fileID: 1469245440}
   - component: {fileID: 1469245441}
+  - component: {fileID: 1469245442}
   m_Layer: 8
   m_Name: Hunted1
   m_TagString: Hunted1
@@ -8504,6 +8525,25 @@ MonoBehaviour:
   outer: {fileID: 1467724038}
   mid: {fileID: 1467724036}
   inner: {fileID: 1467724035}
+--- !u!114 &1469245442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469245435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &1471027627
 GameObject:
   m_ObjectHideFlags: 0

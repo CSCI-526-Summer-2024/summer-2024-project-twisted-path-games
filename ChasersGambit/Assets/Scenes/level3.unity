@@ -3300,6 +3300,7 @@ GameObject:
   - component: {fileID: 611426815}
   - component: {fileID: 611426818}
   - component: {fileID: 611426819}
+  - component: {fileID: 611426820}
   m_Layer: 8
   m_Name: Hunted2
   m_TagString: Hunted2
@@ -3400,6 +3401,25 @@ MonoBehaviour:
   outer: {fileID: 1429376932}
   mid: {fileID: 1429376930}
   inner: {fileID: 1429376929}
+--- !u!114 &611426820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611426813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &697079931
 GameObject:
   m_ObjectHideFlags: 0
@@ -9622,6 +9642,7 @@ GameObject:
   - component: {fileID: 2095705917}
   - component: {fileID: 2095705918}
   - component: {fileID: 2095705919}
+  - component: {fileID: 2095705920}
   m_Layer: 8
   m_Name: Hunted1
   m_TagString: Hunted1
@@ -9722,6 +9743,25 @@ MonoBehaviour:
   outer: {fileID: 537825730}
   mid: {fileID: 537825728}
   inner: {fileID: 537825727}
+--- !u!114 &2095705920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095705914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 1
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff
 --- !u!1 &2107622592
 GameObject:
   m_ObjectHideFlags: 0
