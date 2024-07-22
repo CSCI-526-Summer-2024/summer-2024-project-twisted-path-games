@@ -15,7 +15,6 @@ namespace Controllers
         // Ground drag properties so the player doesn't skate across ice-like ground
         private float groundDrag = 5;
         private float playerHeight = 2;
-        public LayerMask whatIsGround;
         bool grounded;
 
         // Hunted orientation object
@@ -31,6 +30,7 @@ namespace Controllers
         public float shake = 0;
         float shakeAmount = 0.05f;
         float decreaseFactor = 1.0f;
+        public bool shouldOnFlashLightOnStart;
 
         void Start()
         {
@@ -39,6 +39,10 @@ namespace Controllers
             rb.freezeRotation = true;
 
             flashlightToggle = GetComponent<FlashlightToggle>();
+            if (shouldOnFlashLightOnStart)
+            {
+                ToggleFlashlightOn();
+            }
             if (flashlightToggle == null)
             {
                 Debug.Log("flashlight toggle not found");

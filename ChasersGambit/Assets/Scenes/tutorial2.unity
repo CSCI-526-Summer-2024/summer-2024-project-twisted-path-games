@@ -1180,7 +1180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.039
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2222,7 +2222,6 @@ MonoBehaviour:
   isHuntedActive: 1
   powerupTime: 5
   countdown: {fileID: 384294391}
-  PowerupText: {fileID: 0}
 --- !u!4 &393321054
 Transform:
   m_ObjectHideFlags: 0
@@ -5549,13 +5548,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
   orientation: {fileID: 1307799916}
   flashlightToggle: {fileID: 1036961097}
   camera: {fileID: 2054548572}
   shake: 0
+  shouldOnFlashLightOnStart: 1
 --- !u!54 &1036961100
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7955,15 +7952,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.199994
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.05000001
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.559998
+      value: -18.56
       objectReference: {fileID: 0}
     - target: {fileID: 430394, guid: 3bab19842fc2b8e44837b5c42192679d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8584,13 +8581,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 1024
   orientation: {fileID: 978423997}
   flashlightToggle: {fileID: 1669302373}
   camera: {fileID: 144252835}
   shake: 0
+  shouldOnFlashLightOnStart: 0
 --- !u!54 &1669302376
 Rigidbody:
   m_ObjectHideFlags: 0
