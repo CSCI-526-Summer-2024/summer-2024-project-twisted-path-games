@@ -181,14 +181,6 @@ public class CollisionManager : MonoBehaviour
         {
             DisableHuntedAfterExiting(huntedThatExited);
             GameState.DidAnyHuntedExit = true;
-            hunterController1 = hunter1.GetComponent<HunterController>();
-
-
-            if (hunterController1 == null || hunterController2 == null)
-            {
-                Debug.LogError("HunterController component not found on otherHunted");
-                return;
-            }
         }
     }
     
