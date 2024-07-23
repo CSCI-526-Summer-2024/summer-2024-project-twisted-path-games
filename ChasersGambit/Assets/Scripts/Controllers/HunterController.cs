@@ -8,9 +8,9 @@ namespace Controllers
     public class HunterController : MonoBehaviour
     {
         // Speed fields
-        private float speed = 2.8f; // normal chase speed
-        private float patrolSpeed = 2;
-        private float increasedSpeed = 4; // speed when the player gains control
+        public float speed = 2.8f; // normal chase speed
+        public float patrolSpeed = 2;
+        public float increasedSpeed = 4; // speed when the player gains control
 
         // Direction Controls
         float horizontalInput;

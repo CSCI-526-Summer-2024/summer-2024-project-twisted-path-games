@@ -5,7 +5,7 @@ namespace Controllers
 {
     public class HuntedController : MonoBehaviour
     {
-        private float moveSpeed = 3;
+        public float moveSpeed = 3;
 
         float horizontalInput;
         float verticalInput;
