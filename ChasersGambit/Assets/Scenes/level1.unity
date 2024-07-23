@@ -5294,6 +5294,7 @@ MonoBehaviour:
   moveSpeed: 3
   orientation: {fileID: 1931541364}
   flashlightToggle: {fileID: 762239298}
+  flashlightIntensity: 2.5
   camera: {fileID: 1558269157}
   shake: 0
 --- !u!54 &762239295
@@ -9209,6 +9210,7 @@ MonoBehaviour:
   moveSpeed: 3
   orientation: {fileID: 1839855940}
   flashlightToggle: {fileID: 1469245441}
+  flashlightIntensity: 2.5
   camera: {fileID: 630067750}
   shake: 0
 --- !u!54 &1469245438

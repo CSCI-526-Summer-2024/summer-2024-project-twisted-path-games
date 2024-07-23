@@ -8680,6 +8680,7 @@ MonoBehaviour:
   moveSpeed: 3
   orientation: {fileID: 140677797}
   flashlightToggle: {fileID: 996593037}
+  flashlightIntensity: 2.5
   camera: {fileID: 2061627791}
   shake: 0
 --- !u!54 &996593040
@@ -11177,6 +11178,7 @@ MonoBehaviour:
   moveSpeed: 3
   orientation: {fileID: 2052132201}
   flashlightToggle: {fileID: 1277583085}
+  flashlightIntensity: 2.5
   camera: {fileID: 2037332976}
   shake: 0
 --- !u!54 &1277583088

@@ -3043,8 +3043,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
   orientation: {fileID: 1757739849}
   flashlightToggle: {fileID: 484839679}
+  flashlightIntensity: 2.5
   camera: {fileID: 387464897}
   shake: 0
 --- !u!54 &484839682
@@ -7220,6 +7222,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.8
+  patrolSpeed: 2
+  increasedSpeed: 4
   patrolPoints:
   - {fileID: 21401111}
   - {fileID: 813263825}
@@ -8066,7 +8071,7 @@ MonoBehaviour:
   mazeLights: {fileID: 2038862321}
   gameManager: {fileID: 1346741227}
   isHuntedActive: 1
-  powerupTime: 5
+  powerupTime: 6
   countdown: {fileID: 1226814390}
 --- !u!4 &1187634061
 Transform:
@@ -13887,6 +13892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.8
+  patrolSpeed: 2
+  increasedSpeed: 4
   patrolPoints:
   - {fileID: 21401111}
   - {fileID: 813263825}
@@ -14190,8 +14198,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
   orientation: {fileID: 1151733253}
   flashlightToggle: {fileID: 2033246445}
+  flashlightIntensity: 2.5
   camera: {fileID: 1223403275}
   shake: 0
 --- !u!54 &2033246448

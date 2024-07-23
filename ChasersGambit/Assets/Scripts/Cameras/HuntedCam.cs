@@ -7,11 +7,11 @@ namespace Cameras
     {
         // Mouse sensitivity, lowered for build
         #if UNITY_WEBGL && !UNITY_EDITOR
-            public float sensX = 200.0f;
-            public float sensY = 200.0f;  
+            public float sensX = 100.0f;
+            public float sensY = 100.0f;  
         #else
-            public float sensX = 200.0f;
-            public float sensY = 200.0f;
+            public float sensX = 100.0f;
+            public float sensY = 100.0f;
         #endif
 
         // Reference to the orientation object under the hunted game object

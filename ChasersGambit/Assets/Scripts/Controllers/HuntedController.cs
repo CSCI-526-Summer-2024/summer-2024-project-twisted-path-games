@@ -24,7 +24,7 @@ namespace Controllers
         Rigidbody rb;
 
         public FlashlightToggle flashlightToggle;
-
+        public float flashlightIntensity = 1.5f;
         
         public Camera camera;
         public float shake = 0;
@@ -146,9 +146,9 @@ namespace Controllers
         IEnumerator FadeInLight()
         {
             flashlightToggle.enabled = true;
-            float endIntensityOuter = 1.5f;
-            float endIntensityMid = 1.2f;
-            float endIntensityInner = 1.5f;
+            float endIntensityOuter = flashlightIntensity;
+            float endIntensityMid = flashlightIntensity - 0.3f;
+            float endIntensityInner = flashlightIntensity;
 
             float elapsedTime = 0f;
             
@@ -162,9 +162,9 @@ namespace Controllers
                 yield return null;
             }
             
-            flashlightToggle.outer.intensity = 1.5f;
-            flashlightToggle.mid.intensity = 1.2f;
-            flashlightToggle.inner.intensity = 1.5f;
+            flashlightToggle.outer.intensity = flashlightIntensity;
+            flashlightToggle.mid.intensity = flashlightIntensity - 0.3f;
+            flashlightToggle.inner.intensity = flashlightIntensity;
             flashlightToggle.isOn = true;
         }
         
