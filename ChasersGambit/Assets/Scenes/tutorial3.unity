@@ -3095,7 +3095,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.75
+  m_Radius: 0.1
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -3111,6 +3111,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.8
+  patrolSpeed: 2
+  increasedSpeed: 4
   patrolPoints:
   - {fileID: 183040616}
   - {fileID: 1808448176}
@@ -5384,6 +5387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
   orientation: {fileID: 1931541364}
   flashlightToggle: {fileID: 762239298}
   camera: {fileID: 1558269157}
@@ -6257,6 +6261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 038256818fed34406b70dcf0047ba9fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2.8
+  patrolSpeed: 2
+  increasedSpeed: 4
   patrolPoints:
   - {fileID: 183040616}
   - {fileID: 1808448176}
@@ -9344,6 +9351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59278d29435234e9cb4cf4551402c6e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
   orientation: {fileID: 1839855940}
   flashlightToggle: {fileID: 1469245441}
   camera: {fileID: 630067750}
